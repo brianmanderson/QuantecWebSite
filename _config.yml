@@ -1,6 +1,63 @@
-title: "Quantec Radiation"
-description: "QUANTEC-inspired radiation dose/constraint resources"
-url: "https://quantecradiation.org"   # your custom domain
-baseurl: ""                            # leave empty when using apex domain
-markdown: kramdown                     # GitHub Pages default
-theme: null                            # we’ll provide our own layout
+title: "QUANTEC Radiation"
+description: "Evidence-based radiation dose/constraint resources for radiation oncology"
+url: "https://quantecradiation.org"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Jekyll settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+author:
+  name: "QUANTEC Radiation Team"
+  email: "contact@quantecradiation.org"
+
+# Social links (optional)
+social:
+  email: contact@quantecradiation.org
+  
+# SEO settings
+seo:
+  name: "QUANTEC Radiation"
+  type: Organization
+
+# Collections (if you want to add different content types)
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name/
+  resources:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include files
+include:
+  - _pages
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"

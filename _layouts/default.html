@@ -3,26 +3,73 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% raw %}{{ page.title | default: site.title }}{% endraw %}</title>
-
-    <!-- Example of linking a CSS file if/when you add one -->
-    <link rel="stylesheet" href="{% raw %}{{ '/assets/css/style.css' | relative_url }}{% endraw %}">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
 </head>
 <body>
-
     <header>
-        <!-- TODO: paste your site logo/title/nav from your current index.html here -->
-        <h1>{% raw %}{{ site.title }}{% endraw %}</h1>
+        <div class="header-content">
+            <div class="logo">
+                <h1>{{ site.title }}</h1>
+                <div class="tagline">{{ site.description }}</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/about' | relative_url }}">About Us</a></li>
+                    <li><a href="{{ '/resources' | relative_url }}">Resources</a></li>
+                    <li><a href="{{ '/publications' | relative_url }}">Publications</a></li>
+                    <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        {% raw %}{{ content }}{% endraw %}
+        {{ content }}
     </main>
 
     <footer>
-        <!-- TODO: paste your current footer here -->
-        <p>&copy; {% raw %}{{ site.title }}{% endraw %}</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="{{ '/privacy' | relative_url }}">Privacy Policy</a>
+                <a href="{{ '/terms' | relative_url }}">Terms of Use</a>
+                <a href="mailto:contact@quantecradiation.org">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+            <p>Advancing evidence-based radiation oncology through research and collaboration.</p>
+        </div>
     </footer>
 
+    <!-- JavaScript for enhanced interactivity -->
+    <script>
+        // Simple mobile menu toggle if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
