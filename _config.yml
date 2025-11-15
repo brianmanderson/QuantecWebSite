@@ -1,0 +1,6 @@
+title: "Quantec Radiation"
+description: "QUANTEC-inspired radiation dose/constraint resources"
+url: "https://quantecradiation.org"   # your custom domain
+baseurl: ""                            # leave empty when using apex domain
+markdown: kramdown                     # GitHub Pages default
+theme: null                            # we’ll provide our own layout
