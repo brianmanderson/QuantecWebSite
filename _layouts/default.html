@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% raw %}{{ page.title | default: site.title }}{% endraw %}</title>
+
+    <!-- Example of linking a CSS file if/when you add one -->
+    <link rel="stylesheet" href="{% raw %}{{ '/assets/css/style.css' | relative_url }}{% endraw %}">
+</head>
+<body>
+
+    <header>
+        <!-- TODO: paste your site logo/title/nav from your current index.html here -->
+        <h1>{% raw %}{{ site.title }}{% endraw %}</h1>
+    </header>
+
+    <main>
+        {% raw %}{{ content }}{% endraw %}
+    </main>
+
+    <footer>
+        <!-- TODO: paste your current footer here -->
+        <p>&copy; {% raw %}{{ site.title }}{% endraw %}</p>
+    </footer>
+
+</body>
+</html>
