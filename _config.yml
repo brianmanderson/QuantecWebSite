@@ -44,6 +44,7 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - "Website design.docx"
 
 # Include files
 include:
