@@ -224,6 +224,17 @@ footer {
     color: #3498db;
 }
 
+.footer-credit {
+    font-size: 0.8rem;
+    opacity: 0.65;
+    margin-top: 0.75rem;
+}
+
+.footer-credit a {
+    color: #ecf0f1;
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {
@@ -420,12 +431,17 @@ footer {
     font-size: 1.2em;
 }
 
-/* Custom anatomical SVG icons (organs Font Awesome's free set doesn't include) */
+/* Anatomical icons from game-icons.net (organs Font Awesome's free set lacks).
+   Rendered via CSS mask so the SVG inherits the heading color (currentColor). */
 .category-title .organ-icon {
-    width: 1.5em;
-    height: 1.5em;
-    margin-right: 0.6rem;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    margin-right: 0.55rem;
     flex-shrink: 0;
+    background-color: currentColor;
+    -webkit-mask: var(--organ-icon) center / contain no-repeat;
+            mask: var(--organ-icon) center / contain no-repeat;
 }
 
 /* Summary Links Grid */

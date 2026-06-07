@@ -40,6 +40,7 @@ collections:
 # Exclude files from processing
 exclude:
   - README.md
+  - CREDITS.md
   - Gemfile
   - Gemfile.lock
   - node_modules
