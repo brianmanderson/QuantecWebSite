@@ -17,11 +17,11 @@ plugins:
 # Site settings
 author:
   name: "QUANTEC Radiation Team"
-  email: "contact@quantecradiation.org"
+  email: "BrianAnderson@ucsd.edu"
 
 # Social links (optional)
 social:
-  email: contact@quantecradiation.org
+  email: BrianAnderson@ucsd.edu
   
 # SEO settings
 seo:
