@@ -57,6 +57,7 @@ nav a {
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -136,16 +137,33 @@ main {
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-margin-top: 1.5rem;
 }
 
 .gallery-item:hover {
     transform: translateY(-5px);
 }
 
+/* Highlight a gallery card when linked to directly (e.g. /resources/#cns) */
+.gallery-item:target {
+    box-shadow: 0 0 0 3px #2c5aa0, 0 2px 8px rgba(0,0,0,0.1);
+}
+
 .gallery-item h4 {
     color: #2c5aa0;
     margin-bottom: 1rem;
+}
+
+/* Cards that link to another page */
+.gallery-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-link .gallery-item {
+    height: 100%;
 }
 
 /* Button Styles */
@@ -400,6 +418,14 @@ footer {
 .category-title i {
     margin-right: 0.75rem;
     font-size: 1.2em;
+}
+
+/* Custom anatomical SVG icons (organs Font Awesome's free set doesn't include) */
+.category-title .organ-icon {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.6rem;
+    flex-shrink: 0;
 }
 
 /* Summary Links Grid */
