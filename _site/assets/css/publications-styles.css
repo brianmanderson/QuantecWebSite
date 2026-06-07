@@ -1,0 +1,211 @@
+/* Publications Page Specific Styles */
+
+/* Content Blocks */
+.content-block {
+    margin-bottom: 3rem;
+}
+
+.content-block h2 {
+    color: #1e5a8e;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2874ba;
+    padding-bottom: 0.5rem;
+}
+
+/* Highlight Box for Special Content */
+.highlight-box {
+    background-color: #f0f7ff;
+    border-left: 4px solid #2874ba;
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.highlight-box blockquote {
+    margin: 1rem 0 0 0;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* External Links */
+.external-link {
+    margin-top: 0.75rem;
+}
+
+.external-link a {
+    color: #2874ba;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.external-link a:hover {
+    color: #1e5a8e;
+    text-decoration: underline;
+}
+
+.external-link i {
+    margin-right: 0.5rem;
+    font-size: 0.9em;
+}
+
+/* Publication List Styles */
+.publication-list {
+    margin-top: 1rem;
+}
+
+.publication-item {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.publication-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.publication-item h3,
+.publication-item h4 {
+    color: #1e5a8e;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.publication-item.compact {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.publication-item.compact h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-item .authors {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+/* Organ Category Sections */
+.organ-category {
+    margin-bottom: 2.5rem;
+}
+
+.category-title {
+    color: #2874ba;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+    border-radius: 6px;
+    border-left: 4px solid #2874ba;
+    display: flex;
+    align-items: center;
+}
+
+.category-title i {
+    margin-right: 0.75rem;
+    font-size: 1.2em;
+}
+
+/* Summary Links Grid */
+.summary-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.summary-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2874ba 0%, #1e5a8e 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.summary-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.summary-link i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.summary-link span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Responsive Design for Publications */
+@media (max-width: 768px) {
+    .content-block h2 {
+        font-size: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
+    }
+
+    .publication-item {
+        padding: 1rem;
+    }
+
+    .summary-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .highlight-box {
+        padding: 1rem;
+    }
+}
+
+/* Print Styles for Publications */
+@media print {
+    .hero-section {
+        background: white !important;
+        color: black !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .publication-item {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .external-link a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    .summary-link {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc;
+    }
+}
