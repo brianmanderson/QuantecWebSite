@@ -28,28 +28,19 @@ seo:
   name: "QUANTEC Radiation"
   type: Organization
 
-# Collections (if you want to add different content types)
-collections:
-  publications:
-    output: true
-    permalink: /:collection/:name/
-  resources:
-    output: true
-    permalink: /:collection/:name/
-
-# Exclude files from processing
+# Exclude files from processing.
+# Anything not listed here IS published to quantecradiation.org — Jekyll copies unknown files
+# through verbatim. Check `_site/` after adding any non-page file to the repo.
 exclude:
   - README.md
   - CREDITS.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
-  - "Website design.docx"
-
-# Include files
-include:
-  - _pages
+  - docs
+  - "*.docx"
 
 # Default settings
 defaults:

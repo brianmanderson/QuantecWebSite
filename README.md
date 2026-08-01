@@ -11,12 +11,37 @@ Source for [quantecradiation.org](http://quantecradiation.org/) — a Jekyll sta
 
 ## Run locally
 
-Requires Ruby with Bundler (plugins: jekyll-feed, jekyll-sitemap, jekyll-seo-tag).
+Requires **Ruby 3.3** (what GitHub Pages builds with; 3.4+ drops stdlib gems this Gemfile does
+not declare) and Bundler. Plugins: jekyll-feed, jekyll-sitemap, jekyll-seo-tag.
 
+On Windows, install Ruby and then finish the toolchain — the winget package alone leaves MSYS2
+unpacked, and gems with native extensions fail with `MSYS2 could not be found`:
+
+```powershell
+winget install --id RubyInstallerTeam.RubyWithDevKit.3.3 --exact --silent
+ridk install 1
 ```
+
+Ruby lands in `C:\Ruby33-x64\bin`; open a new shell so it is on `PATH`. Then, from the repo root:
+
+```bash
 bundle install
 bundle exec jekyll serve
 ```
+
+Open <http://127.0.0.1:4000/>. `bundle exec jekyll build` writes to `_site/` without serving.
+
+Note that `jekyll serve --watch` does not reload `_config.yml` — restart the server after
+editing it.
+
+## Contributing
+
+`main` is the release branch: merging to it publishes the live site via GitHub Pages. Work on a
+branch and open a pull request; there is no CI, so build the site and check the affected pages
+in a browser at desktop and mobile widths before asking for a review.
+
+Working notes and the original design brief live in [`docs/`](docs/), which is excluded from the
+Jekyll build.
 
 ## Contact
 
