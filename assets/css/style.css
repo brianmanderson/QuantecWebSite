@@ -55,10 +55,13 @@ nav {
     flex-shrink: 0;
 }
 
+/* Six top-level items have to share the header row with a 526px logo. At 1280px the row
+   allows 594px for the nav; these values put it at ~554px. Widening the gap or the link
+   padding pushes it over and wraps the header to two rows. */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.25rem;
+    gap: 0.5rem;
 }
 
 nav a {
@@ -66,7 +69,7 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.6rem;
     border-radius: 4px;
     white-space: nowrap;
 }
@@ -164,6 +167,53 @@ main {
 .gallery-item h4 {
     color: #2c5aa0;
     margin-bottom: 1rem;
+}
+
+/* In-page section tabs (Publications, QUANTEC 2). Real anchors, no JS — they work with
+   keyboard, middle-click and back/forward, which a scripted tab widget would not. */
+.subnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.subnav a {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid #d3dce8;
+    border-radius: 999px;
+    color: #2c5aa0;
+    text-decoration: none;
+    font-weight: 500;
+    background: #fff;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.subnav a:hover,
+.subnav a:focus {
+    background: #2c5aa0;
+    color: #fff;
+}
+
+/* Route out of a card to the papers behind it */
+.panel-link {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.panel-link a {
+    color: #2c5aa0;
+    text-decoration: none;
+}
+
+.panel-link a:hover,
+.panel-link a:focus {
+    text-decoration: underline;
+}
+
+.panel-link i {
+    font-size: 0.85em;
+    margin-left: 0.25rem;
 }
 
 /* Cards that link to another page */
@@ -264,7 +314,13 @@ footer {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.25rem;
+    }
+
+    /* Six items wrap to three rows at 1rem gap, pushing the header past a third of a
+       phone screen before any content shows. Keep this tight. */
+    nav a {
+        padding: 0.45rem 0.55rem;
     }
     
     .hero h2 {
