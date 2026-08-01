@@ -8,12 +8,11 @@ Guidance for Claude Code when working in this repository.
 evidence-based radiation dose/constraint resources for radiation oncology, building on the
 original QUANTEC (Quantitative Analyses of Normal Tissue Effects in the Clinic) reviews.
 
-**The audience is practising clinicians** — radiation oncologists, medical physicists,
-dosimetrists — using this material for treatment planning. Dose constraints, NTCP parameters,
-paper titles, author lists and citation URLs must come from the user or from a source already
-cited in this repo. **Never generate, infer, or "correct" a clinical number or a citation from
-your own knowledge.** A plausible-looking wrong value here is a patient-safety problem. See the
-`content-editing` skill.
+**The audience is practising clinicians** using this material for treatment planning. Dose
+constraints, NTCP parameters, paper titles, author lists and citation URLs must come from the
+user or from a source already cited in this repo. **Never generate, infer, or "correct" a
+clinical number or a citation from your own knowledge** — a plausible-looking wrong value here
+is a patient-safety problem. See the `content-editing` skill.
 
 ## Layout
 
@@ -25,7 +24,7 @@ Flat repo, no collections, no `_posts`. Pages are HTML with YAML front matter:
   is published to the live site.
 - `CREDITS.md` — icon/asset attribution. Any new local asset needs a row here.
 - `CNAME` — the custom domain, registered through Namecheap.
-- `docs/` — working notes converted from the original Word briefs; excluded from the build.
+- `docs/` — notes converted from the original Word briefs; excluded from the build.
 
 ## Workflow rules
 
@@ -59,6 +58,5 @@ Three tracked skills in `.claude/skills/`; their descriptions say when to load t
 
 - [README.md](README.md) — what the site is, and verified local build steps.
 - [docs/site-plan.md](docs/site-plan.md) — the original design brief: the QUANTEC citations the
-  site was built from, plus planned sections (QUANTEC 2, author interviews) not yet built.
-- [docs/update-requests.md](docs/update-requests.md) — an unimplemented backlog of content
-  changes requested by the site owner.
+  site was built from, plus sections (QUANTEC 2, author interviews) not yet built.
+- [docs/update-requests.md](docs/update-requests.md) — an unimplemented content backlog.
