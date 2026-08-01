@@ -28,6 +28,11 @@ Three things about that are still open and should not be treated as settled:
    models", "Trachea/bronchi guidelines") asserted specifics that trace to no source, and
    trachea/bronchi is not an organ the original QUANTEC covered. Removing them was chosen over
    preserving them; that is a direct conflict with the request and needs a ruling.
+4. **A sixth panel was added that this document does not ask for.** The request names five
+   panels and one new one (Head and Neck); the constraints page also carries "Genitourinary and
+   Pelvis" (bladder, rectal toxicity, penile bulb). Those are all Pelvis organs in
+   `site-plan.md`, and without the panel the bladder and penile bulb reviews had no signpost
+   anywhere on the site — but it was added on implementer initiative, not requested.
 
 Anything below this section is the original request text, unchanged.
 
