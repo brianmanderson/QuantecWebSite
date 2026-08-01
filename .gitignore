@@ -11,8 +11,8 @@ _site/
 vendor/bundle/
 
 # Word documents. Working notes and briefs belong in docs/ as markdown — see
-# docs/site-plan.md and docs/update-requests.md. "Website design.docx" predates this rule and
-# is still tracked; git ignores .gitignore for already-tracked files.
+# docs/site-plan.md and docs/update-requests.md. Both source briefs stay on disk locally but
+# out of git; their content and images are already converted under docs/.
 *.docx
 
 # Claude Code machine-local settings (tracked: .claude/settings.json, launch.json, skills/)
