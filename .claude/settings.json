@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(bundle install)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(bundle exec jekyll clean:*)",
+      "Bash(bundle exec jekyll doctor:*)",
+      "Bash(bundle lock:*)",
+      "Bash(bundle list:*)",
+      "Bash(gem list:*)",
+      "Bash(ruby -v)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote -v)",
+      "Bash(git ls-files:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)"
+    ],
+    "deny": [
+      "Bash(git push:* origin main)",
+      "Bash(git push:* --force:*)"
+    ]
+  }
+}
