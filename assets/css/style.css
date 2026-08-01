@@ -201,6 +201,12 @@ main {
     font-weight: 500;
 }
 
+.panel-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
 .panel-link a {
     color: #2c5aa0;
     text-decoration: none;

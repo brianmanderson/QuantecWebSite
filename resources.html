@@ -11,6 +11,14 @@ sitemap: false
     <link rel="canonical" href="{{ '/constraints/' | absolute_url }}">
     <meta name="robots" content="noindex">
     <meta http-equiv="refresh" content="0; url={{ '/constraints/' | relative_url }}">
+    <script>
+        // A meta refresh drops the fragment, so /resources/#cns would land at the top of
+        // the new page instead of on the CNS card. Carry it across before that happens.
+        (function () {
+            var target = {{ '/constraints/' | relative_url | jsonify }};
+            location.replace(target + location.hash);
+        })();
+    </script>
 </head>
 <body>
     <p>This page has moved to <a href="{{ '/constraints/' | relative_url }}">Dose Constraints</a>.</p>

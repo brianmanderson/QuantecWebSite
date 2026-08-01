@@ -1,12 +1,35 @@
 # Pending site update requests
 
 Transcribed verbatim from `UpdateRequests.docx` (dated 2025-07-16), which was an untracked
-working file at the repo root. **Nothing here has been implemented yet** — this is a backlog.
+working file at the repo root.
 
 The source document listed edits under bare headings like "Please edit to:" without naming the
 panel. The section mapping below is *inferred* from the order matching the four organ panels on
-[resources.html](../resources.html); confirm with the requester before implementing anything
-marked (inferred).
+what is now [constraints.html](../constraints.html).
+
+## Implementation status
+
+**Implemented on 2026-08-01**, in the branch that introduced `/constraints/` and `/quantec-2/`.
+Three things about that are still open and should not be treated as settled:
+
+1. **The (inferred) panel mappings were acted on without confirmation.** The CNS,
+   Cardiovascular, Respiratory and Gastrointestinal bullet edits below were applied on the
+   assumption that the source document's unlabelled "Please edit to:" blocks map to those four
+   panels in order. That assumption is still unconfirmed. If the requester meant a different
+   mapping, the bullets are on the wrong panels.
+2. **Two requested renames were deliberately not made.** The constraints page is labelled
+   "Constraints", not "QUANTEC", and the publications page kept "Publications" rather than
+   "AllTEC Publications". Reason: a literal reading produced three destinations named some
+   variant of QUANTEC, and the longer labels overflowed the header — six nav items measured
+   766px against a 594px budget at 1280px, wrapping the header to two rows. The sub-tabs were
+   delivered as in-page section links rather than a dropdown.
+3. **The Respiratory panel was reworded despite this document saying "leave as is".** Its
+   previous bullets ("Lung V20/V30 constraints", "Mean lung dose limits", "Pneumonitis risk
+   models", "Trachea/bronchi guidelines") asserted specifics that trace to no source, and
+   trachea/bronchi is not an organ the original QUANTEC covered. Removing them was chosen over
+   preserving them; that is a direct conflict with the request and needs a ruling.
+
+Anything below this section is the original request text, unchanged.
 
 ## Home page (`index.html`)
 
