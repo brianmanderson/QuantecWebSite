@@ -22,8 +22,7 @@ Flat repo, no collections, no `_posts`. Pages are HTML with YAML front matter:
   → `_layouts/default.html` (head, nav, footer) → `assets/css/style.css` (all styles).
 - `_config.yml` — site config. Its `exclude:` list is load-bearing: anything not listed there
   is published to the live site.
-- `CREDITS.md` — icon/asset attribution. Any new local asset needs a row here.
-- `CNAME` — the custom domain, registered through Namecheap.
+- `CREDITS.md` — attribution; any new local asset needs a row. `CNAME` — the custom domain.
 - `docs/` — notes converted from the original Word briefs; excluded from the build.
 
 ## Workflow rules
@@ -44,6 +43,9 @@ Three tracked skills in `.claude/skills/`; their descriptions say when to load t
 - `content-editing` — read BEFORE touching any page, the layout, or the stylesheet. Holds the
   content-accuracy rule, the CSS component vocabulary, and the CREDITS.md requirement.
 - `release` — the gate above. Run it before any PR.
+
+Plus one tracked agent, `site-reviewer` — an independent read of the built site. Spawn it with a
+fresh context and tell it nothing about what you changed; that independence is the point.
 
 ## Pitfalls
 
