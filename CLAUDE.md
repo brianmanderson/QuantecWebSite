@@ -18,12 +18,16 @@ is a patient-safety problem. See the `content-editing` skill.
 
 Flat repo, no collections, no `_posts`. Pages are HTML with YAML front matter:
 
-- `index.html`, `about.html`, `resources.html`, `publications.html`, `contact.html`
-  → `_layouts/default.html` (head, nav, footer) → `assets/css/style.css` (all styles).
+- `index.html`, `about.html`, `constraints.html`, `publications.html`, `quantec-2.html`,
+  `contact.html` → `_layouts/default.html` (head, nav, footer) → `assets/css/style.css`.
+  `resources.html` is a redirect stub for the pre-rename URL, not a page.
 - `_config.yml` — site config. Its `exclude:` list is load-bearing: anything not listed there
   is published to the live site.
 - `CREDITS.md` — attribution; any new local asset needs a row. `CNAME` — the custom domain.
 - `docs/` — notes converted from the original Word briefs; excluded from the build.
+
+The site states no dose values: each organ topic routes to the review carrying the constraint,
+deliberately, so clinicians plan from the paper rather than our summary of it.
 
 ## Workflow rules
 
@@ -59,6 +63,8 @@ fresh context and tell it nothing about what you changed; that independence is t
 ## Further reading
 
 - [README.md](README.md) — what the site is, and verified local build steps.
-- [docs/site-plan.md](docs/site-plan.md) — the original design brief: the QUANTEC citations the
-  site was built from, plus sections (QUANTEC 2, author interviews) not yet built.
-- [docs/update-requests.md](docs/update-requests.md) — an unimplemented content backlog.
+- [docs/site-plan.md](docs/site-plan.md) — the original brief: the QUANTEC citations the site
+  was built from, plus the Marks/Bentzen interview questions, still unbuilt.
+- [docs/update-requests.md](docs/update-requests.md) — the content backlog, implemented
+  2026-08-01. Read its "Implementation status" first: it lists four deviations from the request
+  still awaiting the owner's ruling.

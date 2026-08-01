@@ -58,8 +58,8 @@ Must print `OK: all internal links and anchors resolve` and exit 0. It walks eve
 resolves each internal `href`/`src` against the real `_site` tree, and verifies that every
 `#fragment` matches an `id` (or `<a name>`) that actually exists on the destination page.
 
-**It deliberately does not touch the network**, so the ~44 external links — the Red Journal
-article URLs, ScienceDirect, AAPM, game-icons.net — are counted and skipped, not verified. If a
+**It deliberately does not touch the network**, so the external links — the Red Journal article
+URLs, ScienceDirect, AAPM, PENTEC, game-icons.net — are counted and skipped, not verified. If a
 change adds or edits an external citation URL, open it in the browser and confirm it resolves to
 the paper it claims. See the content-accuracy rule in the `content-editing` skill; a citation
 that 404s is the mildest of the ways that can go wrong.
@@ -71,13 +71,19 @@ ls -R _site
 ```
 
 Jekyll copies unrecognised files through verbatim, so a stray file at the repo root becomes a
-public URL. The expected tree is `index.html`; `about/`, `contact/`, `resources/`,
-`publications/` each holding `index.html`; `assets/css`, `assets/images`; and `CNAME`,
-`feed.xml`, `robots.txt`, `sitemap.xml`.
+public URL. The expected tree is `index.html`; `about/`, `constraints/`, `publications/`,
+`quantec-2/`, `contact/` and `resources/` each holding `index.html`; `assets/css`,
+`assets/images`; and `CNAME`, `feed.xml`, `robots.txt`, `sitemap.xml`.
 
-If anything else appears — a `.docx`, the `docs/` folder, an editor backup — add it to
-`exclude:` in `_config.yml` and rebuild. A build once shipped `UpdateRequests.docx` to the
-public site this way.
+`resources/` is a deliberate redirect stub, not a page — `/resources/` was the constraints page
+before it moved to `/constraints/`, and the stub carries the fragment across so the live
+`/resources/#cns` deep link still lands on the right card. Do not remove it.
+
+**This list goes stale every time a page is added.** If something unexpected appears, work out
+which it is before acting: a stray *file* — a `.docx`, the `docs/` folder, an editor backup —
+belongs in `exclude:` in `_config.yml`; a new *page* belongs in the list above. A build once
+shipped `UpdateRequests.docx` to the public site, which is why this step exists — but
+`exclude:`-ing a real page would silently unpublish it, which is worse.
 
 ## 4. Look at it, at both widths
 
