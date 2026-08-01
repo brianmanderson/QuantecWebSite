@@ -1,8 +1,16 @@
 # Original site plan and source citations
 
 Transcribed from `Website design.docx`, the brief that the current site was built from. It is
-the authoritative source for the citations and links already on the site, and it contains
-planned material that has **not** been built yet.
+the working source for the citations and links on the site, and it contains planned material
+that has **not** been built yet.
+
+**Where this document and the publisher disagree, the publisher wins.** It is a transcription of
+a Word file and carries that file's typos. Four were found and corrected against Red Journal
+metadata on 2026-08-01 — an author's name (Mary, not May, K. Martel) and three paper titles
+("A Users Guide", "Scientific Issues", and "Use of Normal Tissue **Complication** Probability
+Models in the Clinic"). Correcting a citation against the journal is verification, not
+invention, and is the one case where departing from this file is right. Record the check here
+when you do it.
 
 The .docx embedded three candidate hero images, extracted here so nothing depends on the binary:
 [image1](assets/website-design-image1.png) (963×805),
@@ -35,7 +43,7 @@ The issue included 3 introductory, 16 organ-specific and 5 vision papers.
 
 ### QUANTEC objective
 
-From the introductory paper "Use of normal tissue probability models in the clinic" — Lawrence B.
+From the introductory paper "Use of Normal Tissue Complication Probability Models in the Clinic" — Lawrence B.
 Marks, Ellen D. Yorke, Andrew Jackson, Randall K. Ten Haken, Louis S. Constine, Avraham Eisbruch,
 Søren M. Bentzen, Jiho Nam, and Joseph O. Deasy; *IJROBP* 2010, Vol. 76, No. 3, Supplement,
 pp. S10–S19:
@@ -52,9 +60,9 @@ pp. S10–S19:
 
 | Paper | Authors | Link |
 |---|---|---|
-| Guest Editor's Introduction to QUANTEC: A User Guide | Lawrence B. Marks, Randall K. Ten Haken, May K. Martel | <https://www.redjournal.org/article/S0360-3016(09)03302-1/fulltext> |
-| Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): An Introduction to the Scientific Issue | Søren M. Bentzen, Louis S. Constine, Joseph O. Deasy, Avi Eisbruch, Andrew Jackson, Lawrence B. Marks, Randall K. Ten Haken, Ellen D. Yorke | <https://www.redjournal.org/article/S0360-3016(09)03300-8/fulltext> |
-| Use of normal tissue probability models in the clinic | Lawrence B. Marks, Ellen D. Yorke, Andrew Jackson, Randall K. Ten Haken, Louis S. Constine, Avraham Eisbruch, Søren M. Bentzen, Jiho Nam, Joseph O. Deasy | <https://www.redjournal.org/article/S0360-3016(09)03288-X/fulltext> |
+| Guest Editor's Introduction to QUANTEC: A Users Guide | Lawrence B. Marks, Randall K. Ten Haken, Mary K. Martel | <https://www.redjournal.org/article/S0360-3016(09)03302-1/fulltext> |
+| Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): An Introduction to the Scientific Issues | Søren M. Bentzen, Louis S. Constine, Joseph O. Deasy, Avi Eisbruch, Andrew Jackson, Lawrence B. Marks, Randall K. Ten Haken, Ellen D. Yorke | <https://www.redjournal.org/article/S0360-3016(09)03300-8/fulltext> |
+| Use of Normal Tissue Complication Probability Models in the Clinic | Lawrence B. Marks, Ellen D. Yorke, Andrew Jackson, Randall K. Ten Haken, Louis S. Constine, Avraham Eisbruch, Søren M. Bentzen, Jiho Nam, Joseph O. Deasy | <https://www.redjournal.org/article/S0360-3016(09)03288-X/fulltext> |
 
 ### Organs covered in the original QUANTEC
 
@@ -75,24 +83,25 @@ pp. S10–S19:
 | Abdomen: Kidney | <https://www.redjournal.org/article/S0360-3016(09)03282-9/fulltext> |
 | Pelvis: Bladder | <https://www.redjournal.org/article/S0360-3016(09)03285-4/fulltext> |
 | Pelvis: Rectum | <https://www.redjournal.org/article/S0360-3016(09)03291-X/fulltext> |
-| Pelvis: Penile Bulb | <https://www.redjournal.org/article/S0360-3016(09)03291-X/fulltext> |
+| Pelvis: Penile Bulb | <https://www.redjournal.org/article/S0360-3016(09)03294-5/fulltext> |
 
-Note: the brief gives the **same URL** for Pelvis: Rectum and Pelvis: Penile Bulb. That is
-almost certainly a copy/paste error in the source document — verify the Penile Bulb DOI against
-the Red Journal issue before relying on it, and do not silently substitute a guess.
+### Penile Bulb URL — resolved 2026-08-01
 
-**This has already gone wrong once.** In [publications.html](../publications.html), the
-**Penile Bulb** entry under the Pelvis section links to `S0360-3016(09)03294-5` — a *third*
-value that appears in neither this document nor `update-requests.md`. It entered in commit
-`0387d2d` ("fix broken links", 2026-06-07), which appears to have resolved the duplicate above
-by substituting a plausible PII. It is live on quantecradiation.org.
+The brief originally gave the **same URL** (`03291-X`) for both Rectum and Penile Bulb, which
+was a copy/paste error in the source document. The site had been carrying a different value,
+`03294-5`, since commit `0387d2d`, with no recorded provenance — so for a while it looked like
+an invented citation.
 
-Find it with `grep -n "03294-5" publications.html` rather than by line number — the entry has
-already moved once, and the line immediately above it belongs to **Rectum**, whose URL is
-correct. Editing the wrong one would break a citation that currently works.
+**It was not.** Both were checked directly against the publisher:
 
-Nobody should replace it with another guess: check the table of contents of *IJROBP* 2010,
-Vol. 76, No. 3, Supplement, and record the confirmed PII here first.
+- `S0360-3016(09)03294-5` → "Radiation Dose–Volume Effects and the Penile Bulb", Roach III, Nam,
+  Gagliardi, El Naqa, Deasy, Marks; *IJROBP* Vol. 76, Issue 3, Supplement, S130–S134.
+- `S0360-3016(09)03291-X` → "Radiation Dose–Volume Effects in Radiation-Induced Rectal Injury".
+
+They are distinct papers and both entries on the site are correct. The table above has been
+corrected so this document no longer disagrees with the site. The general rule still stands:
+verify against the journal, never substitute a guess — this one happened to be right, and the
+absence of provenance is precisely why it cost several review rounds to establish that.
 
 ### QUANTEC summary table
 
