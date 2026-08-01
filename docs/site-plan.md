@@ -81,12 +81,18 @@ Note: the brief gives the **same URL** for Pelvis: Rectum and Pelvis: Penile Bul
 almost certainly a copy/paste error in the source document — verify the Penile Bulb DOI against
 the Red Journal issue before relying on it, and do not silently substitute a guess.
 
-**This has already gone wrong once.** [publications.html:243](../publications.html:243) links
-Penile Bulb to `S0360-3016(09)03294-5` — a *third* value that appears in neither this document
-nor `update-requests.md`. It entered in commit `0387d2d` ("fix broken links", 2026-06-07),
-which appears to have resolved the duplicate above by substituting a plausible PII. It is live
-on quantecradiation.org. Nobody should replace it with another guess: check the table of
-contents of *IJROBP* 2010, Vol. 76, No. 3, Supplement, and record the confirmed PII here first.
+**This has already gone wrong once.** In [publications.html](../publications.html), the
+**Penile Bulb** entry under the Pelvis section links to `S0360-3016(09)03294-5` — a *third*
+value that appears in neither this document nor `update-requests.md`. It entered in commit
+`0387d2d` ("fix broken links", 2026-06-07), which appears to have resolved the duplicate above
+by substituting a plausible PII. It is live on quantecradiation.org.
+
+Find it with `grep -n "03294-5" publications.html` rather than by line number — the entry has
+already moved once, and the line immediately above it belongs to **Rectum**, whose URL is
+correct. Editing the wrong one would break a citation that currently works.
+
+Nobody should replace it with another guess: check the table of contents of *IJROBP* 2010,
+Vol. 76, No. 3, Supplement, and record the confirmed PII here first.
 
 ### QUANTEC summary table
 
