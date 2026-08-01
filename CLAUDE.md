@@ -1,7 +1,5 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working in this repository.
-
 ## What this is
 
 [quantecradiation.org](https://quantecradiation.org) — a Jekyll static site publishing
@@ -41,9 +39,8 @@ deliberately, so clinicians plan from the paper rather than our summary of it.
 
 Three tracked skills in `.claude/skills/`; their descriptions say when to load them.
 
-- `preview` — read BEFORE the first `bundle`/`jekyll` command of a session. Ruby setup on this
-  machine is non-obvious (winget's package needs a follow-up `ridk install 1`), and every page
-  builds to a directory, not an `.html` file.
+- `preview` — read BEFORE the first `bundle`/`jekyll` command of a session. Ruby setup here is
+  non-obvious (winget's package needs a follow-up `ridk install 1`).
 - `content-editing` — read BEFORE touching any page, the layout, or the stylesheet. Holds the
   content-accuracy rule, the CSS component vocabulary, and the CREDITS.md requirement.
 - `release` — the gate above. Run it before any PR.
@@ -53,12 +50,11 @@ fresh context and tell it nothing about what you changed; that independence is t
 
 ## Pitfalls
 
-- The global `permalink: /:title/` in `_config.yml` applies to pages, so `about.html` is served
-  at `/about/`. Nav links are correctly extensionless; adding `.html` breaks them. Changing that
-  permalink rewrites every URL on a live public site.
-- `_config.yml` changes are not picked up by `jekyll serve --watch`; restart the server or you
-  are reading a stale build.
-- Don't search or edit inside `_site/` — it is generated output and gitignored.
+- The global `permalink: /:title/` applies to pages, so `about.html` serves at `/about/`. Nav
+  links are correctly extensionless; adding `.html` breaks them, and changing that permalink
+  rewrites every URL on a live public site.
+- `_config.yml` changes are not picked up by `jekyll serve --watch` — restart, or you are
+  reading a stale build. Don't search or edit inside generated `_site/`.
 
 ## Further reading
 
