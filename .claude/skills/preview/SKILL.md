@@ -87,10 +87,10 @@ _site/assets/...
 
 Consequences worth knowing before you "fix" a link:
 
-- The nav in `_layouts/default.html` correctly links to `/about`, `/constraints/`, `/contact`.
+- The nav in `_layouts/default.html` correctly links to `/about`, `/quantec/`, `/contact`.
   Adding `.html` to those would break them — there is no `about.html` in the output.
 - `/resources/` is a redirect stub, not a page: it was the constraints page before the rename
-  and forwards to `/constraints/` preserving the fragment. Leave it in place.
+  and forwards to `/quantec/` preserving the fragment. Leave it in place.
 - `publications.html` *also* sets `permalink: /publications/` explicitly in its front matter.
   That is redundant with the global rule but harmless; leave it.
 - Deleting or changing the global `permalink` silently changes every URL on a live public site.
@@ -115,7 +115,7 @@ Reading the HTML you just wrote is not verification. For any change that touches
    restacks and the gallery grid collapses to one column. Use `resize_window` with
    `preset: "mobile"` and `preset: "desktop"`.
 4. If you added or changed a link or anchor, click it. Anchor targets like
-   `/constraints/#cns` depend on an `id` that actually exists on a `.gallery-item`.
+   `/quantec/#cns` depend on an `id` that actually exists on a `.gallery-item`.
 
 Console errors are worth a glance too — the layout pulls Font Awesome from a CDN, so icons
 silently disappear when offline. That is an environment artifact, not a bug to chase.

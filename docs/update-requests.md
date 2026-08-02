@@ -5,34 +5,40 @@ working file at the repo root.
 
 The source document listed edits under bare headings like "Please edit to:" without naming the
 panel. The section mapping below is *inferred* from the order matching the four organ panels on
-what is now [constraints.html](../constraints.html).
+what is now [quantec.html](../quantec.html).
 
 ## Implementation status
 
-**Implemented on 2026-08-01**, in the branch that introduced `/constraints/` and `/quantec-2/`.
-Three things about that are still open and should not be treated as settled:
+**Implemented on 2026-08-01**, in the branch that introduced `/quantec/` and `/quantec-2/`.
+
+Both requested renames are in place: the constraints page is the **QUANTEC** tab at `/quantec/`,
+and the publications page is **AllTEC Publications**. The sub-tabs are in-page section links
+rather than a dropdown. The nav fits on one header row at 1280px (566px of a 594px budget) —
+`assets/css/style.css` carries the measurement and the warning against widening it.
+
+Four points are still open and awaiting the project lead. They are written up for them in
+[questions-for-project-lead.md](questions-for-project-lead.md); summarised here so this file
+stays the complete record:
 
 1. **The (inferred) panel mappings were acted on without confirmation.** The CNS,
    Cardiovascular, Respiratory and Gastrointestinal bullet edits below were applied on the
    assumption that the source document's unlabelled "Please edit to:" blocks map to those four
-   panels in order. That assumption is still unconfirmed. If the requester meant a different
-   mapping, the bullets are on the wrong panels.
-2. **Two requested renames were deliberately not made.** The constraints page is labelled
-   "Constraints", not "QUANTEC", and the publications page kept "Publications" rather than
-   "AllTEC Publications". Reason: a literal reading produced three destinations named some
-   variant of QUANTEC, and the longer labels overflowed the header — six nav items measured
-   766px against a 594px budget at 1280px, wrapping the header to two rows. The sub-tabs were
-   delivered as in-page section links rather than a dropdown.
-3. **The Respiratory panel was reworded despite this document saying "leave as is".** Its
-   previous bullets ("Lung V20/V30 constraints", "Mean lung dose limits", "Pneumonitis risk
-   models", "Trachea/bronchi guidelines") asserted specifics that trace to no source, and
-   trachea/bronchi is not an organ the original QUANTEC covered. Removing them was chosen over
-   preserving them; that is a direct conflict with the request and needs a ruling.
-4. **A sixth panel was added that this document does not ask for.** The request names five
-   panels and one new one (Head and Neck); the constraints page also carries "Genitourinary and
-   Pelvis" (bladder, rectal toxicity, penile bulb). Those are all Pelvis organs in
-   `site-plan.md`, and without the panel the bladder and penile bulb reviews had no signpost
-   anywhere on the site — but it was added on implementer initiative, not requested.
+   panels in order. If the requester meant a different mapping, the bullets are on the wrong
+   panels. This is the one with real consequences.
+2. **The Respiratory panel was reworded despite this document saying "leave as is".** Its
+   previous bullets were "Lung V20/V30 constraints", "Mean lung dose limits", "Pneumonitis risk
+   models" and "Trachea/bronchi guidelines". The original QUANTEC has no trachea/bronchi review,
+   and the lung review's own abstract states there are "no evident threshold 'tolerance
+   dose–volume' levels", so naming V20/V30 as constraints overstated it. The panel now reads
+   "Lung dose-volume effects / Symptomatic pneumonitis / Mean lung dose and DVH reduction /
+   Dose-volume threshold analyses", every item taken from that paper's abstract, keywords or
+   section headings.
+3. **A sixth panel was added that this document does not ask for** — "Genitourinary and Pelvis"
+   (bladder, rectal toxicity, penile bulb). Without it the bladder and penile bulb reviews had
+   no signpost anywhere on the site, but it was implementer initiative, not a request.
+4. **Three destinations now carry the QUANTEC name** — the QUANTEC tab, the QUANTEC section
+   inside AllTEC Publications, and QUANTEC 2. This follows the request literally; whether the
+   constraints tab should be distinguished is question 3 for the lead.
 
 Anything below this section is the original request text, unchanged.
 

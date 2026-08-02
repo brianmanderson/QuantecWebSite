@@ -55,13 +55,15 @@ nav {
     flex-shrink: 0;
 }
 
-/* Six top-level items have to share the header row with a 526px logo. At 1280px the row
-   allows 594px for the nav; these values put it at ~554px. Widening the gap or the link
-   padding pushes it over and wraps the header to two rows. */
+/* Six top-level items, two of them long ("AllTEC Publications", "QUANTEC 2"), have to share
+   the header row with a 526px logo. At 1280px the row allows 594px for the nav; these values
+   put it at 566px — 28px of slack. At gap 0.5rem it measures 605px and the nav drops to its
+   own row, making the header 167px instead of 130px. Do not widen either value without
+   re-measuring; see the `content-editing` skill. */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
 nav a {
@@ -69,7 +71,7 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-    padding: 0.5rem 0.6rem;
+    padding: 0.5rem 0.5rem;
     border-radius: 4px;
     white-space: nowrap;
 }
@@ -320,13 +322,16 @@ footer {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.25rem;
+        gap: 0.15rem;
     }
 
-    /* Six items wrap to three rows at 1rem gap, pushing the header past a third of a
-       phone screen before any content shows. Keep this tight. */
+    /* "AllTEC Publications" alone is 158px of a 311px content box, so six items wrap to
+       three rows and push the header to 294px — over a third of a phone screen before any
+       content shows. These values hold it to two rows / 263px. Measured; don't relax them
+       without re-checking at 375px. */
     nav a {
-        padding: 0.45rem 0.55rem;
+        padding: 0.45rem 0.35rem;
+        font-size: 0.875rem;
     }
     
     .hero h2 {

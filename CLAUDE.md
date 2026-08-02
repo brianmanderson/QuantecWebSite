@@ -16,7 +16,7 @@ is a patient-safety problem. See the `content-editing` skill.
 
 Flat repo, no collections, no `_posts`. Pages are HTML with YAML front matter:
 
-- `index.html`, `about.html`, `constraints.html`, `publications.html`, `quantec-2.html`,
+- `index.html`, `about.html`, `quantec.html`, `publications.html`, `quantec-2.html`,
   `contact.html` → `_layouts/default.html` (head, nav, footer) → `assets/css/style.css`.
   `resources.html` is a redirect stub for the pre-rename URL, not a page.
 - `_config.yml` — site config. Its `exclude:` list is load-bearing: anything not listed there

@@ -71,12 +71,12 @@ ls -R _site
 ```
 
 Jekyll copies unrecognised files through verbatim, so a stray file at the repo root becomes a
-public URL. The expected tree is `index.html`; `about/`, `constraints/`, `publications/`,
+public URL. The expected tree is `index.html`; `about/`, `quantec/`, `publications/`,
 `quantec-2/`, `contact/` and `resources/` each holding `index.html`; `assets/css`,
 `assets/images`; and `CNAME`, `feed.xml`, `robots.txt`, `sitemap.xml`.
 
-`resources/` is a deliberate redirect stub, not a page — `/resources/` was the constraints page
-before it moved to `/constraints/`, and the stub carries the fragment across so the live
+`resources/` is a deliberate redirect stub, not a page — `/resources/` was the QUANTEC page
+before it moved to `/quantec/`, and the stub carries the fragment across so the live
 `/resources/#cns` deep link still lands on the right card. Do not remove it.
 
 **This list goes stale every time a page is added.** If something unexpected appears, work out

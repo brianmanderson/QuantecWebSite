@@ -47,7 +47,7 @@ Flat repo, no `_posts`, no collections. One file per page:
 |---|---|---|
 | `index.html` | `/` | Hero, mission, the "Key Resources & Areas of Focus" card grid, audience list, CTA |
 | `about.html` | `/about/` | Project history and objectives |
-| `constraints.html` | `/constraints/` | Organ-specific constraint panels, NTCP section |
+| `quantec.html` | `/quantec/` | Organ-specific constraint panels, NTCP section |
 | `publications.html` | `/publications/` | QUANTEC bibliography plus HyTEC and PENTEC — by far the largest page |
 | `quantec-2.html` | `/quantec-2/` | QUANTEC 2 objectives and planned sites/toxicities |
 | `contact.html` | `/contact/` | Corrections address, collaboration invitation |
@@ -55,7 +55,7 @@ Flat repo, no `_posts`, no collections. One file per page:
 | `_layouts/default.html` | all | `<head>`, `{% seo %}`, header + nav, footer, the smooth-scroll script |
 | `assets/css/style.css` | all | Every style rule; there is no per-page CSS |
 
-`resources.html` was the constraints page until it moved to `/constraints/`. It is now a
+`resources.html` was the constraints page until it moved to `/quantec/`. It is now a
 `layout: null` stub that carries the URL fragment across so the live `/resources/#cns` deep link
 still works. Anything written into it renders nowhere.
 
@@ -73,8 +73,8 @@ Radiation" produces a doubled title. Liquid is otherwise used only for `relative
    skill.
 2. Add an `<li><a href="{{ '/newpage' | relative_url }}">…</a></li>` to the `<ul>` in
    `_layouts/default.html`. That `<ul>` is the *only* nav definition; there is no data file.
-3. Always route links through `relative_url` (`{{ '/constraints/' | relative_url }}`), never a
-   bare `/constraints/` or an absolute `https://quantecradiation.org/...`.
+3. Always route links through `relative_url` (`{{ '/quantec/' | relative_url }}`), never a
+   bare `/quantec/` or an absolute `https://quantecradiation.org/...`.
 4. **The nav is full.** Six items measure 554px against a 594px budget at 1280px — 41px of
    slack. A seventh item, or renaming one to something longer, wraps the header to two rows.
    Measure before and after in the browser (see `preview`); do not eyeball it. The gap and link
@@ -98,7 +98,7 @@ block → print styles. Reuse the existing classes instead of adding new ones:
 - `.image-gallery` > `.gallery-container` > `.gallery-item` — the responsive card grid used for
   the home page focus areas, the constraints organ panels and the QUANTEC 2 site groups. Wrap a
   card in `<a class="gallery-link">` to make the whole card clickable; give a card an `id` to
-  make it a deep-link target (`/constraints/#cns` is highlighted by the `:target` rule).
+  make it a deep-link target (`/quantec/#cns` is highlighted by the `:target` rule).
   Every home-page card is a link — a card styled clickable that does nothing is a defect this
   site has shipped before.
 - `.subnav` — in-page section tabs (Publications, QUANTEC 2). Pill-shaped anchor links.
@@ -119,7 +119,7 @@ There are two mobile breakpoints (a general one and a publications-specific one)
 component, add its responsive rule in the same pass — the grid does not collapse on its own.
 
 Avoid inline `style="..."`. Several older ones remain (`index.html`'s list indent,
-`constraints.html`'s NTCP section); prefer moving those into the stylesheet over adding more.
+`quantec.html`'s NTCP section); prefer moving those into the stylesheet over adding more.
 
 ## Icons and images must be credited
 
