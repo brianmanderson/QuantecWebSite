@@ -1,12 +1,56 @@
 # Pending site update requests
 
 Transcribed verbatim from `UpdateRequests.docx` (dated 2025-07-16), which was an untracked
-working file at the repo root. **Nothing here has been implemented yet** — this is a backlog.
+working file at the repo root.
 
 The source document listed edits under bare headings like "Please edit to:" without naming the
 panel. The section mapping below is *inferred* from the order matching the four organ panels on
-[resources.html](../resources.html); confirm with the requester before implementing anything
-marked (inferred).
+what is now [quantec.html](../quantec.html).
+
+## Implementation status
+
+**Implemented on 2026-08-01**, in the branch that introduced `/quantec/` and `/quantec-2/`.
+
+Both requested renames are in place: the constraints page is the **QUANTEC** tab at `/quantec/`,
+and the publications page is **AllTEC Publications**. The sub-tabs are in-page section links
+rather than a dropdown. The nav fits on one header row at 1280px (566px of a 594px budget) —
+`assets/css/style.css` carries the measurement and the warning against widening it.
+
+Six points are still open and awaiting the project lead. They are written up for them in
+[questions-for-project-lead.md](questions-for-project-lead.md); summarised here so this file
+stays the complete record. The numbering matches that file's questions 1, 2, 2b, 3, 4, 5:
+
+1. **The (inferred) panel mappings were acted on without confirmation.** The CNS,
+   Cardiovascular, Respiratory and Gastrointestinal bullet edits below were applied on the
+   assumption that the source document's unlabelled "Please edit to:" blocks map to those four
+   panels in order. If the requester meant a different mapping, the bullets are on the wrong
+   panels. This is the one with real consequences.
+2. **The Respiratory panel was reworded despite this document saying "leave as is".** Its
+   previous bullets were "Lung V20/V30 constraints", "Mean lung dose limits", "Pneumonitis risk
+   models" and "Trachea/bronchi guidelines". The original QUANTEC has no trachea/bronchi review,
+   and the lung review's own abstract states there are "no evident threshold 'tolerance
+   dose–volume' levels", so naming V20/V30 as constraints overstated it. The panel now reads
+   "Lung dose-volume effects / Symptomatic pneumonitis / Mean lung dose and DVH reduction /
+   Dose-volume threshold analyses", every item taken from that paper's abstract, keywords or
+   section headings.
+2b. **The Gastrointestinal panel was reworded, not just added to.** This document asks only to
+   *add* "Rectal toxicity" and "Esophageal dose-volume correlates". The four bullets already
+   there ("Small bowel constraints", "Liver dose limits", "Kidney function preservation",
+   "Gastric dose thresholds") were also rewritten, for the same reason as item 2 — none traced
+   to a source. Same class of deviation as the Respiratory panel, and it was undisclosed until
+   a review caught it.
+3. **Three destinations now carry the QUANTEC name** — the QUANTEC tab, the QUANTEC section
+   inside AllTEC Publications, and QUANTEC 2. This follows the request literally, but someone
+   arriving cold and looking for a dose constraint has three plausible places to click.
+4. **A sixth panel was added that this document does not ask for** — "Genitourinary and Pelvis"
+   (bladder, rectal toxicity, penile bulb). Without it the bladder and penile bulb reviews had
+   no signpost anywhere on the site, but it was implementer initiative, not a request.
+5. **The Ear/cochlea review is filed under Head and Neck, not CNS.** `site-plan.md` lists it as
+   "CNS: Ear"; this document puts "Cochlear dose thresholds" under Head and Neck and the QUANTEC
+   2 site list does the same, so the site follows this document. Consequence: the CNS panel a
+   user reaches from the home page's "CNS Tolerance" card has no hearing content.
+
+Anything below this section is the original request text, unchanged.
 
 ## Home page (`index.html`)
 

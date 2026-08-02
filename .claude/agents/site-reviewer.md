@@ -67,7 +67,7 @@ python .claude/skills/release/scripts/check_links.py _site
    and have not been silently resolved in either direction:
    - `site-plan.md` gives the **same** Red Journal URL for "Pelvis: Rectum" and "Pelvis: Penile
      Bulb". If the site now shows a different Penile Bulb URL, someone invented it — blocking.
-   - The mapping of `update-requests.md` edits onto the four Resources panels is *inferred from
+   - The mapping of `update-requests.md` edits onto the four QUANTEC organ panels is *inferred from
      ordering*, not stated. If it has been implemented without that being confirmed, flag it.
 4. Fetch every external citation URL and report non-200s. Where you can read the landing page,
    report whether it is the paper the site claims. Do not guess a replacement for a dead link.

@@ -31,8 +31,9 @@ the section with a placeholder rather than a guess.
 
 Two known traps already recorded in `docs/site-plan.md`: the source brief gives the *same* Red
 Journal URL for "Pelvis: Rectum" and "Pelvis: Penile Bulb" (a copy/paste error — do not invent a
-replacement), and `docs/update-requests.md` maps requested edits to Resources panels by
-*inferred* order, so confirm before implementing those.
+replacement), and `docs/update-requests.md` maps requested edits to the constraints panels by
+*inferred* order. That mapping has been implemented but never confirmed — see the
+"Implementation status" section of that file for it and the other open deviations.
 
 Qualitative framing prose ("Evidence-based guidelines for lung dose limits and pneumonitis risk
 assessment") is a different matter — that is site copy and can be edited freely, as long as it
@@ -46,15 +47,24 @@ Flat repo, no `_posts`, no collections. One file per page:
 |---|---|---|
 | `index.html` | `/` | Hero, mission, the "Key Resources & Areas of Focus" card grid, audience list, CTA |
 | `about.html` | `/about/` | Project history and objectives |
-| `resources.html` | `/resources/` | Organ-specific constraint panels, NTCP model list |
-| `publications.html` | `/publications/` | The QUANTEC paper bibliography — by far the largest page |
+| `quantec.html` | `/quantec/` | Organ-specific constraint panels, NTCP section |
+| `publications.html` | `/publications/` | QUANTEC bibliography plus HyTEC and PENTEC — by far the largest page |
+| `quantec-2.html` | `/quantec-2/` | QUANTEC 2 objectives and planned sites/toxicities |
 | `contact.html` | `/contact/` | Corrections address, collaboration invitation |
-| `_layouts/default.html` | all | `<head>`, header + nav, footer, the smooth-scroll script |
+| `resources.html` | `/resources/` | **Redirect stub only.** Do not put content here |
+| `_layouts/default.html` | all | `<head>`, `{% seo %}`, header + nav, footer, the smooth-scroll script |
 | `assets/css/style.css` | all | Every style rule; there is no per-page CSS |
 
-Each page is HTML with YAML front matter (`layout: default`, `title:`, `description:`). The
-`title` and `description` feed `<title>` and the meta description via the layout — set both on
-any new page. Liquid is used only for `relative_url` filters and `site.*` values.
+`resources.html` was the constraints page until it moved to `/quantec/`. It is now a
+`layout: null` stub that carries the URL fragment across so the live `/resources/#cns` deep link
+still works. Anything written into it renders nowhere.
+
+Each page is HTML with YAML front matter (`layout: default`, `title:`, `description:`). Both feed
+`{% seo %}` in the layout, which builds the title, meta description, canonical URL, Open Graph
+and JSON-LD — set both on any new page. **`title` must not repeat the site name**; `{% seo %}`
+appends `| QUANTEC Radiation` itself, so "Publications" is right and "Publications - QUANTEC
+Radiation" produces a doubled title. Liquid is otherwise used only for `relative_url` /
+`absolute_url` filters and `site.*` values.
 
 ## Adding a page
 
@@ -63,12 +73,18 @@ any new page. Liquid is used only for `relative_url` filters and `site.*` values
    skill.
 2. Add an `<li><a href="{{ '/newpage' | relative_url }}">…</a></li>` to the `<ul>` in
    `_layouts/default.html`. That `<ul>` is the *only* nav definition; there is no data file.
-3. Always route links through `relative_url` (`{{ '/resources' | relative_url }}`), never a bare
-   `/resources` or an absolute `https://quantecradiation.org/...`.
-4. Nav width is tight. The header already needed a fix to stop the tagline wrapping, and the
-   nav restacks at the 768px breakpoint. Adding a sixth or seventh top-level item means checking
-   both widths in the browser — see `preview`. `docs/update-requests.md` asks for sub-tabs under
-   Publications, which the current flat nav has no pattern for; design that before building it.
+3. Always route links through `relative_url` (`{{ '/quantec/' | relative_url }}`), never a
+   bare `/quantec/` or an absolute `https://quantecradiation.org/...`.
+4. **The nav is full.** Six items measure 566px against a 594px budget at 1280px — 28px of
+   slack. A seventh item, or renaming one to something longer, wraps the header to two rows.
+   Measure before and after in the browser (see `preview`); do not eyeball it. The gap and link
+   padding in `style.css` are already tightened for this and should not be widened.
+5. Sub-navigation within a page uses `.subnav` — real `#anchor` links, no JS tab widget. The
+   layout's smooth-scroll handler pushes the hash and moves focus, so those sections stay
+   linkable, bookmarkable and reachable with the Back button. Keep that property if you touch
+   the handler.
+6. Renaming a page changes a live public URL. Leave a redirect stub at the old permalink that
+   preserves the fragment — `resources.html` is the worked example.
 
 ## CSS component vocabulary
 
@@ -80,19 +96,33 @@ block → print styles. Reuse the existing classes instead of adding new ones:
 - `.content-section` — a standard body section, opened with an `<h3>` carrying a Font Awesome
   icon.
 - `.image-gallery` > `.gallery-container` > `.gallery-item` — the responsive card grid used for
-  the home page focus areas and the Resources organ panels. Wrap a card in `<a class="gallery-link">`
-  to make the whole card clickable; give a card an `id` to make it a deep-link target
-  (`/resources/#cns` is highlighted by the `:target` rule around line 159).
+  the home page focus areas, the constraints organ panels and the QUANTEC 2 site groups. Wrap a
+  card in `<a class="gallery-link">` to make the whole card clickable; give a card an `id` to
+  make it a deep-link target (`/quantec/#cns` is highlighted by the `:target` rule).
+  Every home-page card is a link — a card styled clickable that does nothing is a defect this
+  site has shipped before.
+- `.subnav` — in-page section tabs (Publications, QUANTEC 2). Pill-shaped anchor links.
+- `.panel-link` — the "→ papers" route out of a card. `.panel-note` — a small grey note in a
+  card, used where per-bullet links go to different destinations.
+- `.organ-icon` — an anatomy SVG rendered via CSS `mask` so it inherits `currentColor`; set the
+  file with an inline `--organ-icon` custom property. The rule is deliberately unscoped: it was
+  once `.category-title .organ-icon`, and icons placed in a plain `<h4>` rendered as invisible
+  zero-width spans with no error anywhere. If an icon does not appear, check the computed
+  `mask` and `background-color` before assuming the SVG path is wrong.
 - `.btn` / `.btn-secondary` — call-to-action links.
 - Publications-only: `.container`, `.content-block`, `.highlight-box`, `.publication-list`,
   `.publication-item`, `.authors`, `.external-link`, `.organ-category`, `.category-title`,
   `.summary-links`.
 
+External links carry `target="_blank" rel="noopener"`. Where the visible link text repeats
+across many entries — the publications list is all "Read Full Text" — the link needs an
+`aria-label` naming the specific paper, or a screen-reader user gets an undifferentiated list.
+
 There are two mobile breakpoints (a general one and a publications-specific one). If you add a
 component, add its responsive rule in the same pass — the grid does not collapse on its own.
 
 Avoid inline `style="..."`. Several older ones remain (`index.html`'s list indent,
-`resources.html`'s NTCP box); prefer moving those into the stylesheet over adding more.
+`quantec.html`'s NTCP section); prefer moving those into the stylesheet over adding more.
 
 ## Icons and images must be credited
 

@@ -1,83 +1,26 @@
 ---
-layout: default
-title: "Resources - QUANTEC Radiation"
-description: "Comprehensive radiation dose constraints and clinical guidelines"
+layout: null
+permalink: /resources/
+sitemap: false
 ---
-
-<section class="hero">
-    <h2>Clinical Resources</h2>
-    <p>Access our comprehensive collection of evidence-based dose constraints and clinical guidelines.</p>
-</section>
-
-<section class="content-section">
-    <h3><i class="fas fa-download"></i> Dose Constraint Guidelines</h3>
-    <p>The foundational dose/volume tolerance guidelines come from the original QUANTEC reviews, published as a special issue of the <em>International Journal of Radiation Oncology Biology Physics</em>. You can access the full set of organ-specific papers and summary tables on our Publications page.</p>
-    <div class="mt-3">
-        <a href="{{ '/publications/' | relative_url }}" class="btn">View QUANTEC Publications</a>
-    </div>
-</section>
-
-<section class="content-section">
-    <h3><i class="fas fa-list"></i> Organ-Specific Guidelines</h3>
-    <div class="gallery-container">
-        <div class="gallery-item" id="cns">
-            <h4><i class="fas fa-brain"></i> Central Nervous System</h4>
-            <ul>
-                <li>Brain stem dose limits</li>
-                <li>Optic pathway constraints</li>
-                <li>Cochlear dose thresholds</li>
-                <li>Cognitive function preservation</li>
-            </ul>
-        </div>
-        <div class="gallery-item">
-            <h4><i class="fas fa-heart"></i> Cardiovascular System</h4>
-            <ul>
-                <li>Heart dose constraints</li>
-                <li>Pericardial dose limits</li>
-                <li>Great vessel guidelines</li>
-                <li>Cardiac toxicity models</li>
-            </ul>
-        </div>
-        <div class="gallery-item">
-            <h4><i class="fas fa-lungs"></i> Respiratory System</h4>
-            <ul>
-                <li>Lung V20/V30 constraints</li>
-                <li>Mean lung dose limits</li>
-                <li>Pneumonitis risk models</li>
-                <li>Trachea/bronchi guidelines</li>
-            </ul>
-        </div>
-        <div class="gallery-item">
-            <h4><i class="fas fa-utensils"></i> Gastrointestinal System</h4>
-            <ul>
-                <li>Small bowel constraints</li>
-                <li>Liver dose limits</li>
-                <li>Kidney function preservation</li>
-                <li>Gastric dose thresholds</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="content-section">
-    <h3><i class="fas fa-calculator"></i> NTCP Models</h3>
-    <p>Normal Tissue Complication Probability (NTCP) models for risk assessment:</p>
-    
-    <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
-        <h4>Available Models:</h4>
-        <ul style="margin-left: 2rem; margin-top: 1rem;">
-            <li><strong>Lyman-Kutcher-Burman Model</strong> - Classical NTCP calculation</li>
-            <li><strong>Relative Seriality Model</strong> - For serial and parallel organs</li>
-            <li><strong>Dose-Volume Models</strong> - Organ-specific threshold models</li>
-            <li><strong>Fractionation Correction Models</strong> - BED and EQD2 calculations</li>
-        </ul>
-    </div>
-</section>
-
-<section class="content-section text-center">
-    <h3><i class="fas fa-question-circle"></i> Questions or Corrections?</h3>
-    <p>For the underlying clinical evidence, the original QUANTEC papers on our <a href="{{ '/publications/' | relative_url }}">Publications</a> page are the best reference. If you spot an error on this site or have a suggestion, we'd love to hear from you.</p>
-    <div class="mt-3">
-        <a href="{{ '/contact' | relative_url }}" class="btn">Get in Touch</a>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Moved to QUANTEC - QUANTEC Radiation</title>
+    <link rel="canonical" href="{{ '/quantec/' | absolute_url }}">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ '/quantec/' | relative_url }}">
+    <script>
+        // A meta refresh drops the fragment, so /resources/#cns would land at the top of
+        // the new page instead of on the CNS card. Carry it across before that happens.
+        (function () {
+            var target = {{ '/quantec/' | relative_url | jsonify }};
+            location.replace(target + location.hash);
+        })();
+    </script>
+</head>
+<body>
+    <p>This page has moved to <a href="{{ '/quantec/' | relative_url }}">QUANTEC</a>.</p>
+</body>
+</html>

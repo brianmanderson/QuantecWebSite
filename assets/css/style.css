@@ -55,10 +55,15 @@ nav {
     flex-shrink: 0;
 }
 
+/* Six top-level items, two of them long ("AllTEC Publications", "QUANTEC 2"), have to share
+   the header row with a 526px logo. At 1280px the row allows 594px for the nav; these values
+   put it at 566px — 28px of slack. At gap 0.5rem it measures 605px and the nav drops to its
+   own row, making the header 167px instead of 130px. Do not widen either value without
+   re-measuring; see the `content-editing` skill. */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.25rem;
+    gap: 0.25rem;
 }
 
 nav a {
@@ -66,7 +71,7 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     border-radius: 4px;
     white-space: nowrap;
 }
@@ -164,6 +169,59 @@ main {
 .gallery-item h4 {
     color: #2c5aa0;
     margin-bottom: 1rem;
+}
+
+/* In-page section tabs (Publications, QUANTEC 2). Real anchors, no JS — they work with
+   keyboard, middle-click and back/forward, which a scripted tab widget would not. */
+.subnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.subnav a {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid #d3dce8;
+    border-radius: 999px;
+    color: #2c5aa0;
+    text-decoration: none;
+    font-weight: 500;
+    background: #fff;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.subnav a:hover,
+.subnav a:focus {
+    background: #2c5aa0;
+    color: #fff;
+}
+
+/* Route out of a card to the papers behind it */
+.panel-link {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.panel-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.panel-link a {
+    color: #2c5aa0;
+    text-decoration: none;
+}
+
+.panel-link a:hover,
+.panel-link a:focus {
+    text-decoration: underline;
+}
+
+.panel-link i {
+    font-size: 0.85em;
+    margin-left: 0.25rem;
 }
 
 /* Cards that link to another page */
@@ -264,7 +322,16 @@ footer {
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.15rem;
+    }
+
+    /* "AllTEC Publications" alone is 158px of a 311px content box, so six items wrap to
+       three rows and push the header to 294px — over a third of a phone screen before any
+       content shows. These values hold it to two rows / 263px. Measured; don't relax them
+       without re-checking at 375px. */
+    nav a {
+        padding: 0.45rem 0.35rem;
+        font-size: 0.875rem;
     }
     
     .hero h2 {
@@ -451,8 +518,11 @@ footer {
 }
 
 /* Anatomical icons from game-icons.net (organs Font Awesome's free set lacks).
-   Rendered via CSS mask so the SVG inherits the heading color (currentColor). */
-.category-title .organ-icon {
+   Rendered via CSS mask so the SVG inherits the heading color (currentColor).
+   NOT scoped to .category-title — it was, and the three icons on /quantec-2/ sit in a bare
+   <h4>, so they silently rendered as 0x17 nothing while two sibling cards showed Font Awesome
+   glyphs. Keep this selector unscoped; the component is used in more than one heading style. */
+.organ-icon {
     display: inline-block;
     width: 1.4em;
     height: 1.4em;

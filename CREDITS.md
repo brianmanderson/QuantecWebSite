@@ -2,7 +2,7 @@
 
 ## Icons
 
-The anatomical category icons on the Publications page come from
+The anatomical category icons used on the Publications and QUANTEC 2 pages come from
 [game-icons.net](https://game-icons.net/), used under the
 [Creative Commons Attribution 3.0 license (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/).
 

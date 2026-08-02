@@ -77,18 +77,19 @@ Output lands in `_site/`, which is gitignored.
 
 `_config.yml` sets a global `permalink: /:title/`, and in Jekyll 4 that applies to pages as well
 as posts. So `about.html` at the repo root builds to `_site/about/index.html` and is served at
-`/about/`. Verified from a real build — the whole `_site` tree is:
+`/about/` — every page is a directory holding an `index.html`, never a bare `.html` file.
 
-```
-_site/{index.html, about/, contact/, resources/, publications/}/index.html
-_site/{CNAME, feed.xml, robots.txt, sitemap.xml}
-_site/assets/...
-```
+The authoritative list of what `_site` should contain lives in **one place**: step 3 of the
+`release` skill. It is not repeated here on purpose — this file used to carry a second copy, the
+two drifted after a page was renamed, and the stale one pointed at a page that no longer
+existed. Read it there.
 
 Consequences worth knowing before you "fix" a link:
 
-- The nav in `_layouts/default.html` correctly links to `/about`, `/resources`, `/contact`.
+- The nav in `_layouts/default.html` correctly links to `/about`, `/quantec/`, `/contact`.
   Adding `.html` to those would break them — there is no `about.html` in the output.
+- `/resources/` is a redirect stub, not a page: it was the constraints page before the rename
+  and forwards to `/quantec/` preserving the fragment. Leave it in place.
 - `publications.html` *also* sets `permalink: /publications/` explicitly in its front matter.
   That is redundant with the global rule but harmless; leave it.
 - Deleting or changing the global `permalink` silently changes every URL on a live public site.
@@ -113,7 +114,7 @@ Reading the HTML you just wrote is not verification. For any change that touches
    restacks and the gallery grid collapses to one column. Use `resize_window` with
    `preset: "mobile"` and `preset: "desktop"`.
 4. If you added or changed a link or anchor, click it. Anchor targets like
-   `/resources/#cns` depend on an `id` that actually exists on a `.gallery-item`.
+   `/quantec/#cns` depend on an `id` that actually exists on a `.gallery-item`.
 
 Console errors are worth a glance too — the layout pulls Font Awesome from a CDN, so icons
 silently disappear when offline. That is an environment artifact, not a bug to chase.
