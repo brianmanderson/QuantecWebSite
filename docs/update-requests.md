@@ -16,9 +16,9 @@ and the publications page is **AllTEC Publications**. The sub-tabs are in-page s
 rather than a dropdown. The nav fits on one header row at 1280px (566px of a 594px budget) —
 `assets/css/style.css` carries the measurement and the warning against widening it.
 
-Five points are still open and awaiting the project lead. They are written up for them in
+Six points are still open and awaiting the project lead. They are written up for them in
 [questions-for-project-lead.md](questions-for-project-lead.md); summarised here so this file
-stays the complete record. The numbering matches that file's questions 1–5:
+stays the complete record. The numbering matches that file's questions 1, 2, 2b, 3, 4, 5:
 
 1. **The (inferred) panel mappings were acted on without confirmation.** The CNS,
    Cardiovascular, Respiratory and Gastrointestinal bullet edits below were applied on the
@@ -33,6 +33,12 @@ stays the complete record. The numbering matches that file's questions 1–5:
    "Lung dose-volume effects / Symptomatic pneumonitis / Mean lung dose and DVH reduction /
    Dose-volume threshold analyses", every item taken from that paper's abstract, keywords or
    section headings.
+2b. **The Gastrointestinal panel was reworded, not just added to.** This document asks only to
+   *add* "Rectal toxicity" and "Esophageal dose-volume correlates". The four bullets already
+   there ("Small bowel constraints", "Liver dose limits", "Kidney function preservation",
+   "Gastric dose thresholds") were also rewritten, for the same reason as item 2 — none traced
+   to a source. Same class of deviation as the Respiratory panel, and it was undisclosed until
+   a review caught it.
 3. **Three destinations now carry the QUANTEC name** — the QUANTEC tab, the QUANTEC section
    inside AllTEC Publications, and QUANTEC 2. This follows the request literally, but someone
    arriving cold and looking for a dose constraint has three plausible places to click.

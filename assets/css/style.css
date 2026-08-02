@@ -518,8 +518,11 @@ footer {
 }
 
 /* Anatomical icons from game-icons.net (organs Font Awesome's free set lacks).
-   Rendered via CSS mask so the SVG inherits the heading color (currentColor). */
-.category-title .organ-icon {
+   Rendered via CSS mask so the SVG inherits the heading color (currentColor).
+   NOT scoped to .category-title — it was, and the three icons on /quantec-2/ sit in a bare
+   <h4>, so they silently rendered as 0x17 nothing while two sibling cards showed Font Awesome
+   glyphs. Keep this selector unscoped; the component is used in more than one heading style. */
+.organ-icon {
     display: inline-block;
     width: 1.4em;
     height: 1.4em;

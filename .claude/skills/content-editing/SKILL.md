@@ -105,7 +105,10 @@ block → print styles. Reuse the existing classes instead of adding new ones:
 - `.panel-link` — the "→ papers" route out of a card. `.panel-note` — a small grey note in a
   card, used where per-bullet links go to different destinations.
 - `.organ-icon` — an anatomy SVG rendered via CSS `mask` so it inherits `currentColor`; set the
-  file with an inline `--organ-icon` custom property.
+  file with an inline `--organ-icon` custom property. The rule is deliberately unscoped: it was
+  once `.category-title .organ-icon`, and icons placed in a plain `<h4>` rendered as invisible
+  zero-width spans with no error anywhere. If an icon does not appear, check the computed
+  `mask` and `background-color` before assuming the SVG path is wrong.
 - `.btn` / `.btn-secondary` — call-to-action links.
 - Publications-only: `.container`, `.content-block`, `.highlight-box`, `.publication-list`,
   `.publication-item`, `.authors`, `.external-link`, `.organ-category`, `.category-title`,

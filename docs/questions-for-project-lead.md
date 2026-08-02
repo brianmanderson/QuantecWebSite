@@ -1,7 +1,7 @@
 # Questions for the project lead
 
 The site has been updated from the requests in `UpdateRequests.docx` (now transcribed as
-[update-requests.md](update-requests.md)). Five points could not be settled from the document
+[update-requests.md](update-requests.md)). Six points could not be settled from the document
 alone. Each one below says what the site currently does, so you can confirm or correct it
 without needing to look at the code.
 
@@ -24,7 +24,7 @@ This is the one with real consequences, so it is worth a careful look.
 | Central Nervous System | Spinal cord dose-volume effects · Brain necrosis and cognitive decline · Brainstem injury · Optic nerves and chiasm dose-volume-response |
 | Cardiovascular System | Heart dose constraints · Pericarditis · Cardiac mortality · Cardiac toxicity models |
 | Respiratory System | see question 2 |
-| Gastrointestinal | Esophageal dose-volume correlates · Liver dose-volume effects · Stomach and small bowel · Kidney dose-volume effects · Rectal toxicity |
+| Gastrointestinal | Esophageal dose-volume correlates · Liver dose-volume effects · Stomach and small bowel · Kidney dose-volume effects · Rectal toxicity — **see question 2b, this panel was also reworded** |
 | Head and Neck *(new)* | Parotid gland salivary function preservation · Cochlear dose thresholds · Larynx/Pharynx dose-volume-response |
 
 **Question:** is that the mapping you intended?
@@ -51,6 +51,29 @@ original four back as written?
 
 ---
 
+## 2b. The Gastrointestinal panel was reworded too, not just added to
+
+**Why we're asking:** the request for this panel was to **add** two lines — "Rectal toxicity"
+and "Esophageal dose-volume correlates". We did that, but we also rewrote the four that were
+already there, for the same reason as question 2: none of them could be traced to a source.
+
+| Was | Is now |
+|---|---|
+| Small bowel constraints | Stomach and small bowel |
+| Gastric dose thresholds | *(merged into the line above)* |
+| Liver dose limits | Liver dose-volume effects |
+| Kidney function preservation | Kidney dose-volume effects |
+| — | Esophageal dose-volume correlates *(requested)* |
+| — | Rectal toxicity *(requested)* |
+
+The new wording tracks the QUANTEC paper titles more closely and states no dose figure, but it
+is a change you did not ask for.
+
+**Question:** keep the reworded bullets, or restore your original four alongside the two
+additions?
+
+---
+
 ## 3. Tab names
 
 The request asked for "Resources" → **QUANTEC** and "Publications" → **AllTEC Publications**.
@@ -68,8 +91,8 @@ distinguishes it — "Dose Constraints" or "Constraints by Organ", say?
 
 ## 4. A sixth panel we added
 
-The request names five panels plus one new one (Head and Neck). We added a sixth,
-**Genitourinary and Pelvis** (bladder, rectal toxicity, penile bulb), because otherwise the
+The request names four panels to edit plus one new one (Head and Neck) — five in all. We added a
+sixth, **Genitourinary and Pelvis** (bladder, rectal toxicity, penile bulb), because otherwise the
 bladder and penile bulb reviews had no signpost anywhere on the site — they were reachable only
 by scrolling the publications list.
 
