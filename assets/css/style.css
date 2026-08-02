@@ -57,7 +57,7 @@ nav {
 
 /* Six top-level items, two of them long ("AllTEC Publications", "QUANTEC 2"), have to share
    the header row with a 526px logo. At 1280px the row allows 594px for the nav; these values
-   put it at 566px — 28px of slack. At gap 0.5rem it measures 605px and the nav drops to its
+   put it at 569px — 25px of slack. At gap 0.5rem it measures 605px and the nav drops to its
    own row, making the header 167px instead of 130px. Do not widen either value without
    re-measuring; see the `content-editing` skill. */
 nav ul {

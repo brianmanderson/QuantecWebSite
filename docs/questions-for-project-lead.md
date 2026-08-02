@@ -1,5 +1,15 @@
 # Questions for the project lead
 
+> **All six were answered on 2026-08-02 and are implemented.** The rulings are recorded in
+> [update-requests.md](update-requests.md#rulings--2026-08-02). This file is kept as the record
+> of what was asked and why — it is no longer an open action.
+>
+> In short: the panel mapping was confirmed correct; the Respiratory and Gastrointestinal
+> rewordings were reverted to the original bullets; the constraints tab was relabelled
+> "Constraints" to break the QUANTEC name collision; the sixth panel stays; and the Ear review
+> stays under Head and Neck.
+
+
 The site has been updated from the requests in `UpdateRequests.docx` (now transcribed as
 [update-requests.md](update-requests.md)). Six points could not be settled from the document
 alone. Each one below says what the site currently does, so you can confirm or correct it

@@ -31,9 +31,10 @@ the section with a placeholder rather than a guess.
 
 Two known traps already recorded in `docs/site-plan.md`: the source brief gives the *same* Red
 Journal URL for "Pelvis: Rectum" and "Pelvis: Penile Bulb" (a copy/paste error — do not invent a
-replacement), and `docs/update-requests.md` maps requested edits to the constraints panels by
-*inferred* order. That mapping has been implemented but never confirmed — see the
-"Implementation status" section of that file for it and the other open deviations.
+replacement). `docs/update-requests.md` mapped requested edits to the constraints panels by
+*inferred* order; the owner confirmed that mapping on 2026-08-02. Its "Rulings" section records
+six such decisions — read it before "correcting" anything it covers, because those are
+decisions, not defects.
 
 Qualitative framing prose ("Evidence-based guidelines for lung dose limits and pneumonitis risk
 assessment") is a different matter — that is site copy and can be edited freely, as long as it
@@ -75,7 +76,7 @@ Radiation" produces a doubled title. Liquid is otherwise used only for `relative
    `_layouts/default.html`. That `<ul>` is the *only* nav definition; there is no data file.
 3. Always route links through `relative_url` (`{{ '/quantec/' | relative_url }}`), never a
    bare `/quantec/` or an absolute `https://quantecradiation.org/...`.
-4. **The nav is full.** Six items measure 566px against a 594px budget at 1280px — 28px of
+4. **The nav is full.** Six items measure 569px against a 594px budget at 1280px — 25px of
    slack. A seventh item, or renaming one to something longer, wraps the header to two rows.
    Measure before and after in the browser (see `preview`); do not eyeball it. The gap and link
    padding in `style.css` are already tightened for this and should not be widened.
