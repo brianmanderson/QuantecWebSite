@@ -62,5 +62,5 @@ fresh context and tell it nothing about what you changed; that independence is t
 - [docs/site-plan.md](docs/site-plan.md) — the original brief: the QUANTEC citations the site
   was built from, plus the Marks/Bentzen interview questions, still unbuilt.
 - [docs/update-requests.md](docs/update-requests.md) — the content backlog, implemented
-  2026-08-01. Read its "Implementation status" first: it lists six open points
-  still awaiting the project lead's ruling, written up in docs/questions-for-project-lead.md.
+  2026-08-01. Its "Rulings" section records six decisions the owner made on 2026-08-02 —
+  read it before "fixing" anything it covers; those are decisions, not defects.

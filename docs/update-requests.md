@@ -16,9 +16,39 @@ and the publications page is **AllTEC Publications**. The sub-tabs are in-page s
 rather than a dropdown. The nav fits on one header row at 1280px (566px of a 594px budget) —
 `assets/css/style.css` carries the measurement and the warning against widening it.
 
-Six points are still open and awaiting the project lead. They are written up for them in
-[questions-for-project-lead.md](questions-for-project-lead.md); summarised here so this file
-stays the complete record. The numbering matches that file's questions 1, 2, 2b, 3, 4, 5:
+### Rulings — 2026-08-02
+
+All six open points were settled by the site owner. **Do not re-flag these; they are decisions,
+not defects.** The reasoning that was argued against each one is kept below so the trade-off
+stays visible, but the ruling stands.
+
+| # | Point | Ruling |
+|---|---|---|
+| 1 | Inferred panel mapping | **Confirmed correct.** The order-based mapping is what was intended. Closed. |
+| 2 | Respiratory reworded | **Reverted.** Original four bullets restored verbatim. |
+| 2b | Gastrointestinal reworded | **Reverted.** Original four bullets restored, plus the two requested additions. |
+| 3 | Three QUANTEC-named destinations | **Constraints tab relabelled.** Nav now reads "Constraints"; the URL stays `/quantec/`. |
+| 4 | Added sixth panel | **Kept** (Genitourinary and Pelvis). |
+| 5 | Ear/cochlea under Head and Neck | **Kept as intentional.** The update request supersedes the design brief here. |
+
+On 2 and 2b specifically: the restored bullets are the site owner's own words, supplied by them,
+which is exactly what the content-accuracy rule requires — they are not model-generated. Two
+caveats were raised and overruled, recorded here so nobody re-opens them:
+
+- *"Trachea/bronchi guidelines"* — the original QUANTEC has no trachea or bronchi review, so
+  this topic has no paper to link to. The panel now carries a note saying so rather than
+  linking the bullet to an unrelated review.
+- *"Lung V20/V30 constraints"* — the lung review's own abstract states there are "no evident
+  threshold 'tolerance dose–volume' levels".
+
+On 3: the two labels suggested were "Dose Constraints" and "Constraints by Organ". Neither fits
+— they measure 610px and 639px against a 594px budget and wrap the header to two rows.
+"Constraints" fits at 569px with 25px of slack and breaks the name collision just as completely.
+
+---
+
+The original open list, kept for context. The numbering matches
+[questions-for-project-lead.md](questions-for-project-lead.md) questions 1, 2, 2b, 3, 4, 5:
 
 1. **The (inferred) panel mappings were acted on without confirmation.** The CNS,
    Cardiovascular, Respiratory and Gastrointestinal bullet edits below were applied on the
