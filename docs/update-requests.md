@@ -16,9 +16,9 @@ and the publications page is **AllTEC Publications**. The sub-tabs are in-page s
 rather than a dropdown. The nav fits on one header row at 1280px (566px of a 594px budget) —
 `assets/css/style.css` carries the measurement and the warning against widening it.
 
-Four points are still open and awaiting the project lead. They are written up for them in
+Five points are still open and awaiting the project lead. They are written up for them in
 [questions-for-project-lead.md](questions-for-project-lead.md); summarised here so this file
-stays the complete record:
+stays the complete record. The numbering matches that file's questions 1–5:
 
 1. **The (inferred) panel mappings were acted on without confirmation.** The CNS,
    Cardiovascular, Respiratory and Gastrointestinal bullet edits below were applied on the
@@ -33,12 +33,16 @@ stays the complete record:
    "Lung dose-volume effects / Symptomatic pneumonitis / Mean lung dose and DVH reduction /
    Dose-volume threshold analyses", every item taken from that paper's abstract, keywords or
    section headings.
-3. **A sixth panel was added that this document does not ask for** — "Genitourinary and Pelvis"
+3. **Three destinations now carry the QUANTEC name** — the QUANTEC tab, the QUANTEC section
+   inside AllTEC Publications, and QUANTEC 2. This follows the request literally, but someone
+   arriving cold and looking for a dose constraint has three plausible places to click.
+4. **A sixth panel was added that this document does not ask for** — "Genitourinary and Pelvis"
    (bladder, rectal toxicity, penile bulb). Without it the bladder and penile bulb reviews had
    no signpost anywhere on the site, but it was implementer initiative, not a request.
-4. **Three destinations now carry the QUANTEC name** — the QUANTEC tab, the QUANTEC section
-   inside AllTEC Publications, and QUANTEC 2. This follows the request literally; whether the
-   constraints tab should be distinguished is question 3 for the lead.
+5. **The Ear/cochlea review is filed under Head and Neck, not CNS.** `site-plan.md` lists it as
+   "CNS: Ear"; this document puts "Cochlear dose thresholds" under Head and Neck and the QUANTEC
+   2 site list does the same, so the site follows this document. Consequence: the CNS panel a
+   user reaches from the home page's "CNS Tolerance" card has no hearing content.
 
 Anything below this section is the original request text, unchanged.
 

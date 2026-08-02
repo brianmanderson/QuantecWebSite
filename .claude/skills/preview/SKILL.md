@@ -77,13 +77,12 @@ Output lands in `_site/`, which is gitignored.
 
 `_config.yml` sets a global `permalink: /:title/`, and in Jekyll 4 that applies to pages as well
 as posts. So `about.html` at the repo root builds to `_site/about/index.html` and is served at
-`/about/`. Verified from a real build — the whole `_site` tree is:
+`/about/` — every page is a directory holding an `index.html`, never a bare `.html` file.
 
-```
-_site/{index.html, about/, constraints/, publications/, quantec-2/, contact/, resources/}/index.html
-_site/{CNAME, feed.xml, robots.txt, sitemap.xml}
-_site/assets/...
-```
+The authoritative list of what `_site` should contain lives in **one place**: step 3 of the
+`release` skill. It is not repeated here on purpose — this file used to carry a second copy, the
+two drifted after a page was renamed, and the stale one pointed at a page that no longer
+existed. Read it there.
 
 Consequences worth knowing before you "fix" a link:
 

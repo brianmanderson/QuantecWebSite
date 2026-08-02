@@ -75,7 +75,7 @@ Radiation" produces a doubled title. Liquid is otherwise used only for `relative
    `_layouts/default.html`. That `<ul>` is the *only* nav definition; there is no data file.
 3. Always route links through `relative_url` (`{{ '/quantec/' | relative_url }}`), never a
    bare `/quantec/` or an absolute `https://quantecradiation.org/...`.
-4. **The nav is full.** Six items measure 554px against a 594px budget at 1280px — 41px of
+4. **The nav is full.** Six items measure 566px against a 594px budget at 1280px — 28px of
    slack. A seventh item, or renaming one to something longer, wraps the header to two rows.
    Measure before and after in the browser (see `preview`); do not eyeball it. The gap and link
    padding in `style.css` are already tightened for this and should not be widened.
