@@ -11,9 +11,10 @@ what is now [quantec.html](../quantec.html).
 
 **Implemented on 2026-08-01**, in the branch that introduced `/quantec/` and `/quantec-2/`.
 
-Both requested renames are in place: the constraints page is the **QUANTEC** tab at `/quantec/`,
-and the publications page is **AllTEC Publications**. The sub-tabs are in-page section links
-rather than a dropdown. The nav fits on one header row at 1280px (566px of a 594px budget) —
+Both requested renames were applied: the constraints page moved to `/quantec/` and the
+publications page became **AllTEC Publications**. The constraints tab was then relabelled
+**Constraints** per ruling 3 below; its URL is still `/quantec/`. The sub-tabs are in-page section links
+rather than a dropdown. The nav fits on one header row at 1280px (569px of a 594px budget) —
 `assets/css/style.css` carries the measurement and the warning against widening it.
 
 ### Rulings — 2026-08-02
