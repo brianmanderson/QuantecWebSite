@@ -1,8 +1,36 @@
 # Local paper store — never committed
 
-Put downloaded QUANTEC / HyTEC / PENTEC PDFs here. Everything in this folder except this README
-is gitignored, so the files stay on disk for fast local reference and never reach the public
-GitHub repository.
+Put downloaded QUANTEC / HyTEC / PENTEC PDFs here. Every PDF in this folder is gitignored, so the
+files stay on disk for fast local reference and never reach the public GitHub repository. Three
+text files here *are* tracked: this README, `download-list.md`, and `organise-papers.py`.
+
+## Getting the set — one command
+
+Download the papers through your own browser (see [download-list.md](download-list.md) for all 24
+links), leave them named as they arrive, then:
+
+```
+python organise-papers.py
+```
+
+It reads each PDF's own title page, renames it to the convention below, moves it here, and then
+verifies the store is the complete supplement — 24 papers spanning S1–S160 with no gap and no
+overlap. It refuses to move a file whose filename disagrees with its contents rather than
+guessing, because a mis-served download landing under the wrong organ name is the failure this
+repo cannot afford. `--verify-only` checks what you already have; `--source PATH` if your
+downloads are not in `~/Downloads/Quantec`. Needs `pip install pypdf`.
+
+## Why these are not committed, and will not be
+
+Asked and settled on 2026-08-03. **Free to read is not free to redistribute.** The QUANTEC
+supplement is free to read on redjournal.org, but that is a publisher access decision, not a
+licence. All 24 PDFs carry *"Copyright © 2010 Elsevier Inc. … All rights reserved"* on page 1,
+and a full-text search of all 24 turns up no open-access, Creative Commons, or reuse-permission
+statement anywhere. This repository is public, so committing them would be republication.
+
+Link to the papers — the site already does, for every one of them. Do not host them. If a
+collaborator needs the set, point them at `download-list.md` and this script; that round trip
+takes about twenty minutes.
 
 They are also invisible to the site build: `_config.yml` excludes the whole `docs` folder, so
 nothing here is published to quantecradiation.org. Both protections matter — gitignore alone

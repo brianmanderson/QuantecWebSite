@@ -74,7 +74,13 @@
                     target.scrollIntoView({ behavior: 'smooth' });
                     history.pushState(null, '', hash);
                     // Move focus so keyboard and screen-reader users follow the jump.
-                    target.setAttribute('tabindex', '-1');
+                    // Only stamp tabindex when the target has none of its own: a target that is
+                    // already focusable (e.g. a scrollable data-table region with tabindex="0")
+                    // would otherwise be knocked out of the tab sequence by this line, leaving
+                    // its overflow unreachable by keyboard.
+                    if (!target.hasAttribute('tabindex')) {
+                        target.setAttribute('tabindex', '-1');
+                    }
                     target.focus({ preventScroll: true });
                 });
             });

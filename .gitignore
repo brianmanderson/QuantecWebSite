@@ -15,12 +15,21 @@ vendor/bundle/
 # out of git; their content and images are already converted under docs/.
 *.docx
 
-# Downloaded papers. These are paywalled, copyrighted journal PDFs — they stay on disk for
-# local reference and must never reach the public repository. docs/ itself IS tracked (the
-# markdown briefs live there); only this subfolder is ignored.
+# Downloaded papers. Copyrighted journal PDFs — they stay on disk for local reference and must
+# never reach the public repository. docs/ itself IS tracked (the markdown briefs live there);
+# only this subfolder is ignored.
+#
+# Checked 2026-08-03, because "the supplement is free to read, so why ignore them?" is a
+# reasonable question that will be asked again: free to read is not free to redistribute. All 24
+# PDFs carry "Copyright © 2010 Elsevier Inc. ... All rights reserved" on page 1, and a full-text
+# search of all 24 finds no open-access, Creative Commons or reuse-permission statement anywhere.
+# This repo is public, so committing them would be republication, not caching. Link to the
+# papers (the site already does); do not host them. To get the set locally in one command, see
+# organise-papers.py.
 docs/papers/*
 !docs/papers/README.md
 !docs/papers/download-list.md
+!docs/papers/organise-papers.py
 
 # Claude Code machine-local settings (tracked: .claude/settings.json, launch.json, skills/)
 .claude/settings.local.json

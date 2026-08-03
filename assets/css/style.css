@@ -391,6 +391,143 @@ footer {
     margin: 0 auto;
 }
 
+/* Constraint Tables (Dose Constraints page)
+   Six columns of clinical data will not fit a phone. The wrapper scrolls horizontally so the
+   table never widens the page itself — a body that scrolls sideways is the failure mode here,
+   and a squeezed table that wraps every cell to four lines is the other. min-width on the
+   table is what forces the wrapper to scroll instead of the columns collapsing. */
+.constraint-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.5rem 0 0.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.constraint-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.constraint-table caption {
+    caption-side: top;
+    text-align: left;
+    padding: 0.85rem 1rem 0.6rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2c5aa0;
+}
+
+.constraint-table th,
+.constraint-table td {
+    padding: 0.6rem 0.85rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #ececec;
+}
+
+.constraint-table thead th {
+    background-color: #f0f7ff;
+    color: #2c5aa0;
+    font-weight: 600;
+}
+
+.constraint-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Dose and rate cells must not break mid-value: "Mean dose = 13 Gy" wrapping after the "="
+   reads as a different number at a glance. */
+.constraint-table .num {
+    white-space: nowrap;
+}
+
+/* Provenance line under each table — paper and page the rows came from. */
+.constraint-source {
+    font-size: 0.875rem;
+    color: #5a5a5a;
+    margin: 0 0 2.5rem;
+    line-height: 1.6;
+}
+
+/* Keyboard access to the scroll region. The wrapper carries tabindex="0" so its overflow can be
+   reached without a mouse; without a visible ring that focus is invisible. */
+.constraint-table-wrap:focus-visible {
+    outline: 3px solid #2c5aa0;
+    outline-offset: 2px;
+}
+
+/* Must sit AFTER the base rules above, not in the general responsive block near the top of this
+   file — that block is earlier in source order, so at equal specificity the base rules would win
+   and these overrides would silently do nothing. Verified applying at 375px. */
+@media (max-width: 768px) {
+    /* Six columns of clinical data cannot be squeezed into a phone, and horizontal scrolling was
+       actively dangerous here: at 375px the clip fell after column 3, so a reader saw
+       "Whole organ | 3D-CRT | Symptomatic pneumonitis" with the dose and the rate both off-screen
+       until they discovered a swipe. A data table whose data is invisible is worse than no table.
+       So below the breakpoint each row becomes its own stacked block with the column name printed
+       against every value. Nothing is off-screen and nothing scrolls sideways. */
+    .constraint-table-wrap {
+        overflow-x: visible;
+        border: none;
+        border-radius: 0;
+    }
+
+    .constraint-table {
+        min-width: 0;
+        font-size: 0.9375rem;
+    }
+
+    /* Visually hidden, not display:none — the header cells stay in the accessibility tree. */
+    .constraint-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .constraint-table tr {
+        display: block;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        margin-bottom: 0.85rem;
+        padding: 0.25rem 0;
+    }
+
+    .constraint-table td {
+        display: grid;
+        grid-template-columns: 8.5rem 1fr;
+        gap: 0.5rem;
+        border-bottom: 1px solid #f2f2f2;
+        padding: 0.5rem 0.85rem;
+    }
+
+    .constraint-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    /* The column name, carried on each cell as data-label. */
+    .constraint-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #2c5aa0;
+    }
+
+    /* An empty Notes cell would render as a stray label with nothing beside it. */
+    .constraint-table td:empty {
+        display: none;
+    }
+
+    .constraint-table caption {
+        font-size: 1.05rem;
+        padding-left: 0;
+    }
+}
+
 /* ==========================================================================
    Publications Page Styles
    ========================================================================== */
