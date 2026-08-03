@@ -12,11 +12,11 @@
 
 The site has been updated from the requests in `UpdateRequests.docx` (now transcribed as
 [update-requests.md](update-requests.md)). Six points could not be settled from the document
-alone. Each one below says what the site currently does, so you can confirm or correct it
-without needing to look at the code.
+alone.
 
-Answers can go straight back into this file, or reply however is easiest and they will be
-recorded here and in `update-requests.md`.
+**Everything below is written in the present tense as it stood on 2026-08-01, when the questions
+were put.** Four of the six rulings changed the site afterwards, so read the answered banner
+above — not these passages — for what the site does now.
 
 ---
 
@@ -52,9 +52,10 @@ bullets that were there could not be supported:
 - *"Trachea/bronchi guidelines"* — the original QUANTEC has no trachea or bronchi review.
 - *"Mean lung dose limits"* and *"Pneumonitis risk models"* were fine in substance.
 
-The panel now reads: **Lung dose-volume effects · Symptomatic pneumonitis · Mean lung dose and
-DVH reduction · Dose-volume threshold analyses** — every one drawn from the lung review's own
-abstract, keywords and section headings.
+At the time of asking the panel read: **Lung dose-volume effects · Symptomatic pneumonitis ·
+Mean lung dose and DVH reduction · Dose-volume threshold analyses** — every one drawn from the
+lung review's own abstract, keywords and section headings. *Ruling: reverted to the original
+four bullets.*
 
 **Question:** is that an acceptable reading of "leave as is", or would you rather have the
 original four back as written?
@@ -87,12 +88,13 @@ additions?
 ## 3. Tab names
 
 The request asked for "Resources" → **QUANTEC** and "Publications" → **AllTEC Publications**.
-Both are now in place.
+Both were applied.
 
-Worth flagging: the site now has three destinations carrying the QUANTEC name — the **QUANTEC**
+Worth flagging: that gave the site three destinations carrying the QUANTEC name — the **QUANTEC**
 tab (dose constraints by organ), a **QUANTEC** section inside AllTEC Publications (the 2010
-papers), and the **QUANTEC 2** tab. Someone arriving cold and looking for a dose constraint has
-three plausible places to click.
+papers), and the **QUANTEC 2** tab. Someone arriving cold and looking for a dose constraint had
+three plausible places to click. *Ruling: the constraints tab was relabelled "Constraints",
+leaving two.*
 
 **Question:** is that acceptable, or would you like the constraints tab named something that
 distinguishes it — "Dose Constraints" or "Constraints by Organ", say?

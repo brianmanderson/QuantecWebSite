@@ -40,8 +40,9 @@ labelled as outside your competence, and do not file it as a finding.
 bundle exec jekyll clean && bundle exec jekyll build
 ```
 
-Must exit 0 with no output beyond the standard six lines; any extra line is a warning and is a
-blocking finding on its own. If Ruby is missing from `PATH`, prepend
+Must exit 0 with no output beyond the standard lines the `release` skill's step 1 lists — that
+skill is the authority and this file deliberately does not restate the count. Any *additional*
+line is a warning and is a blocking finding on its own. If Ruby is missing from `PATH`, prepend
 `C:\Ruby33-x64\bin` (PowerShell: `$env:Path = "C:\Ruby33-x64\bin;" + $env:Path`).
 
 Then serve it. Try `preview_start` with `{name: "jekyll-serve"}` first. If that fails with
@@ -63,13 +64,20 @@ python .claude/skills/release/scripts/check_links.py _site
    if it looks correct and especially if it looks plausible.** Invented-but-reasonable is the
    exact failure mode this site cannot tolerate.
 2. Conversely, check for content the backlog asked for that is missing or only half-applied.
-3. Two known defects in the source material. Verify they are still visibly flagged in `docs/`
-   and have not been silently resolved in either direction:
-   - `site-plan.md` gives the **same** Red Journal URL for "Pelvis: Rectum" and "Pelvis: Penile
-     Bulb". If the site now shows a different Penile Bulb URL, someone invented it — blocking.
-   - The mapping of `update-requests.md` edits onto the four QUANTEC organ panels is *inferred from
-     ordering*, not stated. If it has been implemented without that being confirmed, flag it.
-4. Fetch every external citation URL and report non-200s. Where you can read the landing page,
+3. **Read the "Rulings" section of `docs/update-requests.md` before filing anything.** It
+   records decisions the site owner made after a trade-off was put to them. Those are decisions,
+   not defects — re-raising one as a finding is the specific noise the Output section below
+   warns against. The rulings change over time; read the file, do not rely on this list.
+4. Settled matters of fact, kept here because they have each cost a round already:
+   - **The Penile Bulb citation is correct.** `S0360-3016(09)03294-5` is "Radiation Dose–Volume
+     Effects and the Penile Bulb"; `03291-X` is the rectal injury review. Distinct papers, both
+     verified against the publisher, and `site-plan.md` records the check. The brief originally
+     gave the same URL for both, which is why this looked like a fabrication for several rounds.
+     **Do not report the differing URLs as an invented citation** — "fixing" that would put a
+     wrong citation in front of clinicians.
+   - **The panel mapping is confirmed.** It was inferred from ordering and the owner ratified it
+     on 2026-08-02.
+5. Fetch every external citation URL and report non-200s. Where you can read the landing page,
    report whether it is the paper the site claims. Do not guess a replacement for a dead link.
 
 Distinguish clinical assertions from site voice. "Evidence-based guidelines for lung dose limits
@@ -82,8 +90,9 @@ clinical assertion and must trace to a source. Only the latter is in scope here.
   count clicks from the home page to its constraint content. More than two, or a dead end, is a
   finding. Report the actual path you took.
 - Any two navigation labels a clinician could reasonably confuse. Be concrete: name the user
-  goal and the wrong page it lands on. The site is prone to this — a literal reading of the
-  backlog produces three separate destinations labelled some variant of "QUANTEC".
+  goal and the wrong page it lands on. This site has form here: the nav tab reads "Constraints"
+  while its URL is `/quantec/`, deliberately, because a literal reading of the backlog produced
+  three destinations named some variant of QUANTEC. That mismatch is a ruling, not a finding.
 - Pages with no onward navigation, and deep content with no path back.
 - Link text that is meaningless out of context. "Read Full Text" repeated across nineteen
   publication entries is a screen-reader failure, not a style preference.
