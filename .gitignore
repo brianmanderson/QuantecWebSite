@@ -20,6 +20,7 @@ vendor/bundle/
 # markdown briefs live there); only this subfolder is ignored.
 docs/papers/*
 !docs/papers/README.md
+!docs/papers/download-list.md
 
 # Claude Code machine-local settings (tracked: .claude/settings.json, launch.json, skills/)
 .claude/settings.local.json
