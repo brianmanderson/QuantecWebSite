@@ -13,7 +13,7 @@ permalink: /quantec/
 <section class="content-section">
     <h3><i class="fas fa-book-open"></i> How to use this page</h3>
     <p>The dose/volume tolerance guidance on this site comes from the original QUANTEC reviews, published as a special issue of the <em>International Journal of Radiation Oncology Biology Physics</em>. This page routes you to them: find the organ system, then follow it to the review that carries the constraint.</p>
-    <p>The constraint values themselves are quoted from the papers rather than restated here, so that what you plan from is the peer-reviewed source rather than a second-hand summary of it.</p>
+    <p>For spinal cord, lung and heart, selected dose/volume/outcome values are stated directly in the <a href="#data">tables below</a>. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. Every other organ system routes to the paper rather than restating its numbers.</p>
     <div class="mt-3">
         <a href="{{ '/publications/' | relative_url }}" class="btn">Browse all QUANTEC papers</a>
     </div>
@@ -31,6 +31,7 @@ permalink: /quantec/
                 <li>Optic nerves and chiasm dose-volume-response</li>
             </ul>
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#cns">CNS papers <i class="fas fa-arrow-right"></i></a></p>
+            <p class="panel-note">Spinal cord dose/volume values are <a href="#data-spinal-cord">tabulated below</a>.</p>
         </div>
         <div class="gallery-item" id="head-and-neck">
             <h4><i class="fas fa-head-side-mask"></i> Head and Neck</h4>
@@ -50,6 +51,7 @@ permalink: /quantec/
                 <li>Cardiac toxicity models</li>
             </ul>
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#thorax">Thorax papers <i class="fas fa-arrow-right"></i></a></p>
+            <p class="panel-note">Heart dose/volume values are <a href="#data-heart">tabulated below</a>.</p>
         </div>
         <div class="gallery-item" id="respiratory">
             <h4><i class="fas fa-lungs"></i> Respiratory System</h4>
@@ -59,7 +61,7 @@ permalink: /quantec/
                 <li><a href="{{ '/publications/' | relative_url }}#thorax">Pneumonitis risk models</a></li>
                 <li>Trachea/bronchi guidelines</li>
             </ul>
-            <p class="panel-note">Trachea and bronchi were not covered by the original QUANTEC reviews, so that topic has no paper to link to.</p>
+            <p class="panel-note">Lung dose/volume values are <a href="#data-lung">tabulated below</a>. Trachea and bronchi were not covered by the original QUANTEC reviews, so that topic has no paper to link to.</p>
         </div>
         <div class="gallery-item" id="gastrointestinal">
             <h4><i class="fas fa-utensils"></i> Gastrointestinal System</h4>
@@ -83,6 +85,89 @@ permalink: /quantec/
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#pelvis">Pelvis papers <i class="fas fa-arrow-right"></i></a></p>
         </div>
     </div>
+</section>
+
+<section class="content-section" id="data">
+    <h3><i class="fas fa-table"></i> Dose/volume/outcome data</h3>
+    <p>Spinal cord, lung and heart. Every row below is transcribed from a single source — Table 1 of the QUANTEC summary paper — and carries the page it appears on.</p>
+
+    <div class="highlight-box">
+        <p><strong>Read this first.</strong> The table these rows come from carries two footnotes from its authors. Both are reproduced verbatim, because they govern how every value below may be used.</p>
+        <blockquote>All data are estimated from the literature summarized in the QUANTEC reviews unless otherwise noted. Clinically, these data should be applied with caution. Clinicians are strongly advised to use the individual QUANTEC articles to check the applicability of these limits to the clinical situation at hand. They largely do not reflect modern IMRT.</blockquote>
+        <blockquote>All at standard fractionation (i.e., 1.8&ndash;2.0 Gy per daily fraction) unless otherwise noted. V<sub>x</sub> is the volume of the organ receiving &ge; x Gy. D<sub>max</sub> = Maximum radiation dose.</blockquote>
+        <p>Source for both footnotes and every table below: Marks LB, Yorke ED, Jackson A, et al. &ldquo;Use of Normal Tissue Complication Probability Models in the Clinic.&rdquo; <em>IJROBP</em> 2010;76(3 Suppl):S10&ndash;S19, Table 1 (pp. S15&ndash;S18).</p>
+    </div>
+
+    <div class="constraint-table-wrap" id="data-spinal-cord">
+        <table class="constraint-table">
+            <caption>Spinal cord</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Irradiation type</th>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Partial organ</td><td>3D-CRT</td><td>Myelopathy</td><td class="num">D<sub>max</sub> = 50 Gy</td><td class="num">0.2%</td><td>Including full cord cross-section</td></tr>
+                <tr><td>Partial organ</td><td>3D-CRT</td><td>Myelopathy</td><td class="num">D<sub>max</sub> = 60 Gy</td><td class="num">6%</td><td></td></tr>
+                <tr><td>Partial organ</td><td>3D-CRT</td><td>Myelopathy</td><td class="num">D<sub>max</sub> = 69 Gy</td><td class="num">50%</td><td></td></tr>
+                <tr><td>Partial organ</td><td>SRS (single fraction)</td><td>Myelopathy</td><td class="num">D<sub>max</sub> = 13 Gy</td><td class="num">1%</td><td>Partial cord cross-section irradiated</td></tr>
+                <tr><td>Partial organ</td><td>SRS (hypofraction)</td><td>Myelopathy</td><td class="num">D<sub>max</sub> = 20 Gy</td><td class="num">1%</td><td>3 fractions, partial cord cross-section irradiated</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source">Transcribed from Table 1, p. S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03296-9/fulltext" target="_blank" rel="noopener" aria-label="Read Radiation Dose-Volume Effects in the Spinal Cord, Kirkpatrick et al.">Kirkpatrick JP, van der Kogel AJ, Schultheiss TE, &ldquo;Radiation Dose&ndash;Volume Effects in the Spinal Cord&rdquo;, S42&ndash;S49</a>.</p>
+
+    <div class="constraint-table-wrap" id="data-lung">
+        <table class="constraint-table">
+            <caption>Lung</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Irradiation type</th>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Symptomatic pneumonitis</td><td class="num">V<sub>20</sub> &le; 30%</td><td class="num">&lt;20%</td><td>For combined lung. Gradual dose response</td></tr>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Symptomatic pneumonitis</td><td class="num">Mean dose = 7 Gy</td><td class="num">5%</td><td rowspan="5">Excludes purposeful whole lung irradiation</td></tr>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Symptomatic pneumonitis</td><td class="num">Mean dose = 13 Gy</td><td class="num">10%</td></tr>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Symptomatic pneumonitis</td><td class="num">Mean dose = 20 Gy</td><td class="num">20%</td></tr>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Symptomatic pneumonitis</td><td class="num">Mean dose = 24 Gy</td><td class="num">30%</td></tr>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Symptomatic pneumonitis</td><td class="num">Mean dose = 27 Gy</td><td class="num">40%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source">Transcribed from Table 1, p. S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03293-3/fulltext" target="_blank" rel="noopener" aria-label="Read Radiation Dose-Volume Effects in the Lung, Marks et al.">Marks LB, Bentzen SM, Deasy JO, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Lung&rdquo;, S70&ndash;S76</a>. That review states there are no evident threshold tolerance dose&ndash;volume levels for lung; the values above are points on a gradual dose response, not thresholds.</p>
+
+    <div class="constraint-table-wrap" id="data-heart">
+        <table class="constraint-table">
+            <caption>Heart</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Irradiation type</th>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Pericardium</td><td>3D-CRT</td><td>Pericarditis</td><td class="num">Mean dose &lt; 26 Gy</td><td class="num">&lt;15%</td><td>Based on single study</td></tr>
+                <tr><td>Pericardium</td><td>3D-CRT</td><td>Pericarditis</td><td class="num">V<sub>30</sub> &lt; 46%</td><td class="num">&lt;15%</td><td></td></tr>
+                <tr><td>Whole organ</td><td>3D-CRT</td><td>Long-term cardiac mortality</td><td class="num">V<sub>25</sub> &lt; 10%</td><td class="num">&lt;1%</td><td>Overly safe risk estimate based on model predictions</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source">Transcribed from Table 1, p. S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03290-8/fulltext" target="_blank" rel="noopener" aria-label="Read Radiation Dose-Volume Effects in the Heart, Gagliardi et al.">Gagliardi G, Constine LS, Moiseenko V, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Heart&rdquo;, S77&ndash;S85</a>.</p>
 </section>
 
 <section class="content-section" id="ntcp">
