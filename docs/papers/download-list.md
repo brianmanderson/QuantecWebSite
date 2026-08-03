@@ -25,30 +25,51 @@ proxy should clear it.
 
 | ✓ | Paper | Save as | Links |
 |---|---|---|---|
-| ☐ | Guest Editor's Introduction to QUANTEC: A Users Guide | `quantec-00-users-guide.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903302-1) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03302-1/fulltext>) |
-| ☐ | Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): An Introduction to the Scientific Issues | `quantec-00-scientific-issues.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903300-8) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03300-8/fulltext>) |
-| ☐ | Use of Normal Tissue Complication Probability Models in the Clinic | `quantec-00-ntcp-models.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903288-X) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03288-X/fulltext>) |
+| ☑ | Guest Editor's Introduction to QUANTEC: A Users Guide | `quantec-00-users-guide.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903302-1) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03302-1/fulltext>) |
+| ☑ | Quantitative Analyses of Normal Tissue Effects in the Clinic (QUANTEC): An Introduction to the Scientific Issues | `quantec-00-scientific-issues.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903300-8) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03300-8/fulltext>) |
+| ☑ | Use of Normal Tissue Complication Probability Models in the Clinic | `quantec-00-ntcp-models.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903288-X) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03288-X/fulltext>) |
 
 ## Organ-specific papers (16)
 
 | ✓ | Organ | Save as | Links |
 |---|---|---|---|
-| ☐ | CNS: Brain | `quantec-cns-brain.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903287-8) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03287-8/fulltext>) |
-| ☐ | CNS: Optic Nerve/Chiasm | `quantec-cns-optic-nerve-chiasm.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903284-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03284-2/fulltext>) |
-| ☐ | CNS: Brain Stem | `quantec-cns-brain-stem.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903582-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03582-2/fulltext>) |
-| ☐ | CNS: Spinal Cord | `quantec-cns-spinal-cord.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903296-9) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03296-9/fulltext>) |
-| ☐ | CNS: Ear | `quantec-cns-ear.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903298-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03298-2/fulltext>) |
-| ☐ | Head and Neck: Parotid | `quantec-head-and-neck-parotid.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903289-1) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03289-1/fulltext>) |
-| ☐ | Head and Neck: Larynx/Pharynx | `quantec-head-and-neck-larynx-pharynx.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903292-1) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03292-1/fulltext>) |
-| ☐ | Thorax: Lung | `quantec-thorax-lung.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903293-3) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03293-3/fulltext>) |
-| ☐ | Thorax: Heart | `quantec-thorax-heart.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903290-8) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03290-8/fulltext>) |
-| ☐ | Thorax: Esophagus | `quantec-thorax-esophagus.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903283-0) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03283-0/fulltext>) |
-| ☐ | Abdomen: Liver | `quantec-abdomen-liver.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903295-7) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03295-7/fulltext>) |
-| ☐ | Abdomen: Stomach/Small Bowel | `quantec-abdomen-stomach-small-bowel.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903286-6) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03286-6/fulltext>) |
-| ☐ | Abdomen: Kidney | `quantec-abdomen-kidney.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903282-9) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03282-9/fulltext>) |
-| ☐ | Pelvis: Bladder | `quantec-pelvis-bladder.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903285-4) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03285-4/fulltext>) |
-| ☐ | Pelvis: Rectum | `quantec-pelvis-rectum.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903291-X) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03291-X/fulltext>) |
-| ☐ | Pelvis: Penile Bulb | `quantec-pelvis-penile-bulb.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903294-5) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03294-5/fulltext>) |
+| ☑ | CNS: Brain | `quantec-cns-brain.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903287-8) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03287-8/fulltext>) |
+| ☑ | CNS: Optic Nerve/Chiasm | `quantec-cns-optic-nerve-chiasm.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903284-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03284-2/fulltext>) |
+| ☑ | CNS: Brain Stem | `quantec-cns-brain-stem.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903582-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03582-2/fulltext>) |
+| ☑ | CNS: Spinal Cord | `quantec-cns-spinal-cord.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903296-9) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03296-9/fulltext>) |
+| ☑ | CNS: Ear | `quantec-cns-ear.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903298-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03298-2/fulltext>) |
+| ☑ | Head and Neck: Parotid | `quantec-head-and-neck-parotid.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903289-1) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03289-1/fulltext>) |
+| ☑ | Head and Neck: Larynx/Pharynx | `quantec-head-and-neck-larynx-pharynx.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903292-1) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03292-1/fulltext>) |
+| ☑ | Thorax: Lung | `quantec-thorax-lung.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903293-3) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03293-3/fulltext>) |
+| ☑ | Thorax: Heart | `quantec-thorax-heart.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903290-8) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03290-8/fulltext>) |
+| ☑ | Thorax: Esophagus | `quantec-thorax-esophagus.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903283-0) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03283-0/fulltext>) |
+| ☑ | Abdomen: Liver | `quantec-abdomen-liver.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903295-7) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03295-7/fulltext>) |
+| ☑ | Abdomen: Stomach/Small Bowel | `quantec-abdomen-stomach-small-bowel.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903286-6) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03286-6/fulltext>) |
+| ☑ | Abdomen: Kidney | `quantec-abdomen-kidney.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903282-9) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03282-9/fulltext>) |
+| ☑ | Pelvis: Bladder | `quantec-pelvis-bladder.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903285-4) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03285-4/fulltext>) |
+| ☑ | Pelvis: Rectum | `quantec-pelvis-rectum.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903291-X) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03291-X/fulltext>) |
+| ☑ | Pelvis: Penile Bulb | `quantec-pelvis-penile-bulb.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903294-5) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03294-5/fulltext>) |
+
+## Vision papers (5)
+
+The third and final section of the supplement, S135–S160. These are forward-looking essays on
+future research directions — they carry no dose constraints, so nothing on the site should cite
+them for a clinical number.
+
+| ✓ | Paper | Save as | Links |
+|---|---|---|---|
+| ☑ | Accurate Accumulation of Dose for Improved Understanding of Radiation Effects in Normal Tissue | `quantec-vision-dose-accumulation.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903297-0) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03297-0/fulltext>) |
+| ☑ | Imaging for Assessment of Radiation-Induced Normal Tissue Effects | `quantec-vision-imaging.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903581-0) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03581-0/fulltext>) |
+| ☑ | Biomarkers and Surrogate Endpoints for Normal-Tissue Effects of Radiation Therapy: The Importance of Dose–Volume Effects | `quantec-vision-biomarkers.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903579-2) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03579-2/fulltext>) |
+| ☑ | Improving Normal Tissue Complication Probability Models: The Need to Adopt a "Data-Pooling" Culture | `quantec-vision-data-pooling.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903301-X) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03301-X/fulltext>) |
+| ☑ | The Lessons of QUANTEC: Recommendations for Reporting and Gathering Data on Dose–Volume Dependencies of Treatment Outcome | `quantec-vision-lessons-reporting.pdf` | [PDF](https://www.redjournal.org/action/showPdf?pii=S0360-3016%2809%2903299-4) · [Full text](<https://www.redjournal.org/article/S0360-3016(09)03299-4/fulltext>) |
+
+## All 24 downloaded — verified 2026-08-03
+
+The full supplement is on disk. Each file was matched to its paper by reading its own title page
+rather than by trusting the download filename, and the page ranges were checked to run
+S1–S160 with no gap and no overlap — which is what rules out a duplicate or a mis-served
+article hiding in the set.
 
 ## Start with these three
 
