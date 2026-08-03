@@ -103,6 +103,23 @@ corrected so this document no longer disagrees with the site. The general rule s
 verify against the journal, never substitute a guess — this one happened to be right, and the
 absence of provenance is precisely why it cost several review rounds to establish that.
 
+### QUANTEC vision papers
+
+The third section of the supplement, S135–S160. This document asserted "5 vision papers" from
+the start but never listed them; the table below was filled in on 2026-08-03 from the PDFs
+themselves, each identified by its own title page rather than by its download filename.
+
+They are forward-looking essays on future research directions and contain no dose constraints.
+Do not cite them for a clinical number.
+
+| Paper | Link |
+|---|---|
+| Accurate Accumulation of Dose for Improved Understanding of Radiation Effects in Normal Tissue | <https://www.redjournal.org/article/S0360-3016(09)03297-0/fulltext> |
+| Imaging for Assessment of Radiation-Induced Normal Tissue Effects | <https://www.redjournal.org/article/S0360-3016(09)03581-0/fulltext> |
+| Biomarkers and Surrogate Endpoints for Normal-Tissue Effects of Radiation Therapy: The Importance of Dose–Volume Effects | <https://www.redjournal.org/article/S0360-3016(09)03579-2/fulltext> |
+| Improving Normal Tissue Complication Probability Models: The Need to Adopt a "Data-Pooling" Culture | <https://www.redjournal.org/article/S0360-3016(09)03301-X/fulltext> |
+| The Lessons of QUANTEC: Recommendations for Reporting and Gathering Data on Dose–Volume Dependencies of Treatment Outcome | <https://www.redjournal.org/article/S0360-3016(09)03299-4/fulltext> |
+
 ### QUANTEC summary table
 
 - <https://www.redjournal.org/article/S0360-3016(09)03288-X/fulltext>
