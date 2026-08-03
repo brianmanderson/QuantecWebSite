@@ -15,5 +15,11 @@ vendor/bundle/
 # out of git; their content and images are already converted under docs/.
 *.docx
 
+# Downloaded papers. These are paywalled, copyrighted journal PDFs — they stay on disk for
+# local reference and must never reach the public repository. docs/ itself IS tracked (the
+# markdown briefs live there); only this subfolder is ignored.
+docs/papers/*
+!docs/papers/README.md
+
 # Claude Code machine-local settings (tracked: .claude/settings.json, launch.json, skills/)
 .claude/settings.local.json
