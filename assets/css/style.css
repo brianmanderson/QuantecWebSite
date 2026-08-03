@@ -452,22 +452,79 @@ footer {
     line-height: 1.6;
 }
 
+/* Keyboard access to the scroll region. The wrapper carries tabindex="0" so its overflow can be
+   reached without a mouse; without a visible ring that focus is invisible. */
+.constraint-table-wrap:focus-visible {
+    outline: 3px solid #2c5aa0;
+    outline-offset: 2px;
+}
+
 /* Must sit AFTER the base rules above, not in the general responsive block near the top of this
    file — that block is earlier in source order, so at equal specificity the base rules would win
    and these overrides would silently do nothing. Verified applying at 375px. */
 @media (max-width: 768px) {
-    /* The table keeps its min-width and scrolls inside the wrapper; only the type tightens. */
-    .constraint-table {
-        font-size: 0.875rem;
+    /* Six columns of clinical data cannot be squeezed into a phone, and horizontal scrolling was
+       actively dangerous here: at 375px the clip fell after column 3, so a reader saw
+       "Whole organ | 3D-CRT | Symptomatic pneumonitis" with the dose and the rate both off-screen
+       until they discovered a swipe. A data table whose data is invisible is worse than no table.
+       So below the breakpoint each row becomes its own stacked block with the column name printed
+       against every value. Nothing is off-screen and nothing scrolls sideways. */
+    .constraint-table-wrap {
+        overflow-x: visible;
+        border: none;
+        border-radius: 0;
     }
 
-    .constraint-table th,
+    .constraint-table {
+        min-width: 0;
+        font-size: 0.9375rem;
+    }
+
+    /* Visually hidden, not display:none — the header cells stay in the accessibility tree. */
+    .constraint-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .constraint-table tr {
+        display: block;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        margin-bottom: 0.85rem;
+        padding: 0.25rem 0;
+    }
+
     .constraint-table td {
-        padding: 0.5rem 0.6rem;
+        display: grid;
+        grid-template-columns: 8.5rem 1fr;
+        gap: 0.5rem;
+        border-bottom: 1px solid #f2f2f2;
+        padding: 0.5rem 0.85rem;
+    }
+
+    .constraint-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    /* The column name, carried on each cell as data-label. */
+    .constraint-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #2c5aa0;
+    }
+
+    /* An empty Notes cell would render as a stray label with nothing beside it. */
+    .constraint-table td:empty {
+        display: none;
     }
 
     .constraint-table caption {
         font-size: 1.05rem;
+        padding-left: 0;
     }
 }
 

@@ -6,7 +6,7 @@ Source for [quantecradiation.org](http://quantecradiation.org/) — a Jekyll sta
 
 - Plain Jekyll site: pages (`index.html`, `about.html`, `quantec.html`, `publications.html`, `quantec-2.html`, `contact.html`) rendered through `_layouts/default.html`, styled by `assets/css/style.css`. `resources.html` is a redirect stub preserving the pre-rename `/resources/` URL.
 - Focus areas presented on the site: CNS tolerance, head and neck, cardiac toxicity, pulmonary effects, GI/GU toxicity, optic structures, pediatric guidelines, and NTCP modeling.
-- The site does not restate dose values. Each organ topic routes to the peer-reviewed review that carries the constraint, so what a clinician plans from is the source rather than a summary.
+- Most organ topics do not restate dose values: they route to the peer-reviewed review that carries the constraint, so what a clinician plans from is the source rather than a summary. The exception, ruled by the site owner on 2026-08-03, is spinal cord, lung and heart — `/quantec/#data` states those values directly, transcribed from Table 1 of the QUANTEC summary paper with its governing footnotes verbatim and every row attributed to its source page. See `docs/constraints-pilot-lung-heart-cord.md`.
 - `CNAME` points GitHub Pages at the custom domain; the domain is registered through [Namecheap](https://ap.www.namecheap.com/dashboard).
 - Asset/icon credits are in `CREDITS.md`.
 
