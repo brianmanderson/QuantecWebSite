@@ -101,11 +101,18 @@ right. For any change touching markup or CSS:
    different numbers whenever the content has a floor. 1280 and 375 sit either side of the
    switch, so they prove the switch fires and nothing else. On 2026-08-03 the band between them
    was real: every constraint table on `/quantec/` clipped its rightmost column — Notes, which
-   carries the caveats qualifying the dose numbers — from 769px to 880px, because the stacked
-   layout was keyed to the generic 768px breakpoint while the widest table (kidney) needed more.
-   The gate was run and passed at 1280 and 375; an independent `site-reviewer` run found the band
-   afterwards, and PR #20 rekeyed that block to 880px. Derive the width from the content, never
-   from the site's generic breakpoint.
+   carries the caveats qualifying the dose numbers — from 769px up, because the stacked layout
+   was keyed to the generic 768px breakpoint. The gate passed at 1280 and 375; an independent
+   `site-reviewer` run found the band afterwards, and PR #20 rekeyed the block to 880px.
+
+   **Walk up — never read the fitting width off the rendered content.** `.constraint-table` is
+   `width: 100%` above a `min-width: 680px` floor, so it measures whatever the wrapper gives it.
+   Reading its width at the point clipping stopped therefore just restates the viewport, and that
+   circularity is how 880px was derived from a table "needing 736px": at 881px the table does
+   measure 736px, but only because 881 − 145px of page chrome is 736. The floor is 680px, so the
+   content actually fits at 825px and the band was 769–824. 880px is safe — it stacks earlier
+   than it must, which hides nothing — but it is 55px wider than measurement supports, and the
+   `736px` in that block's comment should not be trusted as the number to re-derive from.
 5. `read_console_messages` — should be clean. Font Awesome 404s only mean the CDN is
    unreachable; that is an environment artifact, not a regression.
 
