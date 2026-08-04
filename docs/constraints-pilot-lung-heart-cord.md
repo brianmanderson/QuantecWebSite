@@ -185,9 +185,17 @@ renal dysfunction. Mean dose <15–18 Gy → <5%; mean dose <28 Gy → <50%; V12
 V23 <30%, V28 <20% → <5%, "For combined kidney".
 
 Row 3 was flagged unresolved in the previous pass and is **now resolved**: the kidney review's
-Table 5 is headed "Suggested dose–volume constraints for estimated risk of <5%" and lists
-V12 <55% and V28 <20% under bilateral kidney irradiation. V20 and V23 appear in the summary
-table only — noted on the site rather than presented as if the organ paper carried them.
+Table 5 is headed "Suggested dose–volume constraints for estimated risk of <5%" and carries
+**all four** constraints, each attributed to a study — V12 <55% (Welz et al.), V20 <32% (Jansen
+et al.), V23 <30% and V28 <20% (Nevinny-Stickel et al.).
+
+> **Corrected 2026-08-03 after an independent review.** This record and the site previously said
+> Table 5 listed only V12 and V28, and that V20 and V23 "appear in the summary table only". That
+> was wrong: all four are in Table 5. The error came from asserting a negative on the strength of
+> an extraction window that had simply cut off before the remaining rows — the `sed` range used
+> to read Table 5 ended mid-table. **Never conclude "the source does not say X" from an
+> extraction that merely did not show X**; re-extract with the range widened, or search the whole
+> document for the term, before writing an absence down.
 
 **Stomach** (S17) — whole organ, endpoint ulceration. D100 <45 Gy → <7%. The organ review states
 no comparable predictive model of acute toxicity is available for stomach.
@@ -207,7 +215,7 @@ expressed without either dropping the technique or inventing a combined label.
 
 All **18 organ entries** in Table 1 are transcribed and published: brain, brain stem, optic
 nerve/chiasm, spinal cord, cochlea, parotid, pharynx, larynx, lung, heart, esophagus, liver,
-kidney, stomach, small bowel, rectum, bladder, penile bulb. 61 dose rows across five body-system
+kidney, stomach, small bowel, rectum, bladder, penile bulb. 62 dose rows across five body-system
 groups.
 
 ### Superseded — was "still to transcribe"
