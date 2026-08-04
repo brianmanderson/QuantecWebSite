@@ -128,6 +128,27 @@ The column is therefore split into **Technique** (the source's value verbatim) a
 **Fractionation** (conventional / single fraction / 3 fractions, per footnote †). Nothing is
 reinterpreted and both facts are stated. Cord, lung and heart were migrated to the same scheme.
 
+### Pelvis — 2026-08-03
+
+**Rectum** (S18) — whole organ, 3D-CRT, prostate cancer treatment. The five constraints
+V50 <50%, V60 <35%, V65 <25%, V70 <20%, V75 <15% are **one set**, not five independent rows.
+The rectum review settles it: they are "a conservative starting point for 3D treatment planning",
+and following them "should limit Grade ≥2 late rectal toxicity to <15% and the probability of
+Grade ≥3 late rectal toxicity to <10% for prescriptions up to 79.2 Gy in standard 1.8- to 2-Gy
+fractions". The review adds they "have yet to be validated as 'relatively-safe'". Table 1 alone
+was ambiguous here — it renders the endpoint/rate pair alongside each of the five dose lines,
+which reads equally well as five rows with individual rates. The organ paper resolved it.
+
+**Bladder** (S18) — whole organ, 3D-CRT, endpoint Grade ≥3 late RTOG. Dmax <65 Gy → <6%,
+"Bladder cancer treatment…". V65 ≤50%, V70 ≤35%, V75 ≤25%, V80 ≤15% → **no rate given**.
+That blank is real, not an extraction failure: the bladder review offers those limits "in the
+absence of any reliable data", citing the conventional-fractionation arm of RTOG 0415. The site
+prints "Not stated" rather than an empty cell, so the absence cannot be mistaken for an omission
+on our side.
+
+**Penile bulb** (S18) — whole organ, 3D-CRT, endpoint severe erectile dysfunction. Mean dose to
+95% of gland <50 Gy → <35%; D90 <50 Gy → <35%; D60–70 <70 Gy → <55%.
+
 ### Still to transcribe
 
 Abdomen (liver, stomach/small bowel, kidney) and pelvis (rectum, bladder, penile bulb). Kidney
