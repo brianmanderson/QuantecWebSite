@@ -236,6 +236,43 @@ fractionation genuinely varies within one table — 3, 6, and 3–5 fractions al
 rows. Under the pilot's single "Fractionation scheme" column those rows could not have been
 expressed without either dropping the technique or inventing a combined label.
 
+### One set, or alternatives? — settled 2026-08-04
+
+Three tables render several dose–volume limits stacked in a single row: rectum
+(V50/V60/V65/V70/V75), kidney (V12/V20/V23/V28) and bladder (V65/V70/V75/V80). Table 1 lays all
+three out identically, so its layout cannot tell them apart — an independent review flagged that
+the page was inheriting that ambiguity and letting the three look alike when they might not be.
+
+Each was taken back to its organ review. **They are not alike.** Two are single conjunctive sets;
+the third is not, and the page now says so on each.
+
+- **Rectum — one set.** Already recorded above; the review states that following the five
+  "should limit Grade ≥2 late rectal toxicity to <15% and the probability of Grade ≥3 late rectal
+  toxicity to <10%".
+- **Bladder — one set.** The review describes RTOG 0415 as having "included a solid bladder
+  constraint of" the four volumes, stating them in one sentence joined by "and". Singular
+  constraint, four limits, met together. No rate attaches to it: the review offers them "in the
+  absence of any reliable data".
+- **Kidney — NOT one set.** Table 5 of the review gives each of the four its own row under
+  "Partial kidney irradiation", each with its own investigator — V12 <55% (Welz), V20 <32%
+  (Jansen), V23 <30% and V28 <20% (Nevinny-Stickel). The word "constraint" occurs exactly once in
+  the entire review, in that table's title; the body's only reference to Table 5 calls its
+  contents "some broad guidelines" that "will hopefully be tested in future studies", prefaced by
+  "All dose–volume recommendations are associated with substantial uncertainty". Nothing states
+  they are met together.
+
+**What the page asserts, and what it does not.** For bladder it asserts a single set, because the
+source says so. For kidney it asserts only that the source *does not* present them as one set,
+and that they come from four different studies. It does not tell a clinician to treat them as
+alternatives — that is a planning judgement no QUANTEC text supports either way, and inventing it
+would be the same class of error as inventing a number.
+
+Method note, since this is the second time an absence has had to be established here: the
+"exactly once" claim about the word "constraint" comes from grepping the whole extracted review,
+not from reading the section around Table 5 — the trap recorded in the kidney correction above.
+Both `pdftotext -layout` and reading-order extractions were run and agree, on Table 5's row
+structure and on the bladder sentence.
+
 ### Transcription complete
 
 All **18 organ entries** in Table 1 are transcribed and published: brain, brain stem, optic
@@ -252,6 +289,13 @@ whole-kidney RT of 18 Gy and 28 Gy, respectively" — matching mean dose <15–1
 dose <28 → <50%. **The third kidney row is not yet resolved**: whether V12 <55%, V20 <32%,
 V23 <30%, V28 <20% are one row of alternatives or several, and how they pair to rates, cannot be
 settled from the text extraction and must not be guessed.
+
+> **Both halves of that are now settled**, and the paragraph above is kept only as the record of
+> when they were not. How they pair to rates was resolved on 2026-08-03 (all four → <5%, from
+> Table 5's own heading). Whether they are one set was resolved on 2026-08-04 — they are not; see
+> [One set, or alternatives?](#one-set-or-alternatives--settled-2026-08-04) above. Note that the
+> instinct recorded here was right: it was settled from the organ review, not guessed from the
+> summary table's layout.
 
 ## Where the site's wording departs from the source — ruled 2026-08-03
 
