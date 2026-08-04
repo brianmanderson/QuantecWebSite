@@ -425,13 +425,24 @@ footer {
     padding: 0.6rem 0.85rem;
     text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid #ececec;
+}
+
+/* Row separators sit on the TOP of each body cell, not the bottom. A cell merged with rowspan
+   belongs to the row it starts in, so a `tbody tr:last-child td` rule cannot reach one that
+   spans down into the last row: those cells kept a bottom border while the rest of the last row
+   had none, drawing a 1px stub across part of the table's bottom edge. Six tables showed it.
+   Anchoring the separator to the top means the last row has nothing below it whatever is merged,
+   and a merged cell still shows its group boundary because the next group's cells draw their own
+   top border. Don't reintroduce border-bottom here. */
+.constraint-table tbody td {
+    border-top: 1px solid #ececec;
 }
 
 .constraint-table thead th {
     background-color: #f0f7ff;
     color: #2c5aa0;
     font-weight: 600;
+    border-bottom: 1px solid #ececec;
 }
 
 /* Values identical across every row are hoisted out of the grid into the caption, rather than
@@ -458,10 +469,6 @@ footer {
     background-color: #fafcff;
     font-weight: 600;
     vertical-align: middle;
-}
-
-.constraint-table tbody tr:last-child td {
-    border-bottom: none;
 }
 
 /* Dose and rate cells must not break mid-value: "Mean dose = 13 Gy" wrapping after the "="
@@ -492,8 +499,8 @@ footer {
    880px, NOT the site's general 768px breakpoint. This block is the only one keyed to a width
    other than 768px, and it has to be: 768px is where the nav and the card grid restack, but it
    is not where these tables fit. The wrapper gets viewport minus about 145px of page padding,
-   and every one of these tables has min-width: 680px, so the grid layout stops clipping at 825px.
-   Keyed to 768px this block left a dead band from 769px to 824px — small laptops, split-screen
+   and the widest table's content needs 703px, so the grid layout stops clipping at about 850px.
+   Keyed to 768px this block left a dead band from 769px to ~849px — small laptops, split-screen
    windows, landscape tablets — where all 18 tables clipped their rightmost column behind a
    scroll with no visual affordance. That column is Notes, which carries the caveats qualifying
    the numbers: "Excludes purposeful whole lung irradiation", "Overly safe risk estimate based on
@@ -501,16 +508,33 @@ footer {
    mode this whole section exists to avoid, so the stacked layout runs until the grid genuinely
    fits.
 
-   880 rather than 825 keeps 55px of margin. Stacking a little early hides nothing, so that is
-   the direction to err in, and the value stands. If a column is ever added, re-measure — but
-   derive it from the min-width floor above, NEVER from the rendered table width. These tables
-   are width: 100% above that floor, so above it they are exactly as wide as the wrapper gives
-   them: 680px at an 825px viewport, 735px at 880px, 736px at 881px. Reading the table at the
-   width where clipping stopped therefore just restates the viewport. That circularity is where
-   this comment's earlier claim — "the widest table (kidney) needs 736px" — came from; no table
-   here is 736px wide, all 18 are 680px, and the claim overstated the requirement by 55px. Walk
-   up in an exact-width iframe until scrollWidth <= clientWidth on .constraint-table-wrap; step 4
-   of the release skill has the procedure and a verified snippet. */
+   880 keeps about 30px of margin. Stacking a little early hides nothing, so that is the
+   direction to err in, and the value stands.
+
+   NEVER derive this from the rendered table width. These tables are width: 100% above a
+   min-width: 680px floor, so above it they measure exactly what the wrapper gives them — 735px
+   at 880px, 736px at 881px. Reading the table at the width where clipping stopped therefore
+   just restates the viewport.
+
+   But the floor is NOT the requirement either, and that correction cost a round: this comment
+   briefly read "every one of these tables has min-width: 680px, so the grid stops clipping at
+   825px", having spotted the circularity above and over-corrected past the real number. Forcing
+   the wrapper to 680px clips liver by 25px — its Notes column, the exact failure this block
+   exists to prevent. Measure each table's INTRINSIC width instead, which is neither circular nor
+   the floor:
+
+       t.style.width = 'min-content'; t.style.minWidth = '0';   // then read getBoundingClientRect
+
+   Measured that way: liver 703px (widest), cochlea 610, bladder 575, stomach 294. 703 + 145 of
+   page chrome is ~850px, hence the ~30px of margin at 880.
+
+   A walk-up loop cannot find this number. Below 880px the stacked layout is already live and
+   never clips, so a loop starting under the breakpoint returns its own start value. Probe the
+   grid by forcing wrapper widths at a viewport above 880, or by measuring intrinsic width as
+   above; allow ~2px for the wrapper's borders, which makes every table read 2px over at exactly
+   its own width. Kidney used to be the widest at 736px — that it also equalled 881 − 145 was a
+   coincidence, and it is what made the figure look circular when it was in fact correct. Its
+   Technique and Fractionation columns have since moved into its caption and it is now 511px. */
 @media (max-width: 880px) {
     /* Six columns of clinical data cannot be squeezed into a phone, and horizontal scrolling was
        actively dangerous here: at 375px the clip fell after column 3, so a reader saw
@@ -555,7 +579,30 @@ footer {
         padding: 0.5rem 0.85rem;
     }
 
-    .constraint-table tbody tr td:last-child {
+    /* The stacked layout draws its own separators between the cells of a card, so the grid's
+       top-anchored ones must be switched off or every card gains a stray leading rule.
+       This must be `tbody td`, matching the base rule's specificity — as `.constraint-table td`
+       it is (0,1,1) against the base rule's (0,1,2) and silently loses, which is the same trap
+       the comment on this media query records. Verified applying at 375px. */
+    .constraint-table tbody td {
+        border-top: 0;
+    }
+
+    /* `td:last-child` is the last cell in the DOM, which is not the last *visible* cell whenever a
+       row ends in a Notes cell that this media query hides. Two rules hide one: `td:empty` below
+       (the source gives no note) and `.grouped-note` (the note is merged across the group and is
+       reprinted from `data-note` by the `::after` rule). Either way the visible cell above kept
+       its separator, stranding a 1px hairline in the card's bottom padding — and on the merged
+       ones it also doubled against the `::after` border-top, giving a 2px line where every other
+       separator is 1px. The two `:has()` arms reach that cell.
+
+       Both arms require `:last-child` on the hidden cell, so a hidden cell sitting *between* two
+       visible ones could never suppress a separator that is genuinely needed. Notes is the only
+       column that is ever hidden this way and it is always last, so one step back is enough.
+       Measured at 375px across all 62 cards. */
+    .constraint-table tbody tr td:last-child,
+    .constraint-table tbody tr td:has(+ td:last-child:empty),
+    .constraint-table tbody tr td:has(+ td.grouped-note:last-child) {
         border-bottom: none;
     }
 

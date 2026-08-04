@@ -105,14 +105,35 @@ right. For any change touching markup or CSS:
    was keyed to the generic 768px breakpoint. The gate passed at 1280 and 375; an independent
    `site-reviewer` run found the band afterwards, and PR #20 rekeyed the block to 880px.
 
-   **Walk up — never read the fitting width off the rendered content.** `.constraint-table` is
-   `width: 100%` above a `min-width: 680px` floor, so it measures whatever the wrapper gives it.
-   Reading its width at the point clipping stopped therefore just restates the viewport, and that
-   circularity is how 880px was derived from a table "needing 736px": at 881px the table does
-   measure 736px, but only because 881 − 145px of page chrome is 736. The floor is 680px, so the
-   content actually fits at 825px and the band was 769–824. 880px is safe — it stacks earlier
-   than it must, which hides nothing — but it is 55px wider than measurement supports, and the
-   `736px` in that block's comment should not be trusted as the number to re-derive from.
+   **Never read the fitting width off the rendered content.** `.constraint-table` is `width: 100%`
+   above a `min-width: 680px` floor, so it measures whatever the wrapper gives it. Reading its
+   width at the point clipping stopped therefore just restates the viewport, and that circularity
+   is how 880px was derived from a table "needing 736px": at 881px the table does measure 736px,
+   and 881 − 145px of page chrome is 736.
+
+   **But do not then reach for the `min-width` floor either.** That was tried on 2026-08-03 and
+   was wrong in the dangerous direction: it gave "the content fits at 825px", and forcing the
+   wrapper to 680px in fact clips the liver table by 25px — its Notes column, the exact failure
+   this whole item exists to catch. The floor is a floor, not a requirement. Two tables' content
+   has always exceeded it.
+
+   **Measure each table's intrinsic width.** Neither circular nor the floor:
+
+   ```js
+   t.style.width = 'min-content'; t.style.minWidth = '0';   // then read getBoundingClientRect
+   ```
+
+   As of 2026-08-04: liver 703px (widest), cochlea 610, bladder 575, stomach 294 — so the grid
+   genuinely fits from about 850px and 880 carries ~30px of margin. Kidney was the widest at
+   736px until its Technique and Fractionation columns moved into its caption; that 736 also
+   equalled 881 − 145 was a coincidence, and it is what made a correct figure look circular.
+
+   **A walk-up loop cannot find this number**, which is why the bad figure above went unchallenged.
+   Below the breakpoint the stacked layout is already live and never clips, so a loop that starts
+   under it returns its own start value and looks like a confident answer. Probe the grid by
+   forcing wrapper widths at a viewport *above* the breakpoint, or by measuring intrinsic width as
+   above. Allow ~2px for the wrapper's borders — every table reads 2px over at exactly its own
+   width, so `+2` is the noise floor, not a clip.
 5. `read_console_messages` — should be clean. Font Awesome 404s only mean the CDN is
    unreachable; that is an environment artifact, not a regression.
 
@@ -138,26 +159,50 @@ consequences, all of which have already cost a session:
   establishes its own viewport, so media queries resolve at the width you set. Read `innerWidth`
   back and never report a width you did not read back from the thing you measured.
 
-The walk-up item 4 asks for, and why the iframe is not optional. Resizing the iframe re-resolves
-its media queries, so this needs no reload per width — but it does need the forced reflow,
-because `requestAnimationFrame` never fires in a pane that is not compositing:
+The two measurements item 4 asks for, and why the iframe is not optional. Resizing the iframe
+re-resolves its media queries, so neither needs a reload per width — but both need the forced
+reflow, because `requestAnimationFrame` never fires in a pane that is not compositing.
+
+**(a) Confirm nothing clips at breakpoint + 1 and above.** This is the check that must pass:
 
 ```js
 (async () => {
   const f = document.createElement('iframe');
-  f.style.cssText = 'position:fixed;left:-9999px;top:0;height:900px;border:0;width:769px;';
+  f.style.cssText = 'position:fixed;left:-9999px;top:0;height:900px;border:0;width:881px;';
   f.src = '/quantec/'; document.body.appendChild(f);
   await new Promise(r => f.onload = r);
-  const d = f.contentDocument;
-  const clipAt = w => {
+  const d = f.contentDocument, out = {};
+  for (const w of [881, 882, 885, 900, 1000, 1280]) {
     f.style.width = w + 'px';
     void d.documentElement.offsetWidth;                  // sync reflow; rAF never fires here
     if (f.contentWindow.innerWidth !== w) throw new Error('width lied: ' + f.contentWindow.innerWidth);
-    return Math.max(0, ...[...d.querySelectorAll('.constraint-table-wrap')]  // the scroll container
-      .map(e => e.scrollWidth - e.clientWidth));
-  };
-  let w = 769; while (w <= 1400 && clipAt(w) > 0) w++;   // first width the content actually fits
-  return w;
+    out[w] = [...d.querySelectorAll('.constraint-table-wrap')]  // the scroll container
+      .filter(e => e.scrollWidth > e.clientWidth)
+      .map(e => `${e.id}(+${e.scrollWidth - e.clientWidth})`).join(' ') || 'clean';
+  }
+  return out;                                            // every entry must read "clean"
+})()
+```
+
+**(b) Derive the number the breakpoint should be, if you need to change it.** Intrinsic width,
+measured above the breakpoint so the grid layout is the one being probed — a loop walking up from
+below it measures the stacked layout and returns its own start value:
+
+```js
+(async () => {
+  const f = document.createElement('iframe');
+  f.style.cssText = 'position:fixed;left:-9999px;top:0;height:900px;border:0;width:1400px;';
+  f.src = '/quantec/'; document.body.appendChild(f);
+  await new Promise(r => f.onload = r);
+  const d = f.contentDocument;
+  void d.documentElement.offsetWidth;
+  return [...d.querySelectorAll('.constraint-table')].map(t => {
+    const prev = t.style.cssText;
+    t.style.width = 'min-content'; t.style.minWidth = '0';   // defeat width:100% AND the floor
+    const w = Math.ceil(t.getBoundingClientRect().width);
+    t.style.cssText = prev;
+    return {id: t.closest('.constraint-table-wrap').id, intrinsic: w};
+  }).sort((a, b) => b.intrinsic - a.intrinsic);             // widest first; add ~145px of chrome
 })()
 ```
 
