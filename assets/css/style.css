@@ -434,6 +434,23 @@ footer {
     font-weight: 600;
 }
 
+/* Values identical across every row are hoisted out of the grid into the caption, rather than
+   repeated down a column that carries no information. */
+.constraint-shared {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #5a5a5a;
+}
+
+/* A cell merged across the rows it applies to. */
+.constraint-table .grouped {
+    background-color: #fafcff;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
 .constraint-table tbody tr:last-child td {
     border-bottom: none;
 }
@@ -520,6 +537,31 @@ footer {
     /* An empty Notes cell would render as a stray label with nothing beside it. */
     .constraint-table td:empty {
         display: none;
+    }
+
+    /* A merged cell cannot survive stacking: rowspan renders it in the first row of its group
+       only, so the later cards would lose the value entirely — on the spinal cord table that
+       means a card reading "60 Gy → 6%" with no indication it is 3D-CRT. So hide the merged
+       cells and print the group from the row's own data-group instead, which every row in the
+       group carries. Desktop shows the merged cell; mobile shows a header on every card. */
+    .constraint-table .grouped {
+        display: none;
+    }
+
+    .constraint-table tr[data-group]::before {
+        content: attr(data-group);
+        display: block;
+        padding: 0.45rem 0.85rem;
+        background-color: #f0f7ff;
+        color: #2c5aa0;
+        font-weight: 600;
+        border-bottom: 1px solid #e0e0e0;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .constraint-table tr {
+        padding-top: 0;
+        overflow: hidden;
     }
 
     .constraint-table caption {

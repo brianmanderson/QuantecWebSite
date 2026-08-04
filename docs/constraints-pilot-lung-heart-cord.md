@@ -71,6 +71,59 @@ the Heart", S77–S85 (`quantec-thorax-heart.pdf`).
 | Pericardium | 3D-CRT | Pericarditis | V30 < 46% | <15% | |
 | Whole organ | 3D-CRT | Long-term cardiac mortality | V25 < 10% | <1% | Overly safe risk estimate based on model predictions |
 
+## Where the site's wording departs from the source — ruled 2026-08-03
+
+The tables above are the verbatim transcription. The published tables differ from it in exactly
+two ways, both owner decisions, both recorded here so the difference is never mistaken for a
+transcription error.
+
+1. **`SRS (hypofraction)` is published as `SRS (3 fraction)`.** The source's own Notes cell for
+   that row says "3 fractions", so the number is the source's, not ours — this relabels using a
+   fact the source states rather than introducing one. The transcription tables above keep the
+   source's wording.
+2. **That row's note is published as "Partial cord cross-section irradiated"**, dropping the
+   leading "3 fractions," which the new label now carries. No information is lost; the wording
+   is otherwise the source's.
+
+3. **The column headed `Irradiation type` in the source is published as `Fractionation scheme`,
+   and its `3D-CRT` value as `Conventional (1.8–2.0 Gy/fraction)`.** The dose-per-fraction figure
+   is the source's: footnote † to Table 1 reads "All at standard fractionation (i.e., 1.8–2.0 Gy
+   per daily fraction) unless otherwise noted", and the SRS rows are the "otherwise noted" ones.
+
+   **Note what this trades away.** 3D-CRT is a delivery *technique*; conventional fractionation is
+   a dose-per-fraction *schedule*. They are not synonyms, and the source's column recorded the
+   former. Because the technique is what underpins the modern-IMRT caveat, it is preserved in the
+   provenance line under each table — "The source records these rows as 3D-CRT (3-dimensional
+   conformal radiotherapy)" — rather than being dropped.
+
+### The modern-IMRT caveat is now stated only where a source says it
+
+Table 1's `*` footnote ("They largely do not reflect modern IMRT") is a blanket statement across
+every organ in the table. It remains quoted verbatim in the box above all three tables, which is
+where a blanket statement belongs.
+
+Beside the individual tables it appears **only for lung**, because only the lung review makes the
+point about its own data (p. S72):
+
+> Finally, it is likely that the MLD–RP relationship may have lower predictive power for
+> "nonstandard" dose distributions not included in these analyses, for example after stereotactic
+> body radiotherapy (SBRT), Intensity-Modulated Radiation Therapy (IMRT), or proton therapy.
+
+**The spinal cord review was considered and rejected as a citation.** It contains a sentence
+naming conformal techniques — "making application of these findings to highly conformal
+radiotherapy techniques, such as stereotactic body RT (SBRT) or intensity-modulated proton
+therapy, difficult" — but in context that is about extrapolating *partial-cord-volume animal
+data*, inside the reirradiation discussion, and it names intensity-modulated **proton** therapy.
+It is not a statement that the table's values do not reflect IMRT, and citing it as one would
+misrepresent it. The heart review contains no such statement at all.
+
+Presentation-only, no wording changed: columns whose value is identical in every row are hoisted
+out of the grid into the table caption (lung, for instance, is "every row: whole organ, 3D-CRT,
+endpoint symptomatic pneumonitis"), and cells identical across a contiguous group are merged.
+The Rate column is deliberately **never** merged — spinal cord rows 4 and 5 are both 1%, but
+that is a coincidence between two different techniques, and merging them would assert a grouping
+the source does not make.
+
 ## Verification record
 
 The protocol requires every number to be re-checked against the source by a separate pass. Two
