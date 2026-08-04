@@ -24,13 +24,15 @@ Flat repo, no collections, no `_posts`. Pages are HTML with YAML front matter:
 - `CREDITS.md` — attribution; any new local asset needs a row. `CNAME` — the custom domain.
 - `docs/` — notes converted from the original Word briefs; excluded from the build.
 
-Most organ topics state no dose values: they route to the review carrying the constraint,
-deliberately, so clinicians plan from the paper rather than our summary of it.
+The site originally stated no dose values at all: each organ topic routed to the review carrying
+the constraint, deliberately, so clinicians planned from the paper rather than our summary of it.
 
-**The exception, ruled by the owner on 2026-08-03:** spinal cord, lung and heart now state
-values directly, in `/quantec/#data`. They are transcribed from Table 1 of the QUANTEC summary
-paper, carry both of its governing footnotes verbatim, and cite the page each row came from.
-The transcription record and verification evidence are in
+**The owner reversed that on 2026-08-03.** All 18 organ entries of Table 1 of the QUANTEC summary
+paper — 62 dose rows — are now transcribed into `/quantec/#data`. They carry that table's four
+governing footnotes verbatim, and every table cites the page its rows came from and links its
+organ review. The organ cards above the tables still route to the papers; the tables are an
+addition to that routing, not a replacement for it. The transcription record and verification
+evidence are in
 [docs/constraints-pilot-lung-heart-cord.md](docs/constraints-pilot-lung-heart-cord.md) — read it
 before changing, extending or "correcting" any value in those tables.
 

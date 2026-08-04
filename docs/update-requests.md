@@ -42,6 +42,15 @@ caveats were raised and overruled, recorded here so nobody re-opens them:
 - *"Lung V20/V30 constraints"* — the lung review's own abstract states there are "no evident
   threshold 'tolerance dose–volume' levels".
 
+  **Follow-up, 2026-08-03.** Once the lung table was published, this bullet was briefly turned
+  into a link to it. That made the mismatch concrete: Table 1's lung block carries `V20 ≤ 30%`
+  and five mean-dose rows and **no V30 row at all** (verified against S16 of the summary paper;
+  the only V30 on that page is the pericardium row in the heart block). A clinician clicking a
+  bullet that says "V20/V30" and landing on a table without V30 is worse than not linking it.
+  The bullet keeps the owner's wording, unlinked, and the panel note now states what the
+  summary table actually carries. **Do not re-link it, and do not "fix" the wording** — the
+  words are the owner's under ruling 2, and the absent V30 is the source's.
+
 On 3: the two labels suggested were "Dose Constraints" and "Constraints by Organ". Neither fits
 — they measure 610px and 639px against a 594px budget and wrap the header to two rows.
 "Constraints" fits at 569px with 25px of slack and breaks the name collision just as completely.

@@ -1,9 +1,12 @@
 # Transcription pilot — lung, heart, spinal cord
 
-Status: **published.** The site owner ruled on 2026-08-03 to publish these on `/quantec/`. All
-14 rows are live in the "Dose/volume/outcome data" section of that page, with the two governing
-footnotes reproduced verbatim and each table attributed to its source page. This document
-remains the transcription record and the verification evidence behind them.
+Status: **published, and since extended to the whole table.** The site owner ruled on 2026-08-03
+to publish these on `/quantec/`. The pilot's 14 rows went live first; the same protocol was then
+run over the rest of Table 1, and all **18 organ entries / 62 dose rows** are now in the
+"Dose/volume/outcome data" section of that page, with the four governing footnotes reproduced
+verbatim and each table attributed to its source page. This document remains the transcription
+record and the verification evidence behind them — the sections below are in the order the work
+was done, so the pilot's three organs come first and the extensions follow.
 
 ## Source
 
@@ -20,10 +23,11 @@ transcribed here are on **S15** (spinal cord) and **S16** (lung, heart).
 This is the table the Guest Editor's introduction calls out as "a large summary table of
 dose/volume/outcome data", and the one `site-plan.md` already links as the QUANTEC summary table.
 
-## The two footnotes that govern every number below
+## The four footnotes that govern the numbers below
 
-Both are transcribed verbatim from S18. They are not optional context; they change how the
-values may be used.
+All four are transcribed verbatim from S18. They are not optional context; they change how the
+values may be used and what the notation means. The site reproduces all four in the box above
+the tables.
 
 > **\*** All data are estimated from the literature summarized in the QUANTEC reviews unless
 > otherwise noted. Clinically, these data should be applied with caution. Clinicians are
@@ -32,6 +36,27 @@ values may be used.
 
 > **†** All at standard fractionation (i.e., 1.8–2.0 Gy per daily fraction) unless otherwise
 > noted. Vx is the volume of the organ receiving ≥ x Gy. Dmax = Maximum radiation dose.
+
+> **‖** Dx = minimum dose received by the "hottest" x% (or x cc's) of the organ.
+
+> **††** Classic Radiation induced liver disease (RILD) involves anicteric hepatomegaly and
+> ascites, typically occurring between 2 weeks and 3 months after therapy. Classic RILD also
+> involves elevated alkaline phosphatase (more than twice the upper limit of normal or baseline
+> value).
+
+The first two govern every organ in the table. **‖** and **††** were added to the site when the
+abdomen and pelvis tables landed and the notation they define came into use — ‖ for the liver
+`D100`, penile bulb `D90`/`D60–70`, brain stem `D1–10 cc` and stomach `D100` rows, †† for the
+liver endpoint. They were re-verified against S18 on 2026-08-03 and recorded here, because for a
+while the site carried four footnotes while this record documented two.
+
+Table 1 has five further footnotes, all organ-specific rather than governing. Each is carried on
+the site next to the table it belongs to rather than in the box: **‡** Non-TBI (kidney, in the
+caption); **§** with combined chemotherapy (small bowel, in the caption); **¶** severe xerostomia
+depends on other factors including submandibular dose (parotid, in the provenance line);
+**\*\*** estimated by Dr. Eisbruch (larynx edema rows, in the provenance line); **‡‡** the optic
+neuropathy cases in the 55–60 Gy range received ≥59 Gy, excluding pituitary-tumour patients
+(optic nerve, in the provenance line).
 
 ## Spinal cord — S15
 
@@ -332,9 +357,11 @@ defect; the reasoning argued against it is kept below so the trade-off stays vis
 
 What shipped as a result:
 
-- The three tables live in `/quantec/#data`, reachable from the CNS, Cardiovascular and
-  Respiratory cards.
-- Both QUANTEC footnotes are reproduced verbatim above the tables, including "Clinicians are
+- The tables live in `/quantec/#data`, grouped under five body-system headings and reachable
+  from every organ card above them. (The pilot shipped three tables reached from the CNS,
+  Cardiovascular and Respiratory cards; all 18 are now published and all six cards route to
+  them.)
+- The QUANTEC footnotes are reproduced verbatim above the tables, including "Clinicians are
   strongly advised to use the individual QUANTEC articles" and "They largely do not reflect
   modern IMRT".
 - Each table carries its source page and a link to the organ review.
