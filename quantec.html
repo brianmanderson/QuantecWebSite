@@ -13,7 +13,7 @@ permalink: /quantec/
 <section class="content-section">
     <h3><i class="fas fa-book-open"></i> How to use this page</h3>
     <p>The dose/volume tolerance guidance on this site comes from the original QUANTEC reviews, published as a special issue of the <em>International Journal of Radiation Oncology Biology Physics</em>. This page routes you to them: find the organ system, then follow it to the review that carries the constraint.</p>
-    <p>Dose/volume/outcome values are stated directly in the <a href="#data">tables below</a> for the central nervous system, head and neck, thorax and pelvis. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. The abdominal organs are still being transcribed, and route to the paper in the meantime.</p>
+    <p>Dose/volume/outcome values are stated directly in the <a href="#data">tables below</a> for every organ system the QUANTEC summary table covers. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. Each table names the paper and page its rows came from.</p>
     <div class="mt-3">
         <a href="{{ '/publications/' | relative_url }}" class="btn">Browse all QUANTEC papers</a>
     </div>
@@ -74,7 +74,7 @@ permalink: /quantec/
                 <li><a href="{{ '/publications/' | relative_url }}#pelvis">Rectal toxicity</a></li>
                 <li><a href="{{ '/publications/' | relative_url }}#thorax">Esophageal dose-volume correlates</a></li>
             </ul>
-            <p class="panel-note">These reviews sit under Abdomen, Pelvis and Thorax on the Publications page — each topic links to its own.</p>
+            <p class="panel-note">Liver, stomach, small bowel and kidney values are <a href="#group-abdomen" aria-label="Abdomen dose/volume values, tabulated below on this page">tabulated below</a>; esophagus is under <a href="#group-thorax" aria-label="Thorax dose/volume values, tabulated below on this page">Thorax</a> and rectum under <a href="#group-pelvis" aria-label="Pelvis dose/volume values, tabulated below on this page">Pelvis</a>. These reviews sit under Abdomen, Pelvis and Thorax on the Publications page — each topic links to its own.</p>
         </div>
         <div class="gallery-item" id="genitourinary">
             <h4><i class="fas fa-flask"></i> Genitourinary and Pelvis</h4>
@@ -91,7 +91,7 @@ permalink: /quantec/
 
 <section class="content-section" id="data">
     <h3><i class="fas fa-table"></i> Dose/volume/outcome data</h3>
-    <p>Every row below is transcribed from a single source — Table 1 of the QUANTEC summary paper — and carries the page it appears on. Central nervous system, head and neck, thorax and pelvis are published; the abdominal organs are still being transcribed.</p>
+    <p>Every row below is transcribed from a single source — Table 1 of the QUANTEC summary paper — and carries the page it appears on. All 18 organ entries in that table are now published.</p>
 
     <div class="highlight-box">
         <p><strong>Read this first.</strong> The table these rows come from carries two footnotes from its authors. Both are reproduced verbatim, because they govern how every value below may be used.</p>
@@ -104,6 +104,7 @@ permalink: /quantec/
         <a href="#group-cns">Central nervous system</a>
         <a href="#group-head-neck">Head and neck</a>
         <a href="#group-thorax">Thorax</a>
+        <a href="#group-abdomen">Abdomen</a>
         <a href="#group-pelvis">Pelvis</a>
     </p>
 
@@ -333,6 +334,90 @@ permalink: /quantec/
         </table>
     </div>
     <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03283-0/fulltext" target="_blank" rel="noopener" aria-label="Read the Esophagus QUANTEC review, Werner-Wasik M">Werner-Wasik M, Yorke E, Deasy J, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Esophagus&rdquo;, S86&ndash;S93</a>.</p>
+
+    <h4 id="group-abdomen" class="constraint-group">Abdomen</h4>
+    <div class="constraint-table-wrap" id="data-liver" role="region" tabindex="0" aria-label="Liver dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Liver <span class="constraint-shared">Every row: endpoint classic RILD (radiation-induced liver disease)</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">3D-CRT or whole organ</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &lt;30&ndash;32 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td rowspan="2" data-label="Notes">Excluding patients with pre-existing liver disease or hepatocellular carcinoma, as tolerance doses are lower in these patients</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">3D-CRT</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &lt;42 Gy</td><td class="num" data-label="Rate">&lt;50%</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">3D-CRT or whole organ</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &lt;28 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td rowspan="2" data-label="Notes">In patients with Child-Pugh A pre-existing liver disease or hepatocellular carcinoma, excluding hepatitis B reactivation as an endpoint</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">3D-CRT</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &lt;36 Gy</td><td class="num" data-label="Rate">&lt;50%</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">SBRT</td><td data-label="Fractionation">3 fractions</td><td class="num" data-label="Dose">Mean dose &lt;13 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">For primary liver cancer</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">SBRT</td><td data-label="Fractionation">6 fractions</td><td class="num" data-label="Dose">Mean dose &lt;18 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">For primary liver cancer</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">SBRT</td><td data-label="Fractionation">3 fractions</td><td class="num" data-label="Dose">Mean dose &lt;15 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">For liver metastases</td></tr>
+                <tr><td data-label="Volume">Whole liver &minus; GTV</td><td data-label="Technique">SBRT</td><td data-label="Fractionation">6 fractions</td><td class="num" data-label="Dose">Mean dose &lt;20 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">For liver metastases</td></tr>
+                <tr><td data-label="Volume">&gt;700 cc of normal liver</td><td data-label="Technique">SBRT</td><td data-label="Fractionation">3&ndash;5 fractions</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;15 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">Critical volume based</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S17. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03295-7/fulltext" target="_blank" rel="noopener" aria-label="Read the Liver QUANTEC review, Pan CC">Pan CC, Kavanagh BD, Dawson LA, et al., &ldquo;Radiation-Associated Liver Injury&rdquo;, S94&ndash;S100</a>. The four SBRT rows are confirmed verbatim by that review, which recommends mean normal liver dose &lt;13 Gy (primary, three fractions), &lt;18 Gy (primary, six), &lt;15 Gy (metastases, three) and &lt;20 Gy (metastases, six), plus a critical-volume constraint of &ge;700 mL receiving &le;15 Gy in three to five fractions.</p>
+    <div class="constraint-table-wrap" id="data-kidney" role="region" tabindex="0" aria-label="Kidney dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Kidney <span class="constraint-shared">Every row: bilateral whole kidney (non-TBI), endpoint clinically relevant renal dysfunction</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Technique">Bilateral whole organ or 3D-CRT</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &lt;15&ndash;18 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes"></td></tr>
+                <tr><td data-label="Technique">Bilateral whole organ</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &lt;28 Gy</td><td class="num" data-label="Rate">&lt;50%</td><td data-label="Notes"></td></tr>
+                <tr><td data-label="Technique">3D-CRT</td><td data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">V<sub>12</sub> &lt;55%, V<sub>20</sub> &lt;32%, V<sub>23</sub> &lt;30%, V<sub>28</sub> &lt;20%</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">For combined kidney</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S17. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03282-9/fulltext" target="_blank" rel="noopener" aria-label="Read the Kidney QUANTEC review, Dawson LA">Dawson LA, Kavanagh BD, Paulino AC, et al., &ldquo;Radiation-Associated Kidney Injury&rdquo;, S108&ndash;S115</a>. Rows 1 and 2 are cross-confirmed by that review, which reports a threshold of 15 Gy and 5% and 50% risk at 18 Gy and 28 Gy for whole-kidney RT. Its Table 5, headed &ldquo;suggested dose&ndash;volume constraints for estimated risk of &lt;5%&rdquo;, lists V<sub>12</sub> &lt;55% and V<sub>28</sub> &lt;20%; V<sub>20</sub> and V<sub>23</sub> appear in the summary table only.</p>
+    <div class="constraint-table-wrap" id="data-stomach" role="region" tabindex="0" aria-label="Stomach dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Stomach <span class="constraint-shared">Every row: whole organ, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint ulceration</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Technique">Whole organ</td><td class="num" data-label="Dose">D<sub>100</sub> &lt;45 Gy</td><td class="num" data-label="Rate">&lt;7%</td><td data-label="Notes"></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S17. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03286-6/fulltext" target="_blank" rel="noopener" aria-label="Read the Stomach QUANTEC review, Kavanagh BD">Kavanagh BD, Pan CC, Dawson LA, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Stomach and Small Bowel&rdquo;, S101&ndash;S107</a>. That review notes no comparable predictive model of acute toxicity is available for stomach.</p>
+    <div class="constraint-table-wrap" id="data-small-bowel" role="region" tabindex="0" aria-label="Small bowel dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Small bowel <span class="constraint-shared">Every row: 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint Grade &ge;3 acute toxicity with combined chemotherapy</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Volume">Individual small bowel loops</td><td class="num" data-label="Dose">V<sub>15</sub> &lt;120 cc</td><td class="num" data-label="Rate">&lt;10%</td><td data-label="Notes">Volume based on segmentation of the individual loops of bowel, not the entire potential peritoneal space</td></tr>
+                <tr><td data-label="Volume">Entire potential space within peritoneal cavity</td><td class="num" data-label="Dose">V<sub>45</sub> &lt;195 cc</td><td class="num" data-label="Rate">&lt;10%</td><td data-label="Notes">Volume based on the entire potential space within the peritoneal cavity</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S17. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03286-6/fulltext" target="_blank" rel="noopener" aria-label="Read the Small bowel QUANTEC review, Kavanagh BD">Kavanagh BD, Pan CC, Dawson LA, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Stomach and Small Bowel&rdquo;, S101&ndash;S107</a>. Both rows are confirmed by that review: &ldquo;V15 = 120 cc if individual bowel loops are outlined or V45 = 195 cc if entire peritoneal potential space of bowel is outlined&rdquo;.</p>
 
     <h4 id="group-pelvis" class="constraint-group">Pelvis</h4>
     <div class="constraint-table-wrap" id="data-rectum" role="region" tabindex="0" aria-label="Rectum dose, volume and outcome data">

@@ -149,7 +149,52 @@ on our side.
 **Penile bulb** (S18) — whole organ, 3D-CRT, endpoint severe erectile dysfunction. Mean dose to
 95% of gland <50 Gy → <35%; D90 <50 Gy → <35%; D60–70 <70 Gy → <55%.
 
-### Still to transcribe
+### Abdomen — 2026-08-03 (completes the table)
+
+**Liver** (S17) — endpoint classic RILD throughout. Whole liver − GTV: mean dose <30–32 Gy →
+<5% and <42 Gy → <50% ("Excluding patients with pre-existing liver disease or hepatocellular
+carcinoma…"); mean dose <28 Gy → <5% and <36 Gy → <50% ("In patients with Child-Pugh A
+pre-existing liver disease or hepatocellular carcinoma, excluding hepatitis B reactivation as an
+endpoint"). SBRT: <13 Gy/3 fx primary, <18 Gy/6 fx primary, <15 Gy/3 fx metastases, <20 Gy/6 fx
+metastases, all → <5%. >700 cc of normal liver: Dmax <15 Gy → <5%, critical-volume based.
+
+The SBRT rows were the ambiguous ones — four doses and four notes, interleaved. **The liver
+review confirms the pairing verbatim**: "< 13 Gy for primary liver cancer, in three fractions
+< 18 Gy for primary liver cancer, in six fractions < 15 Gy for liver metastases, in three
+fractions < 20 Gy for liver metastases, in six fractions", plus "≥ 700 mL of normal liver
+receives ≤ 15 Gy in three to five fractions".
+
+**Kidney** (S17) — bilateral whole kidney (non-TBI, footnote ‡), endpoint clinically relevant
+renal dysfunction. Mean dose <15–18 Gy → <5%; mean dose <28 Gy → <50%; V12 <55%, V20 <32%,
+V23 <30%, V28 <20% → <5%, "For combined kidney".
+
+Row 3 was flagged unresolved in the previous pass and is **now resolved**: the kidney review's
+Table 5 is headed "Suggested dose–volume constraints for estimated risk of <5%" and lists
+V12 <55% and V28 <20% under bilateral kidney irradiation. V20 and V23 appear in the summary
+table only — noted on the site rather than presented as if the organ paper carried them.
+
+**Stomach** (S17) — whole organ, endpoint ulceration. D100 <45 Gy → <7%. The organ review states
+no comparable predictive model of acute toxicity is available for stomach.
+
+**Small bowel** (S17) — 3D-CRT, endpoint Grade ≥3 acute toxicity with combined chemotherapy
+(footnote §). Individual small bowel loops: V15 <120 cc → <10%. Entire potential space within
+the peritoneal cavity: V45 <195 cc → <10%. Both confirmed by the organ review: "V15 = 120 cc if
+individual bowel loops are outlined or V45 = 195 cc if entire peritoneal potential space of
+bowel is outlined".
+
+**The Technique / Fractionation split earned itself here.** Liver is the only organ whose
+fractionation genuinely varies within one table — 3, 6, and 3–5 fractions alongside conventional
+rows. Under the pilot's single "Fractionation scheme" column those rows could not have been
+expressed without either dropping the technique or inventing a combined label.
+
+### Transcription complete
+
+All **18 organ entries** in Table 1 are transcribed and published: brain, brain stem, optic
+nerve/chiasm, spinal cord, cochlea, parotid, pharynx, larynx, lung, heart, esophagus, liver,
+kidney, stomach, small bowel, rectum, bladder, penile bulb. 60 dose rows across five body-system
+groups.
+
+### Superseded — was "still to transcribe"
 
 Abdomen (liver, stomach/small bowel, kidney) and pelvis (rectum, bladder, penile bulb). Kidney
 is partly resolved: rows 1 and 2 are cross-confirmed by the kidney review, which states "a
