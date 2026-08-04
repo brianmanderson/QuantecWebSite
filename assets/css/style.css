@@ -471,6 +471,17 @@ footer {
     vertical-align: middle;
 }
 
+/* A merged cell carrying the dose itself rather than a grouping key — only rectum, whose five
+   constraints are one set spanning both endpoint rows and so have to merge. In the other 17
+   tables the styling above marks the qualifier and never the number, so a clinician who has read
+   those learns to skim what it marks; rectum was wearing it on the one value they plan from.
+   Keep the merge and the centring, drop the emphasis. The rowspan's own borders still show the
+   span, and the caption states that the five are a single set. */
+.constraint-table .grouped.grouped-value {
+    background-color: transparent;
+    font-weight: 400;
+}
+
 /* Dose and rate cells must not break mid-value: "Mean dose = 13 Gy" wrapping after the "="
    reads as a different number at a glance. */
 .constraint-table .num {
@@ -600,7 +611,16 @@ footer {
        visible ones could never suppress a separator that is genuinely needed. Notes is the only
        column that is ever hidden this way and it is always last, so one step back is enough.
        Measured at 375px across all 62 cards. */
-    .constraint-table tbody tr td:last-child,
+    .constraint-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    /* Deliberately a SEPARATE rule, not two more arms on the selector list above. One
+       unparseable selector invalidates an entire comma list, so a browser without `:has()`
+       support would drop the baseline `td:last-child` rule along with these — stranding a
+       hairline on all 62 cards instead of the 21 this was written to fix, which is worse than
+       doing nothing. Split, such a browser loses only the refinement and keeps the baseline.
+       Never merge these two rules back together. */
     .constraint-table tbody tr td:has(+ td:last-child:empty),
     .constraint-table tbody tr td:has(+ td.grouped-note:last-child) {
         border-bottom: none;
