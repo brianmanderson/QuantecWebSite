@@ -425,13 +425,24 @@ footer {
     padding: 0.6rem 0.85rem;
     text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid #ececec;
+}
+
+/* Row separators sit on the TOP of each body cell, not the bottom. A cell merged with rowspan
+   belongs to the row it starts in, so a `tbody tr:last-child td` rule cannot reach one that
+   spans down into the last row: those cells kept a bottom border while the rest of the last row
+   had none, drawing a 1px stub across part of the table's bottom edge. Six tables showed it.
+   Anchoring the separator to the top means the last row has nothing below it whatever is merged,
+   and a merged cell still shows its group boundary because the next group's cells draw their own
+   top border. Don't reintroduce border-bottom here. */
+.constraint-table tbody td {
+    border-top: 1px solid #ececec;
 }
 
 .constraint-table thead th {
     background-color: #f0f7ff;
     color: #2c5aa0;
     font-weight: 600;
+    border-bottom: 1px solid #ececec;
 }
 
 /* Values identical across every row are hoisted out of the grid into the caption, rather than
@@ -458,10 +469,6 @@ footer {
     background-color: #fafcff;
     font-weight: 600;
     vertical-align: middle;
-}
-
-.constraint-table tbody tr:last-child td {
-    border-bottom: none;
 }
 
 /* Dose and rate cells must not break mid-value: "Mean dose = 13 Gy" wrapping after the "="
@@ -492,7 +499,14 @@ footer {
    880px, NOT the site's general 768px breakpoint. This block is the only one keyed to a width
    other than 768px, and it has to be: 768px is where the nav and the card grid restack, but it
    is not where these tables fit. The wrapper gets viewport minus about 145px of page padding,
-   and the widest table (kidney) needs 736px, so the grid layout only stops clipping at 881px.
+   so 881px yields a 736px wrapper.
+
+   736px was the *kidney* table's requirement when this number was first derived. Kidney has
+   since had its Technique and Fractionation columns hoisted into its caption and now needs only
+   511px; the widest table is now liver at 703px, which would fit from about 848px. 880 is kept
+   because it is the conservative side of that — a stacked layout running 30px wider than
+   strictly necessary costs nothing, whereas the grid clipping costs a Notes column. Re-measure
+   min-content widths before lowering it, and re-measure before adding any column.
    Keyed to 768px this block left a dead band from 769px to 880px — small laptops, split-screen
    windows, landscape tablets — where all 18 tables clipped their rightmost column behind a
    scroll with no visual affordance. That column is Notes, which carries the caveats qualifying
@@ -543,6 +557,15 @@ footer {
         gap: 0.5rem;
         border-bottom: 1px solid #f2f2f2;
         padding: 0.5rem 0.85rem;
+    }
+
+    /* The stacked layout draws its own separators between the cells of a card, so the grid's
+       top-anchored ones must be switched off or every card gains a stray leading rule.
+       This must be `tbody td`, matching the base rule's specificity — as `.constraint-table td`
+       it is (0,1,1) against the base rule's (0,1,2) and silently loses, which is the same trap
+       the comment on this media query records. Verified applying at 375px. */
+    .constraint-table tbody td {
+        border-top: 0;
     }
 
     .constraint-table tbody tr td:last-child {

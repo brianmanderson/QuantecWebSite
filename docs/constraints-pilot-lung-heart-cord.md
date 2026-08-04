@@ -324,15 +324,28 @@ transcription error.
    four 3D-CRT and five SBRT rows, Fractionation within each fraction count); brain stem (the
    three conventional rows, now one group); spinal cord (Technique `SRS` across its single- and
    3-fraction rows); larynx (`Edema` endpoint ×2); esophagus (`Grade ≥2 acute esophagitis`
-   endpoint ×3). Kidney's Technique and Fractionation columns became identical in every row once
-   4 was applied, so they were hoisted into the caption and the columns dropped, per the
-   convention below.
+   endpoint ×3).
+
+   Three tables lost their Technique column entirely to the caption, because ruling 4 left it
+   with one value: **kidney** (Technique and Fractionation both), **pharynx** and **stomach**.
+   That is the convention below — a column identical in every row belongs in the caption — and
+   applying it to only some of the three was itself caught as an inconsistency by review: stomach
+   would have shown a grid cell implying a per-row distinction that a one-row table cannot have,
+   while kidney showed the same collapsed value in its caption. Brain stem and liver keep the
+   column, because SRS/SBRT rows make it genuinely vary.
 
    **The Rate column is still never merged**, for the reason recorded below. The same reasoning
    blocked one further merge: the two spinal cord SRS rows now carry identical *note* text, but
    only because ruling 2 above moved "3 fractions," out of the 3-fraction row's note. The source
    wrote two different notes there, so merging them would assert a grouping the source does not
    make. They are left as two cells.
+
+   **One CSS rule had to change with them** (`assets/css/style.css`). Row separators were drawn
+   on the bottom of each cell, with `tbody tr:last-child td` clearing them on the last row. A
+   merged cell belongs to the row it *starts* in, so that selector cannot reach one spanning into
+   the last row, and six tables drew a 1px stub across part of their bottom edge — four of them
+   newly, from the merges above. Separators are now anchored to the top of each body cell, which
+   is rowspan-proof. The comment on the rule says so; don't reintroduce `border-bottom` there.
 
 ### The modern-IMRT caveat is now stated only where a source says it
 
