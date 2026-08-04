@@ -64,6 +64,29 @@ change adds or edits an external citation URL, open it in the browser and confir
 the paper it claims. See the content-accuracy rule in the `content-editing` skill; a citation
 that 404s is the mildest of the ways that can go wrong.
 
+### 2b. Duplicated clinical values still agree
+
+```bash
+python .claude/skills/release/scripts/check_restated_cells.py _site
+```
+
+Must print `OK: N restated cell(s) match the merged cell they stand in for` and exit 0.
+
+One value on this site is deliberately written twice. A cell merged with `rowspan` renders in its
+first row only, so the stacked phone layout cannot reach it from any later row — the rectum dose
+set is therefore stated once in the merged cell and again in a `.dose-restated` cell, and CSS
+shows whichever copy the current layout needs. That was chosen over printing it from `data-group`
+so the dose stays a real cell in the accessibility tree on a phone, rather than existing only as
+CSS generated content.
+
+The cost is two copies of a dose in the page, and **nothing but this check stops them drifting**.
+An edit that fixes one and misses the other leaves desktop and mobile quoting different
+constraints, with no visible symptom in either layout on its own. The check compares the cells'
+inner HTML exactly, so an entity or a subscript that differs fails too — that is deliberate, since
+`V<sub>50</sub>` and `V50` render differently.
+
+If you ever add another such pair, use the same two class names and it is covered automatically.
+
 ## 3. Nothing unintended got published
 
 ```bash
