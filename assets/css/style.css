@@ -122,12 +122,20 @@ main {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+/* A backstop only, and it must stay one: break-word breaks mid-word, and on the one heading that
+   needed it that read "Dose/volume/outcom" / "e data" at 375px — worse than the overhang it fixed.
+   That heading now carries <wbr> after its slashes and breaks there instead, which leaves this
+   rule doing nothing to it at any width. It stays so that a future heading with an oversized token
+   overflows into its own second line rather than pushing the whole page into horizontal scroll,
+   which is what happened at 320px before. If it ever visibly fires, add the <wbr>s rather than
+   accepting the mid-word break. */
 .content-section h3 {
     color: #2c5aa0;
     margin-bottom: 1rem;
     font-size: 1.8rem;
     border-bottom: 2px solid #e9ecef;
     padding-bottom: 0.5rem;
+    overflow-wrap: break-word;
 }
 
 .content-section p {
@@ -723,6 +731,41 @@ footer {
     .constraint-table caption {
         font-size: 1.05rem;
         padding-left: 0;
+    }
+}
+
+/* Narrow phones: put the column name above the value instead of beside it.
+
+   Must sit AFTER the 880px block — these rules match it at equal specificity and win on source
+   order alone, exactly as that block wins over the base rules. The two `display: none` rules in it
+   are safe: `td:empty` is (0,2,1) and `.grouped`/`.grouped-note` are (0,2,0), all of which outrank
+   the (0,1,1) here, so hidden cells stay hidden.
+
+   Why this width. The label column is a fixed 8.5rem, so everything the viewport loses comes out
+   of the value column: 123px at 375px, 108px at 360px, 68px at 320px. Below 375px that column is
+   narrower than the words put in it — the bladder Notes cell says "size/shape/location", one
+   128px token with no break opportunity in it — and `tr { overflow: hidden }`, which is there to
+   clip the group header to the card's rounded corner, then hides the overhang outright. 45px of
+   that caveat was invisible at 320px and 5px at 360px, with no scrollbar or any other affordance
+   to say so. A Notes caveat is what qualifies the dose beside it; silently truncating one is the
+   failure this whole stacked layout exists to prevent. Introduced by PR #24, fixed here.
+
+   Giving the value the full width is what fixes it, and it also reads better than the alternative:
+   letting the words break inside a 68px column left the bladder table 1111px tall at 320px against
+   745px this way, with mid-word breaks throughout. `overflow-wrap` stays as a backstop for a
+   future value longer than any measured here — at these widths nothing currently needs it.
+
+   375px and up are deliberately untouched: that layout is measured cell-by-cell in PR #24. */
+@media (max-width: 374px) {
+    .constraint-table td {
+        display: block;
+        overflow-wrap: break-word;
+    }
+
+    .constraint-table td::before {
+        display: block;
+        width: auto;
+        padding-right: 0;
     }
 }
 
