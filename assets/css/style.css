@@ -487,8 +487,21 @@ footer {
 
 /* Must sit AFTER the base rules above, not in the general responsive block near the top of this
    file — that block is earlier in source order, so at equal specificity the base rules would win
-   and these overrides would silently do nothing. Verified applying at 375px. */
-@media (max-width: 768px) {
+   and these overrides would silently do nothing. Verified applying at 375px.
+
+   880px, NOT the site's general 768px breakpoint. This block is the only one keyed to a width
+   other than 768px, and it has to be: 768px is where the nav and the card grid restack, but it
+   is not where these tables fit. The wrapper gets viewport minus about 145px of page padding,
+   and the widest table (kidney) needs 736px, so the grid layout only stops clipping at 881px.
+   Keyed to 768px this block left a dead band from 769px to 880px — small laptops, split-screen
+   windows, landscape tablets — where all 18 tables clipped their rightmost column behind a
+   scroll with no visual affordance. That column is Notes, which carries the caveats qualifying
+   the numbers: "Excludes purposeful whole lung irradiation", "Overly safe risk estimate based on
+   model predictions", "Point dose <<1 cc". A number rendered without its caveat is the failure
+   mode this whole section exists to avoid, so the stacked layout runs until the grid genuinely
+   fits. If a column is ever added to these tables, re-measure this number — it is derived from
+   the table width, not chosen. */
+@media (max-width: 880px) {
     /* Six columns of clinical data cannot be squeezed into a phone, and horizontal scrolling was
        actively dangerous here: at 375px the clip fell after column 3, so a reader saw
        "Whole organ | 3D-CRT | Symptomatic pneumonitis" with the dose and the rate both off-screen

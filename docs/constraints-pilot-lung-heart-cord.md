@@ -281,7 +281,7 @@ transcription error.
 ### The modern-IMRT caveat is now stated only where a source says it
 
 Table 1's `*` footnote ("They largely do not reflect modern IMRT") is a blanket statement across
-every organ in the table. It remains quoted verbatim in the box above all three tables, which is
+every organ in the table. It remains quoted verbatim in the box above the tables, which is
 where a blanket statement belongs.
 
 Beside the individual tables it appears **only for lung**, because only the lung review makes the
@@ -314,9 +314,15 @@ The protocol requires every number to be re-checked against the source by a sepa
 1. `pdftotext -layout` — preserves visual column position
 2. `pdftotext` (reading order) — preserves the PDF's internal text sequence
 
-They agree on every value in all three tables. The agreement is meaningful because the two
-methods fail differently: layout mode reconstructs columns geometrically and can bind a value to
-the wrong row when a cell wraps; reading order cannot, but loses the visual grouping.
+They agree on every value in all 18 tables — the pilot's three, and the 15 added when the same
+protocol was run over the rest of Table 1. The agreement is meaningful because the two methods
+fail differently: layout mode reconstructs columns geometrically and can bind a value to the
+wrong row when a cell wraps; reading order cannot, but loses the visual grouping.
+
+Re-run in full on 2026-08-03 by an independent review with no knowledge of what had changed:
+all 62 dose rows across the 18 tables re-checked against pp. S15–S18 by both methods, plus the
+four footnote blockquotes, the kidney Table 5 provenance claim, the lung S72 quote, and all 19
+citation links against the organ PDFs' own title pages. No discrepancy found.
 
 **One real ambiguity was caught this way and resolved.** In layout mode the lung block rendered
 as five mean-dose rows against a vertically displaced rate column, admitting two readings:

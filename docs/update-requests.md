@@ -55,6 +55,27 @@ On 3: the two labels suggested were "Dose Constraints" and "Constraints by Organ
 — they measure 610px and 639px against a 594px budget and wrap the header to two rows.
 "Constraints" fits at 569px with 25px of slack and breaks the name collision just as completely.
 
+### How the six organ cards route — settled, do not "normalise"
+
+Five cards end with a single `.panel-link` arrow to their section of the Publications page. **The
+Gastrointestinal card deliberately does not, and this is not an oversight** — it has been flagged
+as one by more than one review, so it is written down here.
+
+That card's six topics do not live in one section: small bowel, liver, kidney and stomach are
+under Abdomen, rectal toxicity under Pelvis, esophagus under Thorax. A single "→ papers" arrow
+would have to pick one and be wrong for the other two, so each bullet links to its own
+destination and the card's note says that is what is happening. The `.panel-link` it originally
+carried pointed at Abdomen alone and was removed for exactly this reason.
+
+Every other card's topics do sit in one section, so they take the arrow. Respiratory was the
+odd one out in the other direction until 2026-08-03 — per-bullet links but no arrow, on a card
+whose topics are all under Thorax — and now matches its four siblings.
+
+**The rule, if a card is ever added:** topics in one Publications section → one `.panel-link`
+arrow, unlinked bullets. Topics scattered across sections → per-bullet links, no arrow, and a
+note saying so. Do not make the six cards uniform for its own sake; the difference carries
+information.
+
 ---
 
 The original open list, kept for context. The numbering matches
