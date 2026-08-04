@@ -391,11 +391,24 @@ rather than an assumption:
    limits", and warns the data "largely do not reflect modern IMRT" — which in 2026 is most
    thoracic treatment. A table on the site is a summary of a summary the authors already
    qualified.
-2. **The owner has already ruled once in this territory.** `update-requests.md` ruling 2 reverted
-   "Lung V20/V30 constraints" as overstating the evidence, on the grounds that the lung review's
-   abstract says there are "no evident threshold 'tolerance dose–volume' levels". The summary
-   table's `V20 ≤ 30%` row is exactly that number. Publishing it re-raises a question that was
-   settled the other way ten months ago.
+2. **The owner has already ruled once in this territory.** `update-requests.md` ruling 2 restored
+   "Lung V20/V30 constraints" verbatim, overruling an implementer rewrite that had removed it on
+   the grounds that the lung review's abstract says there are "no evident threshold
+   'tolerance dose–volume' levels". The summary table's `V20 ≤ 30%` row is exactly that number.
+
+   > **Corrected 2026-08-03.** This point previously read that ruling 2 "reverted 'Lung V20/V30
+   > constraints' as overstating the evidence" and that publishing "re-raises a question settled
+   > the other way ten months ago". That inverted the ruling. Ruling 2 reverted the *rewrite*,
+   > putting the owner's V20/V30 wording back — so the owner was content to name V20 as a
+   > constraint, and this point in fact cut **in favour of** publishing the row, not against it.
+   > Left in place rather than deleted because an argument recorded backwards is worth showing
+   > as such: anyone re-reading this section was being told the owner had ruled against a thing
+   > they had ruled for.
 
 None of this makes publishing wrong — it is a real editorial choice with a real upside, and the
 values above are verified and ready. It was the site owner's call, and it was made: publish.
+
+**Postscript, 2026-08-03.** The tension in point 2 resolved itself once the table was live. The
+card was asserting a V30 constraint that Table 1 does not carry, so the owner dropped V30 from
+that bullet; it now reads "Lung V20 constraints". V20 stands, published and cited. The full
+account is in ruling 2's follow-up in [update-requests.md](update-requests.md).
