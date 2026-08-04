@@ -499,22 +499,42 @@ footer {
    880px, NOT the site's general 768px breakpoint. This block is the only one keyed to a width
    other than 768px, and it has to be: 768px is where the nav and the card grid restack, but it
    is not where these tables fit. The wrapper gets viewport minus about 145px of page padding,
-   so 881px yields a 736px wrapper.
-
-   736px was the *kidney* table's requirement when this number was first derived. Kidney has
-   since had its Technique and Fractionation columns hoisted into its caption and now needs only
-   511px; the widest table is now liver at 703px, which would fit from about 848px. 880 is kept
-   because it is the conservative side of that — a stacked layout running 30px wider than
-   strictly necessary costs nothing, whereas the grid clipping costs a Notes column. Re-measure
-   min-content widths before lowering it, and re-measure before adding any column.
-   Keyed to 768px this block left a dead band from 769px to 880px — small laptops, split-screen
+   and the widest table's content needs 703px, so the grid layout stops clipping at about 850px.
+   Keyed to 768px this block left a dead band from 769px to ~849px — small laptops, split-screen
    windows, landscape tablets — where all 18 tables clipped their rightmost column behind a
    scroll with no visual affordance. That column is Notes, which carries the caveats qualifying
    the numbers: "Excludes purposeful whole lung irradiation", "Overly safe risk estimate based on
    model predictions", "Point dose <<1 cc". A number rendered without its caveat is the failure
    mode this whole section exists to avoid, so the stacked layout runs until the grid genuinely
-   fits. If a column is ever added to these tables, re-measure this number — it is derived from
-   the table width, not chosen. */
+   fits.
+
+   880 keeps about 30px of margin. Stacking a little early hides nothing, so that is the
+   direction to err in, and the value stands.
+
+   NEVER derive this from the rendered table width. These tables are width: 100% above a
+   min-width: 680px floor, so above it they measure exactly what the wrapper gives them — 735px
+   at 880px, 736px at 881px. Reading the table at the width where clipping stopped therefore
+   just restates the viewport.
+
+   But the floor is NOT the requirement either, and that correction cost a round: this comment
+   briefly read "every one of these tables has min-width: 680px, so the grid stops clipping at
+   825px", having spotted the circularity above and over-corrected past the real number. Forcing
+   the wrapper to 680px clips liver by 25px — its Notes column, the exact failure this block
+   exists to prevent. Measure each table's INTRINSIC width instead, which is neither circular nor
+   the floor:
+
+       t.style.width = 'min-content'; t.style.minWidth = '0';   // then read getBoundingClientRect
+
+   Measured that way: liver 703px (widest), cochlea 610, bladder 575, stomach 294. 703 + 145 of
+   page chrome is ~850px, hence the ~30px of margin at 880.
+
+   A walk-up loop cannot find this number. Below 880px the stacked layout is already live and
+   never clips, so a loop starting under the breakpoint returns its own start value. Probe the
+   grid by forcing wrapper widths at a viewport above 880, or by measuring intrinsic width as
+   above; allow ~2px for the wrapper's borders, which makes every table read 2px over at exactly
+   its own width. Kidney used to be the widest at 736px — that it also equalled 881 − 145 was a
+   coincidence, and it is what made the figure look circular when it was in fact correct. Its
+   Technique and Fractionation columns have since moved into its caption and it is now 511px. */
 @media (max-width: 880px) {
     /* Six columns of clinical data cannot be squeezed into a phone, and horizontal scrolling was
        actively dangerous here: at 375px the clip fell after column 3, so a reader saw
