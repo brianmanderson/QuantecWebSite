@@ -71,6 +71,73 @@ the Heart", S77–S85 (`quantec-thorax-heart.pdf`).
 | Pericardium | 3D-CRT | Pericarditis | V30 < 46% | <15% | |
 | Whole organ | 3D-CRT | Long-term cardiac mortality | V25 < 10% | <1% | Overly safe risk estimate based on model predictions |
 
+## Extension to CNS, head and neck, and thorax — 2026-08-03
+
+Eight further organs transcribed from the same Table 1, by the same two-method protocol. Rows
+below are the verbatim transcription; page is where each row appears.
+
+**Brain** (S15) — whole organ, endpoint symptomatic necrosis. 3D-CRT: Dmax <60 Gy → <3%;
+Dmax = 72 Gy → 5%; Dmax = 90 Gy → 10% (one note across the three: "Data at 72 and 90 Gy,
+extrapolated from BED models"). SRS single fraction: V12 <5–10 cc → <20%, "Rapid rise when
+V12 > 5–10 cc".
+
+**Brain stem** (S15) — whole organ, endpoint permanent cranial neuropathy or necrosis.
+Irradiation type "Whole organ": Dmax <54 Gy → <5%. 3D-CRT: D1–10 cc ≤59 Gy → <5%;
+Dmax <64 Gy → <5%, "Point dose <<1 cc". SRS single fraction: Dmax <12.5 Gy → <5%, "For patients
+with acoustic tumors".
+
+**Optic nerve / chiasm** (S15) — whole organ, endpoint optic neuropathy. 3D-CRT: Dmax <55 Gy →
+<3%; Dmax 55–60 Gy → 3–7%; Dmax >60 Gy → >7–20% (one note across the three: "Given the small
+size, 3D CRT is often whole organ‡‡"). SRS single fraction: Dmax <12 Gy → <10%.
+
+**Cochlea** (S15) — whole organ, endpoint sensory neural hearing loss. 3D-CRT: mean dose ≤45 Gy
+→ <30%, "Mean dose to cochlear, hearing at 4 kHz". SRS single fraction: prescription dose ≤14 Gy
+→ <25%, "Serviceable hearing".
+
+**Parotid** (S15) — 3D-CRT, endpoint long-term parotid salivary function reduced to <25% of
+pre-RT level. Bilateral whole parotid glands: mean dose <25 Gy → <20%, "For combined parotid
+glands¶". Unilateral whole parotid gland: mean dose <20 Gy → <20%, "For single parotid gland.
+At least one parotid gland spared to <20 Gy¶".
+
+**Pharynx** (S16) — pharyngeal constrictors, irradiation type "Whole organ", endpoint
+symptomatic dysphagia and aspiration. Mean dose <50 Gy → <20%, "Based on Section B4 in paper".
+
+**Larynx** (S16) — whole organ, 3D-CRT. Vocal dysfunction: Dmax <66 Gy → <20%. Aspiration: mean
+dose <50 Gy → <30%. Edema: mean dose <44 Gy → <20%; V50 <27% → <20% (one note across the two
+edema rows, "Without chemotherapy, based on single study in patients without larynx cancer\*\*").
+
+**Esophagus** (S16) — whole organ, 3D-CRT. Grade ≥3 acute esophagitis: mean dose <34 Gy → 5–20%,
+"Based on RTOG and several studies". Grade ≥2 acute esophagitis: V35 <50%, V50 <40%, V70 <20%,
+each → <30% (one note across the three: "A variety of alternate threshold doses have been
+implicated. Appears to be a dose/volume response").
+
+Footnote markers above are Table 1's own: ‡‡ records that the optic neuropathy cases in the
+55–60 Gy range received ≥59 Gy and that patients with pituitary tumours are excluded; ¶ that
+severe xerostomia depends on other factors including submandibular dose; \*\* that the larynx
+edema rows are an estimate by Dr Eisbruch. All three are reproduced on the site next to their
+tables.
+
+### The "Irradiation type" column had to be split — ruled 2026-08-03
+
+The pilot published that column as `Fractionation scheme` with `3D-CRT` rendered as
+`Conventional (1.8–2.0 Gy/fraction)`. **That does not generalise.** Four organs carry values in
+that column which are not fractionation schemes at all: brain stem row 1 and pharynx read
+"Whole organ", liver reads "3D-CRT or Whole organ", kidney "Bilateral whole organ or 3D-CRT".
+
+The column is therefore split into **Technique** (the source's value verbatim) and
+**Fractionation** (conventional / single fraction / 3 fractions, per footnote †). Nothing is
+reinterpreted and both facts are stated. Cord, lung and heart were migrated to the same scheme.
+
+### Still to transcribe
+
+Abdomen (liver, stomach/small bowel, kidney) and pelvis (rectum, bladder, penile bulb). Kidney
+is partly resolved: rows 1 and 2 are cross-confirmed by the kidney review, which states "a
+threshold dose for RT injury of 15 Gy with a 5% and 50% risk of injury at 5 years for
+whole-kidney RT of 18 Gy and 28 Gy, respectively" — matching mean dose <15–18 → <5% and mean
+dose <28 → <50%. **The third kidney row is not yet resolved**: whether V12 <55%, V20 <32%,
+V23 <30%, V28 <20% are one row of alternatives or several, and how they pair to rates, cannot be
+settled from the text extraction and must not be guessed.
+
 ## Where the site's wording departs from the source — ruled 2026-08-03
 
 The tables above are the verbatim transcription. The published tables differ from it in exactly

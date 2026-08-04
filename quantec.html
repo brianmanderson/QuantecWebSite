@@ -13,7 +13,7 @@ permalink: /quantec/
 <section class="content-section">
     <h3><i class="fas fa-book-open"></i> How to use this page</h3>
     <p>The dose/volume tolerance guidance on this site comes from the original QUANTEC reviews, published as a special issue of the <em>International Journal of Radiation Oncology Biology Physics</em>. This page routes you to them: find the organ system, then follow it to the review that carries the constraint.</p>
-    <p>For spinal cord, lung and heart, selected dose/volume/outcome values are stated directly in the <a href="#data">tables below</a>. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. Every other organ system routes to the paper rather than restating its numbers.</p>
+    <p>Dose/volume/outcome values are stated directly in the <a href="#data">tables below</a> for the central nervous system, head and neck, and thorax. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. Abdomen and pelvis are still being transcribed, and route to the paper in the meantime.</p>
     <div class="mt-3">
         <a href="{{ '/publications/' | relative_url }}" class="btn">Browse all QUANTEC papers</a>
     </div>
@@ -31,7 +31,7 @@ permalink: /quantec/
                 <li>Optic nerves and chiasm dose-volume-response</li>
             </ul>
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#cns">CNS papers <i class="fas fa-arrow-right"></i></a></p>
-            <p class="panel-note">Spinal cord dose/volume values are <a href="#data-spinal-cord" aria-label="Spinal cord dose/volume values, tabulated below on this page">tabulated below</a>.</p>
+            <p class="panel-note">Brain, brain stem, optic nerve and spinal cord values are <a href="#group-cns" aria-label="Central nervous system dose/volume values, tabulated below on this page">tabulated below</a>.</p>
         </div>
         <div class="gallery-item" id="head-and-neck">
             <h4><i class="fas fa-head-side-mask"></i> Head and Neck</h4>
@@ -41,6 +41,7 @@ permalink: /quantec/
                 <li>Larynx/Pharynx dose-volume-response</li>
             </ul>
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#head-and-neck">Head and neck papers <i class="fas fa-arrow-right"></i></a></p>
+            <p class="panel-note">Cochlea, parotid, pharynx and larynx values are <a href="#group-head-neck" aria-label="Head and neck dose/volume values, tabulated below on this page">tabulated below</a>.</p>
         </div>
         <div class="gallery-item" id="cardiovascular">
             <h4><i class="fas fa-heart"></i> Cardiovascular System</h4>
@@ -51,17 +52,17 @@ permalink: /quantec/
                 <li>Cardiac toxicity models</li>
             </ul>
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#thorax">Thorax papers <i class="fas fa-arrow-right"></i></a></p>
-            <p class="panel-note">Heart dose/volume values are <a href="#data-heart" aria-label="Heart dose/volume values, tabulated below on this page">tabulated below</a>.</p>
+            <p class="panel-note">Heart dose/volume values are <a href="#data-heart" aria-label="Heart dose/volume values, tabulated below on this page">tabulated below</a>. Esophagus is under <a href="#group-thorax" aria-label="Thorax dose/volume values, tabulated below on this page">Thorax</a>.</p>
         </div>
         <div class="gallery-item" id="respiratory">
             <h4><i class="fas fa-lungs"></i> Respiratory System</h4>
             <ul>
-                <li><a href="{{ '/publications/' | relative_url }}#thorax">Lung V20/V30 constraints</a></li>
-                <li><a href="{{ '/publications/' | relative_url }}#thorax">Mean lung dose limits</a></li>
+                <li><a href="#data-lung">Lung V20/V30 constraints</a></li>
+                <li><a href="#data-lung">Mean lung dose limits</a></li>
                 <li><a href="{{ '/publications/' | relative_url }}#thorax">Pneumonitis risk models</a></li>
                 <li>Trachea/bronchi guidelines</li>
             </ul>
-            <p class="panel-note">Lung dose/volume values are <a href="#data-lung" aria-label="Lung dose/volume values, tabulated below on this page">tabulated below</a>. Trachea and bronchi were not covered by the original QUANTEC reviews, so that topic has no paper to link to.</p>
+            <p class="panel-note">Trachea and bronchi were not covered by the original QUANTEC reviews, so that topic has no paper to link to.</p>
         </div>
         <div class="gallery-item" id="gastrointestinal">
             <h4><i class="fas fa-utensils"></i> Gastrointestinal System</h4>
@@ -98,31 +99,180 @@ permalink: /quantec/
         <p>Source for both footnotes and every table below: Marks LB, Yorke ED, Jackson A, et al. &ldquo;Use of Normal Tissue Complication Probability Models in the Clinic.&rdquo; <em>IJROBP</em> 2010;76(3 Suppl):S10&ndash;S19, Table 1 (pp. S15&ndash;S18).</p>
     </div>
 
-    <div class="constraint-table-wrap" id="data-spinal-cord" role="region" tabindex="0" aria-label="Spinal cord dose, volume and outcome data">
+    <p class="subnav">
+        <a href="#group-cns">Central nervous system</a>
+        <a href="#group-head-neck">Head and neck</a>
+        <a href="#group-thorax">Thorax</a>
+    </p>
+
+    <h4 id="group-cns" class="constraint-group">Central nervous system</h4>
+    <div class="constraint-table-wrap" id="data-brain" role="region" tabindex="0" aria-label="Brain dose, volume and outcome data">
         <table class="constraint-table">
-            <caption>Spinal cord <span class="constraint-shared">Every row: partial organ, endpoint myelopathy</span></caption>
+            <caption>Brain <span class="constraint-shared">Every row: whole organ, endpoint symptomatic necrosis</span></caption>
             <thead>
                 <tr>
-                    <th scope="col">Fractionation scheme</th>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
                     <th scope="col">Dose / dose-volume parameter</th>
                     <th scope="col">Rate</th>
                     <th scope="col">Notes on dose/volume parameters</th>
                 </tr>
             </thead>
             <tbody>
-                <tr data-group="Conventional (1.8&ndash;2.0 Gy/fraction)"><td class="grouped" rowspan="3" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> = 50 Gy</td><td class="num" data-label="Rate">0.2%</td><td data-label="Notes">Including full cord cross-section</td></tr>
-                <tr data-group="Conventional (1.8&ndash;2.0 Gy/fraction)"><td class="num" data-label="Dose">D<sub>max</sub> = 60 Gy</td><td class="num" data-label="Rate">6%</td><td data-label="Notes"></td></tr>
-                <tr data-group="Conventional (1.8&ndash;2.0 Gy/fraction)"><td class="num" data-label="Dose">D<sub>max</sub> = 69 Gy</td><td class="num" data-label="Rate">50%</td><td data-label="Notes"></td></tr>
-                <tr data-group="SRS (single fraction)"><td class="grouped" data-label="Fractionation">SRS (single fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> = 13 Gy</td><td class="num" data-label="Rate">1%</td><td data-label="Notes">Partial cord cross-section irradiated</td></tr>
-                <tr data-group="SRS (3 fraction)"><td class="grouped" data-label="Fractionation">SRS (3 fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> = 20 Gy</td><td class="num" data-label="Rate">1%</td><td data-label="Notes">Partial cord cross-section irradiated</td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="grouped" rowspan="3" data-label="Technique">3D-CRT</td><td class="grouped" rowspan="3" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;60 Gy</td><td class="num" data-label="Rate">&lt;3%</td><td rowspan="3" data-label="Notes">Data at 72 and 90 Gy, extrapolated from BED models</td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> = 72 Gy</td><td class="num" data-label="Rate">5%</td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> = 90 Gy</td><td class="num" data-label="Rate">10%</td></tr>
+                <tr data-group="SRS &middot; single fraction"><td class="grouped" data-label="Technique">SRS</td><td class="grouped" data-label="Fractionation">Single fraction</td><td class="num" data-label="Dose">V<sub>12</sub> &lt;5&ndash;10 cc</td><td class="num" data-label="Rate">&lt;20%</td><td data-label="Notes">Rapid rise when V<sub>12</sub> &gt; 5&ndash;10 cc</td></tr>
             </tbody>
         </table>
     </div>
-    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy). Transcribed from Table 1, p. S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03296-9/fulltext" target="_blank" rel="noopener" aria-label="Read Radiation Dose-Volume Effects in the Spinal Cord, Kirkpatrick et al.">Kirkpatrick JP, van der Kogel AJ, Schultheiss TE, &ldquo;Radiation Dose&ndash;Volume Effects in the Spinal Cord&rdquo;, S42&ndash;S49</a>.</p>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03287-8/fulltext" target="_blank" rel="noopener" aria-label="Read the Brain QUANTEC review, Lawrence YR">Lawrence YR, Li XA, El Naqa I, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Brain&rdquo;, S20&ndash;S27</a>.</p>
+    <div class="constraint-table-wrap" id="data-brain-stem" role="region" tabindex="0" aria-label="Brain stem dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Brain stem <span class="constraint-shared">Every row: whole organ, endpoint permanent cranial neuropathy or necrosis</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-group="Whole organ &middot; conventional"><td class="grouped" data-label="Technique">Whole organ</td><td class="grouped" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;54 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes"></td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="grouped" rowspan="2" data-label="Technique">3D-CRT</td><td class="grouped" rowspan="2" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">D<sub>1&ndash;10 cc</sub> &le;59 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes"></td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> &lt;64 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">Point dose &lt;&lt;1 cc</td></tr>
+                <tr data-group="SRS &middot; single fraction"><td class="grouped" data-label="Technique">SRS</td><td class="grouped" data-label="Fractionation">Single fraction</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;12.5 Gy</td><td class="num" data-label="Rate">&lt;5%</td><td data-label="Notes">For patients with acoustic tumors</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03582-2/fulltext" target="_blank" rel="noopener" aria-label="Read the Brain stem QUANTEC review, Mayo C">Mayo C, Yorke E, Merchant TE, &ldquo;Radiation Associated Brainstem Injury&rdquo;, S36&ndash;S41</a>.</p>
+    <div class="constraint-table-wrap" id="data-optic-nerve" role="region" tabindex="0" aria-label="Optic nerve / chiasm dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Optic nerve / chiasm <span class="constraint-shared">Every row: whole organ, endpoint optic neuropathy</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-group="3D-CRT &middot; conventional"><td class="grouped" rowspan="3" data-label="Technique">3D-CRT</td><td class="grouped" rowspan="3" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;55 Gy</td><td class="num" data-label="Rate">&lt;3%</td><td rowspan="3" data-label="Notes">Given the small size, 3D-CRT is often whole organ</td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> 55&ndash;60 Gy</td><td class="num" data-label="Rate">3&ndash;7%</td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> &gt;60 Gy</td><td class="num" data-label="Rate">&gt;7&ndash;20%</td></tr>
+                <tr data-group="SRS &middot; single fraction"><td class="grouped" data-label="Technique">SRS</td><td class="grouped" data-label="Fractionation">Single fraction</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;12 Gy</td><td class="num" data-label="Rate">&lt;10%</td><td data-label="Notes"></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03284-2/fulltext" target="_blank" rel="noopener" aria-label="Read the Optic nerve / chiasm QUANTEC review, Mayo C">Mayo C, Martel MK, Marks LB, et al., &ldquo;Radiation Dose&ndash;Volume Effects of Optic Nerves and Chiasm&rdquo;, S28&ndash;S35</a>. Table 1 adds that the neuropathy cases in the 55&ndash;60 Gy range received &ge;59 Gy, and excludes patients with pituitary tumours, where tolerance may be reduced.</p>
+    <div class="constraint-table-wrap" id="data-spinal-cord" role="region" tabindex="0" aria-label="Spinal cord dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Spinal cord <span class="constraint-shared">Every row: partial organ, endpoint myelopathy</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-group="3D-CRT &middot; conventional"><td class="grouped" rowspan="3" data-label="Technique">3D-CRT</td><td class="grouped" rowspan="3" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">D<sub>max</sub> = 50 Gy</td><td class="num" data-label="Rate">0.2%</td><td data-label="Notes">Including full cord cross-section</td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> = 60 Gy</td><td class="num" data-label="Rate">6%</td><td data-label="Notes"></td></tr>
+                <tr data-group="3D-CRT &middot; conventional"><td class="num" data-label="Dose">D<sub>max</sub> = 69 Gy</td><td class="num" data-label="Rate">50%</td><td data-label="Notes"></td></tr>
+                <tr data-group="SRS &middot; single fraction"><td class="grouped" data-label="Technique">SRS</td><td class="grouped" data-label="Fractionation">Single fraction</td><td class="num" data-label="Dose">D<sub>max</sub> = 13 Gy</td><td class="num" data-label="Rate">1%</td><td data-label="Notes">Partial cord cross-section irradiated</td></tr>
+                <tr data-group="SRS &middot; 3 fractions"><td class="grouped" data-label="Technique">SRS</td><td class="grouped" data-label="Fractionation">3 fractions</td><td class="num" data-label="Dose">D<sub>max</sub> = 20 Gy</td><td class="num" data-label="Rate">1%</td><td data-label="Notes">Partial cord cross-section irradiated</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03296-9/fulltext" target="_blank" rel="noopener" aria-label="Read the Spinal cord QUANTEC review, Kirkpatrick JP">Kirkpatrick JP, van der Kogel AJ, Schultheiss TE, &ldquo;Radiation Dose&ndash;Volume Effects in the Spinal Cord&rdquo;, S42&ndash;S49</a>.</p>
 
+    <h4 id="group-head-neck" class="constraint-group">Head and neck</h4>
+    <div class="constraint-table-wrap" id="data-cochlea" role="region" tabindex="0" aria-label="Cochlea dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Cochlea <span class="constraint-shared">Every row: whole organ, endpoint sensory neural hearing loss</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Fractionation</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-group="3D-CRT &middot; conventional"><td class="grouped" data-label="Technique">3D-CRT</td><td class="grouped" data-label="Fractionation">Conventional (1.8&ndash;2.0 Gy/fraction)</td><td class="num" data-label="Dose">Mean dose &le;45 Gy</td><td class="num" data-label="Rate">&lt;30%</td><td data-label="Notes">Mean dose to cochlear, hearing at 4 kHz</td></tr>
+                <tr data-group="SRS &middot; single fraction"><td class="grouped" data-label="Technique">SRS</td><td class="grouped" data-label="Fractionation">Single fraction</td><td class="num" data-label="Dose">Prescription dose &le;14 Gy</td><td class="num" data-label="Rate">&lt;25%</td><td data-label="Notes">Serviceable hearing</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03298-2/fulltext" target="_blank" rel="noopener" aria-label="Read the Cochlea QUANTEC review, Bhandare N">Bhandare N, Jackson A, Eisbruch A, et al., &ldquo;Radiation Therapy and Hearing Loss&rdquo;, S50&ndash;S57</a>.</p>
+    <div class="constraint-table-wrap" id="data-parotid" role="region" tabindex="0" aria-label="Parotid dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Parotid <span class="constraint-shared">Every row: 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint long-term parotid salivary function reduced to &lt;25% of pre-RT level</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Volume">Bilateral whole parotid glands</td><td class="num" data-label="Dose">Mean dose &lt;25 Gy</td><td class="num" data-label="Rate">&lt;20%</td><td data-label="Notes">For combined parotid glands</td></tr>
+                <tr><td data-label="Volume">Unilateral whole parotid gland</td><td class="num" data-label="Dose">Mean dose &lt;20 Gy</td><td class="num" data-label="Rate">&lt;20%</td><td data-label="Notes">For single parotid gland. At least one parotid gland spared to &lt;20 Gy</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S15. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03289-1/fulltext" target="_blank" rel="noopener" aria-label="Read the Parotid QUANTEC review, Deasy JO">Deasy JO, Moiseenko V, Marks L, et al., &ldquo;Radiotherapy Dose&ndash;Volume Effects on Salivary Gland Function&rdquo;, S58&ndash;S63</a>. Table 1 notes that severe xerostomia also depends on other factors, including dose to the submandibular glands.</p>
+    <div class="constraint-table-wrap" id="data-pharynx" role="region" tabindex="0" aria-label="Pharynx dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Pharynx <span class="constraint-shared">Every row: conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint symptomatic dysphagia and aspiration</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Volume segmented</th>
+                    <th scope="col">Technique</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Volume">Pharyngeal constrictors</td><td data-label="Technique">Whole organ</td><td class="num" data-label="Dose">Mean dose &lt;50 Gy</td><td class="num" data-label="Rate">&lt;20%</td><td data-label="Notes">Based on Section B4 in paper</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03292-1/fulltext" target="_blank" rel="noopener" aria-label="Read the Pharynx QUANTEC review, Rancati T">Rancati T, Schwarz M, Allen AM, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Larynx and Pharynx&rdquo;, S64&ndash;S69</a>.</p>
+    <div class="constraint-table-wrap" id="data-larynx" role="region" tabindex="0" aria-label="Larynx dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Larynx <span class="constraint-shared">Every row: whole organ, 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction)</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Endpoint">Vocal dysfunction</td><td class="num" data-label="Dose">D<sub>max</sub> &lt;66 Gy</td><td class="num" data-label="Rate">&lt;20%</td><td data-label="Notes">With chemotherapy, based on single study (see Section A4.2 in paper)</td></tr>
+                <tr><td data-label="Endpoint">Aspiration</td><td class="num" data-label="Dose">Mean dose &lt;50 Gy</td><td class="num" data-label="Rate">&lt;30%</td><td data-label="Notes">With chemotherapy, based on single study (see Fig. 1 in paper)</td></tr>
+                <tr><td data-label="Endpoint">Edema</td><td class="num" data-label="Dose">Mean dose &lt;44 Gy</td><td class="num" data-label="Rate">&lt;20%</td><td rowspan="2" data-label="Notes">Without chemotherapy, based on single study in patients without larynx cancer</td></tr>
+                <tr><td data-label="Endpoint">Edema</td><td class="num" data-label="Dose">V<sub>50</sub> &lt;27%</td><td class="num" data-label="Rate">&lt;20%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03292-1/fulltext" target="_blank" rel="noopener" aria-label="Read the Larynx QUANTEC review, Rancati T">Rancati T, Schwarz M, Allen AM, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Larynx and Pharynx&rdquo;, S64&ndash;S69</a>. Table 1 attributes the edema rows to an estimate by Dr Eisbruch.</p>
+
+    <h4 id="group-thorax" class="constraint-group">Thorax</h4>
     <div class="constraint-table-wrap" id="data-lung" role="region" tabindex="0" aria-label="Lung dose, volume and outcome data">
         <table class="constraint-table">
-            <caption>Lung <span class="constraint-shared">Every row: whole organ, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint symptomatic pneumonitis</span></caption>
+            <caption>Lung <span class="constraint-shared">Every row: whole organ, 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint symptomatic pneumonitis</span></caption>
             <thead>
                 <tr>
                     <th scope="col">Dose / dose-volume parameter</th>
@@ -140,11 +290,10 @@ permalink: /quantec/
             </tbody>
         </table>
     </div>
-    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy). The lung review itself notes (p. S72) that &ldquo;it is likely that the MLD&ndash;RP relationship may have lower predictive power for &lsquo;nonstandard&rsquo; dose distributions not included in these analyses, for example after stereotactic body radiotherapy (SBRT), Intensity-Modulated Radiation Therapy (IMRT), or proton therapy.&rdquo; The source states one note across all five mean-dose rows: <em>excludes purposeful whole lung irradiation</em>. Transcribed from Table 1, p. S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03293-3/fulltext" target="_blank" rel="noopener" aria-label="Read Radiation Dose-Volume Effects in the Lung, Marks et al.">Marks LB, Bentzen SM, Deasy JO, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Lung&rdquo;, S70&ndash;S76</a>. That review states there are no evident threshold tolerance dose&ndash;volume levels for lung; the values above are points on a gradual dose response, not thresholds.</p>
-
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03293-3/fulltext" target="_blank" rel="noopener" aria-label="Read the Lung QUANTEC review, Marks LB">Marks LB, Bentzen SM, Deasy JO, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Lung&rdquo;, S70&ndash;S76</a>. The lung review itself notes (p.&nbsp;S72) that &ldquo;it is likely that the MLD&ndash;RP relationship may have lower predictive power for &lsquo;nonstandard&rsquo; dose distributions not included in these analyses, for example after stereotactic body radiotherapy (SBRT), Intensity-Modulated Radiation Therapy (IMRT), or proton therapy.&rdquo; That review also states there are no evident threshold tolerance dose&ndash;volume levels for lung; the values above are points on a gradual dose response, not thresholds. The source states one note across all five mean-dose rows: <em>excludes purposeful whole lung irradiation</em>.</p>
     <div class="constraint-table-wrap" id="data-heart" role="region" tabindex="0" aria-label="Heart dose, volume and outcome data">
         <table class="constraint-table">
-            <caption>Heart <span class="constraint-shared">Every row: conventional fractionation (1.8&ndash;2.0 Gy/fraction)</span></caption>
+            <caption>Heart <span class="constraint-shared">Every row: 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction)</span></caption>
             <thead>
                 <tr>
                     <th scope="col">Volume segmented</th>
@@ -161,7 +310,27 @@ permalink: /quantec/
             </tbody>
         </table>
     </div>
-    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy). Transcribed from Table 1, p. S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03290-8/fulltext" target="_blank" rel="noopener" aria-label="Read Radiation Dose-Volume Effects in the Heart, Gagliardi et al.">Gagliardi G, Constine LS, Moiseenko V, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Heart&rdquo;, S77&ndash;S85</a>.</p>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03290-8/fulltext" target="_blank" rel="noopener" aria-label="Read the Heart QUANTEC review, Gagliardi G">Gagliardi G, Constine LS, Moiseenko V, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Heart&rdquo;, S77&ndash;S85</a>.</p>
+    <div class="constraint-table-wrap" id="data-esophagus" role="region" tabindex="0" aria-label="Esophagus dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Esophagus <span class="constraint-shared">Every row: whole organ, 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction)</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Endpoint">Grade &ge;3 acute esophagitis</td><td class="num" data-label="Dose">Mean dose &lt;34 Gy</td><td class="num" data-label="Rate">5&ndash;20%</td><td data-label="Notes">Based on RTOG and several studies</td></tr>
+                <tr><td data-label="Endpoint">Grade &ge;2 acute esophagitis</td><td class="num" data-label="Dose">V<sub>35</sub> &lt;50%</td><td class="num" data-label="Rate">&lt;30%</td><td rowspan="3" data-label="Notes">A variety of alternate threshold doses have been implicated. Appears to be a dose/volume response</td></tr>
+                <tr><td data-label="Endpoint">Grade &ge;2 acute esophagitis</td><td class="num" data-label="Dose">V<sub>50</sub> &lt;40%</td><td class="num" data-label="Rate">&lt;30%</td></tr>
+                <tr><td data-label="Endpoint">Grade &ge;2 acute esophagitis</td><td class="num" data-label="Dose">V<sub>70</sub> &lt;20%</td><td class="num" data-label="Rate">&lt;30%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03283-0/fulltext" target="_blank" rel="noopener" aria-label="Read the Esophagus QUANTEC review, Werner-Wasik M">Werner-Wasik M, Yorke E, Deasy J, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Esophagus&rdquo;, S86&ndash;S93</a>.</p>
 </section>
 
 <section class="content-section" id="ntcp">
