@@ -568,7 +568,21 @@ footer {
         border-top: 0;
     }
 
-    .constraint-table tbody tr td:last-child {
+    /* `td:last-child` is the last cell in the DOM, which is not the last *visible* cell whenever a
+       row ends in a Notes cell that this media query hides. Two rules hide one: `td:empty` below
+       (the source gives no note) and `.grouped-note` (the note is merged across the group and is
+       reprinted from `data-note` by the `::after` rule). Either way the visible cell above kept
+       its separator, stranding a 1px hairline in the card's bottom padding — and on the merged
+       ones it also doubled against the `::after` border-top, giving a 2px line where every other
+       separator is 1px. The two `:has()` arms reach that cell.
+
+       Both arms require `:last-child` on the hidden cell, so a hidden cell sitting *between* two
+       visible ones could never suppress a separator that is genuinely needed. Notes is the only
+       column that is ever hidden this way and it is always last, so one step back is enough.
+       Measured at 375px across all 62 cards. */
+    .constraint-table tbody tr td:last-child,
+    .constraint-table tbody tr td:has(+ td:last-child:empty),
+    .constraint-table tbody tr td:has(+ td.grouped-note:last-child) {
         border-bottom: none;
     }
 

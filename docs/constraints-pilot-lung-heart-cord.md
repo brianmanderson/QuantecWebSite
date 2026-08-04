@@ -347,6 +347,14 @@ transcription error.
    newly, from the merges above. Separators are now anchored to the top of each body cell, which
    is rowspan-proof. The comment on the rule says so; don't reintroduce `border-bottom` there.
 
+   That deletion also fixed a larger bug it did not set out to fix: the old rule sat *outside* the
+   mobile media query at specificity (0,1,3), beating the stacked layout's own (0,1,1) rule, so
+   the last card of nearly every table had been rendering with no internal separators at all —
+   32 of them. The stacked layout needed one further fix of its own, because `td:last-child` is
+   the last cell in the *DOM*, not the last visible one: rows ending in a Notes cell hidden either
+   by `td:empty` or by `.grouped-note` stranded a hairline in the card's bottom padding. Both are
+   now matched with `:has()`. All 62 cards measured clean at 375px.
+
 ### The modern-IMRT caveat is now stated only where a source says it
 
 Table 1's `*` footnote ("They largely do not reflect modern IMRT") is a blanket statement across
