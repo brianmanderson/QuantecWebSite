@@ -355,6 +355,37 @@ transcription error.
    by `td:empty` or by `.grouped-note` stranded a hairline in the card's bottom padding. Both are
    now matched with `:has()`. All 62 cards measured clean at 375px.
 
+6. **The rectum table was brought into line with the other three endpoint tables.** Owner
+   decision, 2026-08-04, after an independent review found it was the odd one out in four ways at
+   once. No value, endpoint, rate or caption changed — the endpoint/dose/rate triples are
+   identical before and after.
+
+   - **Column order is now Endpoint → Dose → Rate.** It had been Dose → Endpoint, the only table
+     of the four with an Endpoint column (larynx, esophagus, heart being the others) not to
+     follow the source's order.
+   - **The merged dose cell no longer wears the grouping-key styling.** Rectum's five constraints
+     are one set spanning both endpoint rows, so the cell must merge — but `.grouped`'s bold and
+     tint mark the *qualifier* in the other 17 tables and never the number, so rectum was styling
+     the one value a clinician plans from as though it were context. It now carries
+     `.grouped .grouped-value`, which keeps the merge and the vertical centring and drops the
+     emphasis. The rowspan's own borders still show the span, and the caption still states that
+     the five are a single set.
+   - **Mobile cards now label the dose.** `.grouped` is hidden in the stacked layout and reprinted
+     from `data-group`, so the card header had been a bare list of Vx constraints — rectum was the
+     only one of 18 whose cards carried no `Dose` label anywhere. Its `data-group` now reads
+     `Dose: V50 <50%, …`.
+   - **The empty Notes column is gone.** Table 1's Notes cell for this row is "Prostate cancer
+     treatment", which the caption already carries, so the column was a header over two blank
+     cells — and a blank Notes cell means "the source gives no note" in eight other tables. The
+     provenance line now says explicitly that the table has no Notes column rather than an empty
+     one. **Penile bulb still renders an empty Notes column** and was left alone; it is the
+     "source gives no note" case, so its blank is honest.
+
+   The constraint list uses non-breaking spaces inside each `Vnn <mm%` unit, in both the cell and
+   `data-group`, so a line break can only fall after a comma. Verified at 1280/1000/900/881/768/
+   500/375px that no unit splits across lines — in rectum or in the kidney and bladder cells that
+   share the pattern.
+
 ### The modern-IMRT caveat is now stated only where a source says it
 
 Table 1's `*` footnote ("They largely do not reflect modern IMRT") is a blanket statement across

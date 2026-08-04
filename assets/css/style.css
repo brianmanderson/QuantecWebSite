@@ -471,6 +471,17 @@ footer {
     vertical-align: middle;
 }
 
+/* A merged cell carrying the dose itself rather than a grouping key — only rectum, whose five
+   constraints are one set spanning both endpoint rows and so have to merge. In the other 17
+   tables the styling above marks the qualifier and never the number, so a clinician who has read
+   those learns to skim what it marks; rectum was wearing it on the one value they plan from.
+   Keep the merge and the centring, drop the emphasis. The rowspan's own borders still show the
+   span, and the caption states that the five are a single set. */
+.constraint-table .grouped.grouped-value {
+    background-color: transparent;
+    font-weight: 400;
+}
+
 /* Dose and rate cells must not break mid-value: "Mean dose = 13 Gy" wrapping after the "="
    reads as a different number at a glance. */
 .constraint-table .num {
