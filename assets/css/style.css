@@ -573,6 +573,31 @@ footer {
         overflow: hidden;
     }
 
+    /* nowrap is right in the desktop grid, where it stops "Mean dose = 13 Gy" breaking after the
+       "=" and reading as a different number. In the stacked layout there is no grid to protect
+       and the wrapper no longer scrolls, so a long value like "Mean dose to 95% of gland <50 Gy"
+       pushes the whole document sideways and runs off the screen. Let it wrap. */
+    .constraint-table .num {
+        white-space: normal;
+    }
+
+    /* Same problem as the merged Technique cells: a rowspan'd Notes cell renders only in its
+       group's first row, so the later cards lose the caveat and the first card shows one that is
+       partly about rows the reader cannot see. Hide the cell and print the note on every card in
+       the span from the row's own data-note. */
+    .constraint-table .grouped-note {
+        display: none;
+    }
+
+    .constraint-table tr[data-note]::after {
+        content: "Note: " attr(data-note);
+        display: block;
+        padding: 0.5rem 0.85rem;
+        border-top: 1px solid #f2f2f2;
+        color: #5a5a5a;
+        font-size: 0.875rem;
+    }
+
     .constraint-table caption {
         font-size: 1.05rem;
         padding-left: 0;

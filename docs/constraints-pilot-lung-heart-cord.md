@@ -94,17 +94,33 @@ size, 3D CRT is often whole organ‡‡"). SRS single fraction: Dmax <12 Gy → 
 → <30%, "Mean dose to cochlear, hearing at 4 kHz". SRS single fraction: prescription dose ≤14 Gy
 → <25%, "Serviceable hearing".
 
-**Parotid** (S15) — 3D-CRT, endpoint long-term parotid salivary function reduced to <25% of
+**Parotid** (S15–S16) — 3D-CRT, endpoint long-term parotid salivary function reduced to <25% of
 pre-RT level. Bilateral whole parotid glands: mean dose <25 Gy → <20%, "For combined parotid
 glands¶". Unilateral whole parotid gland: mean dose <20 Gy → <20%, "For single parotid gland.
-At least one parotid gland spared to <20 Gy¶".
+At least one parotid gland spared to <20 Gy¶". Bilateral whole parotid glands: mean dose <39 Gy
+→ <50%, "For combined parotid glands (per Fig. 3 in paper)¶".
+
+> **The third parotid row was missed on the first pass, in both the page and this record**, and
+> was caught by an independent review on 2026-08-03. The cause is worth remembering: the parotid
+> block is the only organ whose rows straddle the S15/S16 page break, and the extraction that
+> built this entry stopped at the page boundary. The omission dropped the entire 50% risk level
+> for parotid while the page claimed to publish every organ entry.
+>
+> **How to avoid repeating it:** when transcribing a table that spans pages, extract each page
+> and then check the top of the *next* page for continuation rows before moving on. S17 and S18
+> were re-checked afterwards and both begin with a fresh organ header, so parotid was the only
+> organ affected.
 
 **Pharynx** (S16) — pharyngeal constrictors, irradiation type "Whole organ", endpoint
 symptomatic dysphagia and aspiration. Mean dose <50 Gy → <20%, "Based on Section B4 in paper".
 
-**Larynx** (S16) — whole organ, 3D-CRT. Vocal dysfunction: Dmax <66 Gy → <20%. Aspiration: mean
-dose <50 Gy → <30%. Edema: mean dose <44 Gy → <20%; V50 <27% → <20% (one note across the two
-edema rows, "Without chemotherapy, based on single study in patients without larynx cancer\*\*").
+**Larynx** (S16) — whole organ, 3D-CRT. Vocal dysfunction: Dmax <66 Gy → <20%, "With
+chemotherapy, based on single study (see Section A4.2 in paper)". Aspiration: mean dose <50 Gy →
+<30%, "With chemotherapy, based on single study (see Fig. 1 in paper)". Edema: mean dose <44 Gy →
+<20%; V50 <27% → <20% (one note across the two edema rows, "Without chemotherapy, based on
+single study in patients without larynx cancer\*\*"). The first two notes were omitted from this
+record on the first pass though the page carried them correctly — noted so nobody later
+"corrects" the page down to the record.
 
 **Esophagus** (S16) — whole organ, 3D-CRT. Grade ≥3 acute esophagitis: mean dose <34 Gy → 5–20%,
 "Based on RTOG and several studies". Grade ≥2 acute esophagitis: V35 <50%, V50 <40%, V70 <20%,
@@ -191,7 +207,7 @@ expressed without either dropping the technique or inventing a combined label.
 
 All **18 organ entries** in Table 1 are transcribed and published: brain, brain stem, optic
 nerve/chiasm, spinal cord, cochlea, parotid, pharynx, larynx, lung, heart, esophagus, liver,
-kidney, stomach, small bowel, rectum, bladder, penile bulb. 60 dose rows across five body-system
+kidney, stomach, small bowel, rectum, bladder, penile bulb. 61 dose rows across five body-system
 groups.
 
 ### Superseded — was "still to transcribe"
