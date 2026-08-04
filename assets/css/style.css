@@ -582,10 +582,34 @@ footer {
         padding: 0.25rem 0;
     }
 
+    /* Label column, then value column — but deliberately NOT grid or flex. Every in-flow child of
+       a grid container is a grid item, and each run of text between two elements is wrapped in an
+       anonymous one, so `V<sub>65</sub> &le;50%, V<sub>70</sub> &le;35%` is nine items, not one
+       value. Auto-placement dealt them into successive grid cells and a one-line dose rendered as
+       a staircase: bladder's second row read "Dose | V", then "65 | <=50%, V", then "70 | <=35%,
+       V" — each subscript stranded in the label column, away from the V it belongs to, and the
+       percentage beside it belonging to the level on the line above. 35 value cells across 14 of
+       the 18 tables did this; `sub` is the only element these cells ever contain. An inner table
+       is what fixes it: anonymous-table-box generation wraps a cell's whole run of inline content
+       in ONE anonymous cell, so the subscripts stay inline where they belong.
+
+       `table-layout: fixed` is doing the job `minmax(0, 1fr)` would do for a grid, and is needed
+       for the same reason: an auto-sized column cannot shrink below its content's min-content
+       width, so a single unbreakable token puts a floor under the whole table. The bladder Notes
+       cell says "size/shape/location", 128px with no break opportunity in it, which held the
+       table 5px wider than its wrapper at 375px — the only one of the 18 that overflowed. Fixed
+       layout takes the column widths from this rule instead and lets a long token spill into the
+       cell's own padding.
+
+       `border-collapse` is inherited and the outer table sets `collapse`, in which a table's own
+       padding is ignored — inherited, these cells lose their 0.85rem inset and the labels sit
+       against the card border. Hence the explicit `separate`. */
     .constraint-table td {
-        display: grid;
-        grid-template-columns: 8.5rem 1fr;
-        gap: 0.5rem;
+        display: table;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
         border-bottom: 1px solid #f2f2f2;
         padding: 0.5rem 0.85rem;
     }
@@ -626,9 +650,17 @@ footer {
         border-bottom: none;
     }
 
-    /* The column name, carried on each cell as data-label. */
+    /* The column name, carried on each cell as data-label. 8.5rem of width plus 0.5rem of padding
+       reproduces exactly the 8.5rem track and 0.5rem gap this was before the rule above stopped
+       being a grid — the value column starts at the same 157.6px it always did, at 375px. The
+       reset's `*` does not match pseudo-elements, so state the box-sizing rather than inherit an
+       assumption about it: content-box is what makes width and padding add up to the old 144px. */
     .constraint-table td::before {
         content: attr(data-label);
+        display: table-cell;
+        box-sizing: content-box;
+        width: 8.5rem;
+        padding-right: 0.5rem;
         font-weight: 600;
         color: #2c5aa0;
     }
