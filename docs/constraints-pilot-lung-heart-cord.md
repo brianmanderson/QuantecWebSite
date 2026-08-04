@@ -355,6 +355,13 @@ transcription error.
    by `td:empty` or by `.grouped-note` stranded a hairline in the card's bottom padding. Both are
    now matched with `:has()`. All 62 cards measured clean at 375px.
 
+   **The `:has()` selectors must stay in their own rule**, which they did not at first. Merged
+   into one comma list with the plain `td:last-child` arm, a browser without `:has()` support
+   would have dropped the whole list — baseline included — stranding a hairline on all 62 cards
+   instead of the 21 the change was written to fix, i.e. worse than doing nothing. Caught by
+   review on 2026-08-04 and split. Verified by deleting the `:has()` rule from the live CSSOM:
+   62 clean as shipped, 19 stranded with it gone (the old behaviour), never 62.
+
 6. **The rectum table was brought into line with the other three endpoint tables.** Owner
    decision, 2026-08-04, after an independent review found it was the odd one out in four ways at
    once. No value, endpoint, rate or caption changed — the endpoint/dose/rate triples are

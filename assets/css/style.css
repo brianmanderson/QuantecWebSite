@@ -611,7 +611,16 @@ footer {
        visible ones could never suppress a separator that is genuinely needed. Notes is the only
        column that is ever hidden this way and it is always last, so one step back is enough.
        Measured at 375px across all 62 cards. */
-    .constraint-table tbody tr td:last-child,
+    .constraint-table tbody tr td:last-child {
+        border-bottom: none;
+    }
+
+    /* Deliberately a SEPARATE rule, not two more arms on the selector list above. One
+       unparseable selector invalidates an entire comma list, so a browser without `:has()`
+       support would drop the baseline `td:last-child` rule along with these — stranding a
+       hairline on all 62 cards instead of the 21 this was written to fix, which is worse than
+       doing nothing. Split, such a browser loses only the refinement and keeps the baseline.
+       Never merge these two rules back together. */
     .constraint-table tbody tr td:has(+ td:last-child:empty),
     .constraint-table tbody tr td:has(+ td.grouped-note:last-child) {
         border-bottom: none;
