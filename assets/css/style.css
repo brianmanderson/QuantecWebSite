@@ -490,6 +490,14 @@ footer {
     font-weight: 400;
 }
 
+/* The stacked layout's copy of that merged cell. A rowspan renders in its first row only, so the
+   second phone card cannot reach it; the markup restates the value in row 2 and this hides the
+   restatement wherever the merge is doing the job — i.e. everywhere above the breakpoint. The
+   media query below turns it back on. */
+.constraint-table .dose-restated {
+    display: none;
+}
+
 /* Dose and rate cells must not break mid-value: "Mean dose = 13 Gy" wrapping after the "="
    reads as a different number at a glance. */
 .constraint-table .num {
@@ -685,6 +693,27 @@ footer {
        group carries. Desktop shows the merged cell; mobile shows a header on every card. */
     .constraint-table .grouped {
         display: none;
+    }
+
+    /* Rectum is the exception, and the only one: the value its merge carries is the dose itself,
+       not a qualifier like "3D-CRT · conventional". Printed from data-group it would exist solely
+       as generated content, which `display: none` above has already dropped from the
+       accessibility tree — so a screen-reader user on a phone would get an endpoint and a rate
+       with no dose at all. Here the cell stays a real cell in both cards: merged one carries card
+       one, `.dose-restated` carries card two, and rectum's rows deliberately have no data-group,
+       so nothing is printed twice. `display: table` (not the browser default `table-cell`) is
+       what the block above gives every stacked cell, and these must match it.
+
+       Prominent rather than plain, unlike the desktop rule further up. Above the breakpoint the
+       tint distinguishes columns, so a dose must not wear the qualifier's styling; down here
+       there are no columns to confuse and this cell is replacing the header bar that used to sit
+       at the top of the card. It is the value the reader came for. */
+    .constraint-table .grouped.grouped-value,
+    .constraint-table .dose-restated {
+        display: table;
+        background-color: #f0f7ff;
+        color: #2c5aa0;
+        font-weight: 600;
     }
 
     .constraint-table tr[data-group]::before {

@@ -433,7 +433,34 @@ transcription error.
      "source gives no note" case, so its blank is honest.
 
    The constraint list uses non-breaking spaces inside each `Vnn <mm%` unit, in both the cell and
-   `data-group`, so a line break can only fall after a comma. Verified at 1280/1000/900/881/768/
+   `data-group`, so a line break can only fall after a comma.
+
+7. **The rectum dose is a real cell in both phone cards, not a `data-group` header.** Owner
+   decision, 2026-08-04, taken over three alternatives after review pointed out the consequence of
+   6: `.grouped` is `display: none` below 880px, which removes the cell from the accessibility
+   tree, so the dose survived only as CSS generated content in `tr[data-group]::before`. Every one
+   of the 35 merged cells works that way, but rectum is the only table where what is hidden is the
+   number a clinician plans from rather than a qualifier like "3D-CRT · conventional".
+
+   A `rowspan` renders in its first row only, so the second card cannot reach the merged cell. The
+   value is therefore **written twice**: the merged cell serves the desktop grid and card one, and
+   a `.dose-restated` cell in row 2 serves card two. Each layout hides the copy it does not need —
+   `.dose-restated` is `display: none` above the breakpoint, and the media query turns it on and
+   the merged cell back on below it. Rectum's rows lost their `data-group` in the same change, so
+   nothing is printed twice on a card. Desktop is unaffected: measured at 1280px the table still
+   has exactly three columns, the hidden restatement adding none, and the merged cell still spans
+   the full 89px of `tbody`.
+
+   **Two copies of a dose is a real hazard and is guarded.** `release` step 2b runs
+   `check_restated_cells.py`, which compares the two cells' inner HTML exactly and fails on any
+   difference; it was tested against a deliberately drifted copy (50% → 55%) before being relied
+   on. Nothing else would catch it — an edit to one copy leaves desktop and mobile quoting
+   different constraints with no visible symptom in either layout alone.
+
+   On mobile the cell is styled prominently (tint, bold, brand blue at 6.3:1) rather than plain as
+   on desktop. The two are not inconsistent: above the breakpoint the tint distinguishes *columns*,
+   so a dose must not wear the qualifier's styling; below it there are no columns to confuse and
+   this cell has taken over the header bar's job of leading the card. Verified at 1280/1000/900/881/768/
    500/375px that no unit splits across lines — in rectum or in the kidney and bladder cells that
    share the pattern.
 

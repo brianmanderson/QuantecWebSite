@@ -436,8 +436,14 @@ permalink: /quantec/
                 </tr>
             </thead>
             <tbody>
-                <tr data-group="Dose: V50&nbsp;&lt;50%, V60&nbsp;&lt;35%, V65&nbsp;&lt;25%, V70&nbsp;&lt;20%, V75&nbsp;&lt;15%"><td data-label="Endpoint">Grade &ge;2 late rectal toxicity</td><td class="grouped grouped-value" rowspan="2" data-label="Dose">V<sub>50</sub>&nbsp;&lt;50%, V<sub>60</sub>&nbsp;&lt;35%, V<sub>65</sub>&nbsp;&lt;25%, V<sub>70</sub>&nbsp;&lt;20%, V<sub>75</sub>&nbsp;&lt;15%</td><td class="num" data-label="Rate">&lt;15%</td></tr>
-                <tr data-group="Dose: V50&nbsp;&lt;50%, V60&nbsp;&lt;35%, V65&nbsp;&lt;25%, V70&nbsp;&lt;20%, V75&nbsp;&lt;15%"><td data-label="Endpoint">Grade &ge;3 late rectal toxicity</td><td class="num" data-label="Rate">&lt;10%</td></tr>
+                <!-- The five constraints appear TWICE below, and the two copies must stay identical:
+                     the first cell is merged across both rows for the desktop grid, and the second
+                     is the stacked layout's copy for the row the rowspan cannot reach. A rowspan
+                     renders in its first row only, so without the restatement the second phone card
+                     would carry an endpoint and a rate with no dose. Neither copy is decoration.
+                     Change one, change the other; `release` checks that they match. -->
+                <tr><td data-label="Endpoint">Grade &ge;2 late rectal toxicity</td><td class="grouped grouped-value" rowspan="2" data-label="Dose">V<sub>50</sub>&nbsp;&lt;50%, V<sub>60</sub>&nbsp;&lt;35%, V<sub>65</sub>&nbsp;&lt;25%, V<sub>70</sub>&nbsp;&lt;20%, V<sub>75</sub>&nbsp;&lt;15%</td><td class="num" data-label="Rate">&lt;15%</td></tr>
+                <tr><td data-label="Endpoint">Grade &ge;3 late rectal toxicity</td><td class="dose-restated" data-label="Dose">V<sub>50</sub>&nbsp;&lt;50%, V<sub>60</sub>&nbsp;&lt;35%, V<sub>65</sub>&nbsp;&lt;25%, V<sub>70</sub>&nbsp;&lt;20%, V<sub>75</sub>&nbsp;&lt;15%</td><td class="num" data-label="Rate">&lt;10%</td></tr>
             </tbody>
         </table>
     </div>
