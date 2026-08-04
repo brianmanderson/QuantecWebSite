@@ -1,9 +1,12 @@
 # Transcription pilot — lung, heart, spinal cord
 
-Status: **published.** The site owner ruled on 2026-08-03 to publish these on `/quantec/`. All
-14 rows are live in the "Dose/volume/outcome data" section of that page, with the two governing
-footnotes reproduced verbatim and each table attributed to its source page. This document
-remains the transcription record and the verification evidence behind them.
+Status: **published, and since extended to the whole table.** The site owner ruled on 2026-08-03
+to publish these on `/quantec/`. The pilot's 14 rows went live first; the same protocol was then
+run over the rest of Table 1, and all **18 organ entries / 62 dose rows** are now in the
+"Dose/volume/outcome data" section of that page, with the four governing footnotes reproduced
+verbatim and each table attributed to its source page. This document remains the transcription
+record and the verification evidence behind them — the sections below are in the order the work
+was done, so the pilot's three organs come first and the extensions follow.
 
 ## Source
 
@@ -20,10 +23,11 @@ transcribed here are on **S15** (spinal cord) and **S16** (lung, heart).
 This is the table the Guest Editor's introduction calls out as "a large summary table of
 dose/volume/outcome data", and the one `site-plan.md` already links as the QUANTEC summary table.
 
-## The two footnotes that govern every number below
+## The four footnotes that govern the numbers below
 
-Both are transcribed verbatim from S18. They are not optional context; they change how the
-values may be used.
+All four are transcribed verbatim from S18. They are not optional context; they change how the
+values may be used and what the notation means. The site reproduces all four in the box above
+the tables.
 
 > **\*** All data are estimated from the literature summarized in the QUANTEC reviews unless
 > otherwise noted. Clinically, these data should be applied with caution. Clinicians are
@@ -32,6 +36,27 @@ values may be used.
 
 > **†** All at standard fractionation (i.e., 1.8–2.0 Gy per daily fraction) unless otherwise
 > noted. Vx is the volume of the organ receiving ≥ x Gy. Dmax = Maximum radiation dose.
+
+> **‖** Dx = minimum dose received by the "hottest" x% (or x cc's) of the organ.
+
+> **††** Classic Radiation induced liver disease (RILD) involves anicteric hepatomegaly and
+> ascites, typically occurring between 2 weeks and 3 months after therapy. Classic RILD also
+> involves elevated alkaline phosphatase (more than twice the upper limit of normal or baseline
+> value).
+
+The first two govern every organ in the table. **‖** and **††** were added to the site when the
+abdomen and pelvis tables landed and the notation they define came into use — ‖ for the liver
+`D100`, penile bulb `D90`/`D60–70`, brain stem `D1–10 cc` and stomach `D100` rows, †† for the
+liver endpoint. They were re-verified against S18 on 2026-08-03 and recorded here, because for a
+while the site carried four footnotes while this record documented two.
+
+Table 1 has five further footnotes, all organ-specific rather than governing. Each is carried on
+the site next to the table it belongs to rather than in the box: **‡** Non-TBI (kidney, in the
+caption); **§** with combined chemotherapy (small bowel, in the caption); **¶** severe xerostomia
+depends on other factors including submandibular dose (parotid, in the provenance line);
+**\*\*** estimated by Dr. Eisbruch (larynx edema rows, in the provenance line); **‡‡** the optic
+neuropathy cases in the 55–60 Gy range received ≥59 Gy, excluding pituitary-tumour patients
+(optic nerve, in the provenance line).
 
 ## Spinal cord — S15
 
@@ -256,7 +281,7 @@ transcription error.
 ### The modern-IMRT caveat is now stated only where a source says it
 
 Table 1's `*` footnote ("They largely do not reflect modern IMRT") is a blanket statement across
-every organ in the table. It remains quoted verbatim in the box above all three tables, which is
+every organ in the table. It remains quoted verbatim in the box above the tables, which is
 where a blanket statement belongs.
 
 Beside the individual tables it appears **only for lung**, because only the lung review makes the
@@ -289,9 +314,15 @@ The protocol requires every number to be re-checked against the source by a sepa
 1. `pdftotext -layout` — preserves visual column position
 2. `pdftotext` (reading order) — preserves the PDF's internal text sequence
 
-They agree on every value in all three tables. The agreement is meaningful because the two
-methods fail differently: layout mode reconstructs columns geometrically and can bind a value to
-the wrong row when a cell wraps; reading order cannot, but loses the visual grouping.
+They agree on every value in all 18 tables — the pilot's three, and the 15 added when the same
+protocol was run over the rest of Table 1. The agreement is meaningful because the two methods
+fail differently: layout mode reconstructs columns geometrically and can bind a value to the
+wrong row when a cell wraps; reading order cannot, but loses the visual grouping.
+
+Re-run in full on 2026-08-03 by an independent review with no knowledge of what had changed:
+all 62 dose rows across the 18 tables re-checked against pp. S15–S18 by both methods, plus the
+four footnote blockquotes, the kidney Table 5 provenance claim, the lung S72 quote, and all 19
+citation links against the organ PDFs' own title pages. No discrepancy found.
 
 **One real ambiguity was caught this way and resolved.** In layout mode the lung block rendered
 as five mean-dose rows against a vertically displaced rate column, admitting two readings:
@@ -332,9 +363,11 @@ defect; the reasoning argued against it is kept below so the trade-off stays vis
 
 What shipped as a result:
 
-- The three tables live in `/quantec/#data`, reachable from the CNS, Cardiovascular and
-  Respiratory cards.
-- Both QUANTEC footnotes are reproduced verbatim above the tables, including "Clinicians are
+- The tables live in `/quantec/#data`, grouped under five body-system headings and reachable
+  from every organ card above them. (The pilot shipped three tables reached from the CNS,
+  Cardiovascular and Respiratory cards; all 18 are now published and all six cards route to
+  them.)
+- The QUANTEC footnotes are reproduced verbatim above the tables, including "Clinicians are
   strongly advised to use the individual QUANTEC articles" and "They largely do not reflect
   modern IMRT".
 - Each table carries its source page and a link to the organ review.
@@ -358,11 +391,24 @@ rather than an assumption:
    limits", and warns the data "largely do not reflect modern IMRT" — which in 2026 is most
    thoracic treatment. A table on the site is a summary of a summary the authors already
    qualified.
-2. **The owner has already ruled once in this territory.** `update-requests.md` ruling 2 reverted
-   "Lung V20/V30 constraints" as overstating the evidence, on the grounds that the lung review's
-   abstract says there are "no evident threshold 'tolerance dose–volume' levels". The summary
-   table's `V20 ≤ 30%` row is exactly that number. Publishing it re-raises a question that was
-   settled the other way ten months ago.
+2. **The owner has already ruled once in this territory.** `update-requests.md` ruling 2 restored
+   "Lung V20/V30 constraints" verbatim, overruling an implementer rewrite that had removed it on
+   the grounds that the lung review's abstract says there are "no evident threshold
+   'tolerance dose–volume' levels". The summary table's `V20 ≤ 30%` row is exactly that number.
+
+   > **Corrected 2026-08-03.** This point previously read that ruling 2 "reverted 'Lung V20/V30
+   > constraints' as overstating the evidence" and that publishing "re-raises a question settled
+   > the other way ten months ago". That inverted the ruling. Ruling 2 reverted the *rewrite*,
+   > putting the owner's V20/V30 wording back — so the owner was content to name V20 as a
+   > constraint, and this point in fact cut **in favour of** publishing the row, not against it.
+   > Left in place rather than deleted because an argument recorded backwards is worth showing
+   > as such: anyone re-reading this section was being told the owner had ruled against a thing
+   > they had ruled for.
 
 None of this makes publishing wrong — it is a real editorial choice with a real upside, and the
 values above are verified and ready. It was the site owner's call, and it was made: publish.
+
+**Postscript, 2026-08-03.** The tension in point 2 resolved itself once the table was live. The
+card was asserting a V30 constraint that Table 1 does not carry, so the owner dropped V30 from
+that bullet; it now reads "Lung V20 constraints". V20 stands, published and cited. The full
+account is in ruling 2's follow-up in [update-requests.md](update-requests.md).

@@ -26,7 +26,7 @@ stays visible, but the ruling stands.
 | # | Point | Ruling |
 |---|---|---|
 | 1 | Inferred panel mapping | **Confirmed correct.** The order-based mapping is what was intended. Closed. |
-| 2 | Respiratory reworded | **Reverted.** Original four bullets restored verbatim. |
+| 2 | Respiratory reworded | **Reverted.** Original four bullets restored verbatim — then bullet 1 amended by the owner on 2026-08-03, see below. |
 | 2b | Gastrointestinal reworded | **Reverted.** Original four bullets restored, plus the two requested additions. |
 | 3 | Three QUANTEC-named destinations | **Constraints tab relabelled.** Nav now reads "Constraints"; the URL stays `/quantec/`. |
 | 4 | Added sixth panel | **Kept** (Genitourinary and Pelvis). |
@@ -42,9 +42,51 @@ caveats were raised and overruled, recorded here so nobody re-opens them:
 - *"Lung V20/V30 constraints"* — the lung review's own abstract states there are "no evident
   threshold 'tolerance dose–volume' levels".
 
+  **Superseded — the owner amended this bullet on 2026-08-03. It now reads "Lung V20
+  constraints", and that is the current correct text.** Do not restore "V20/V30" from the
+  verbatim-restoration wording of ruling 2 above; this amendment is later than that ruling and
+  wins.
+
+  How it came up. Once the lung table was published, the bullet was briefly turned into a link
+  to it, which made the mismatch concrete: Table 1's lung block carries `V20 ≤ 30%` and five
+  mean-dose rows and **no V30 row at all** — verified against S16 of the summary paper, where
+  the only V30 on the page is the pericardium row in the heart block. So the card asserted a
+  V30 constraint at heading level that the table it pointed at did not have. The link was
+  removed first and the panel note carried a disclaimer instead; the owner was asked whether
+  the bullet should keep naming V30 given the page now states the table has none, and ruled to
+  drop it.
+
+  Two consequences worth knowing. The panel note's disclaimer ("the summary table gives V20 and
+  mean lung dose, and carries no V30 row") existed only to offset the bullet, so it went with
+  it — the note now matches the other five cards. The absence itself is still stated in bold on
+  the lung table's own provenance line, which is where a clinician looking for V30 actually
+  lands. **Do not re-link this bullet either** — the reason the link was wrong is gone, but a
+  card bullet linking to a table is not the pattern any other card uses.
+
 On 3: the two labels suggested were "Dose Constraints" and "Constraints by Organ". Neither fits
 — they measure 610px and 639px against a 594px budget and wrap the header to two rows.
 "Constraints" fits at 569px with 25px of slack and breaks the name collision just as completely.
+
+### How the six organ cards route — settled, do not "normalise"
+
+Five cards end with a single `.panel-link` arrow to their section of the Publications page. **The
+Gastrointestinal card deliberately does not, and this is not an oversight** — it has been flagged
+as one by more than one review, so it is written down here.
+
+That card's six topics do not live in one section: small bowel, liver, kidney and stomach are
+under Abdomen, rectal toxicity under Pelvis, esophagus under Thorax. A single "→ papers" arrow
+would have to pick one and be wrong for the other two, so each bullet links to its own
+destination and the card's note says that is what is happening. The `.panel-link` it originally
+carried pointed at Abdomen alone and was removed for exactly this reason.
+
+Every other card's topics do sit in one section, so they take the arrow. Respiratory was the
+odd one out in the other direction until 2026-08-03 — per-bullet links but no arrow, on a card
+whose topics are all under Thorax — and now matches its four siblings.
+
+**The rule, if a card is ever added:** topics in one Publications section → one `.panel-link`
+arrow, unlinked bullets. Topics scattered across sections → per-bullet links, no arrow, and a
+note saying so. Do not make the six cards uniform for its own sake; the difference carries
+information.
 
 ---
 
