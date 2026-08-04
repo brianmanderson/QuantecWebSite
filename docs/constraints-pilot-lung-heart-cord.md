@@ -255,8 +255,8 @@ settled from the text extraction and must not be guessed.
 
 ## Where the site's wording departs from the source — ruled 2026-08-03
 
-The tables above are the verbatim transcription. The published tables differ from it in exactly
-two ways, both owner decisions, both recorded here so the difference is never mistaken for a
+The tables above are the verbatim transcription. The published tables differ from it in the ways
+listed below, all owner decisions, all recorded here so the difference is never mistaken for a
 transcription error.
 
 1. **`SRS (hypofraction)` is published as `SRS (3 fraction)`.** The source's own Notes cell for
@@ -277,6 +277,62 @@ transcription error.
    former. Because the technique is what underpins the modern-IMRT caveat, it is preserved in the
    provenance line under each table — "The source records these rows as 3D-CRT (3-dimensional
    conformal radiotherapy)" — rather than being dropped.
+
+   (Superseded in part by the Technique / Fractionation split ruled later the same day, above:
+   the source's `Irradiation type` value is now published verbatim in a **Technique** column and
+   the fractionation schedule stated separately. Kept here because the provenance-line convention
+   it established is still in force.)
+
+4. **The Technique column no longer distinguishes "Whole organ" from "3D-CRT" — every
+   conventional-fractionation row now reads `3D-CRT`.** Owner decision, 2026-08-03, for
+   readability across the 18 tables. Five organs carried a technique value that was not plain
+   `3D-CRT`, and all five are now published as `3D-CRT`:
+
+   | Organ | Source's `Irradiation type` | Published as |
+   |---|---|---|
+   | Brain stem | `Whole organ` (Dmax <54 Gy row only) | `3D-CRT` |
+   | Pharynx | `Whole organ` | `3D-CRT` |
+   | Liver | `3D-CRT or Whole organ` (both <5% rows) | `3D-CRT` |
+   | Kidney | `Bilateral whole organ or 3D-CRT`; `Bilateral whole organ` | `3D-CRT` |
+   | Stomach | `Whole organ` | `3D-CRT` |
+
+   **What this trades away, and what protects it.** The source's column distinguished data drawn
+   from whole-organ irradiation from data drawn from partial-organ conformal treatment; that
+   distinction is gone from the grid. Two things keep it recoverable. Each of the five provenance
+   lines now names the source's own value verbatim — for kidney, all three of them. And the
+   *volume* irradiated is a different column and was **not** touched: "whole organ" still appears
+   in the Volume segmented column and in the captions that hoist it (brain, brain stem, optic
+   nerve, cochlea, larynx, lung, esophagus, stomach, rectum, bladder, penile bulb; heart's
+   `Whole organ` row; kidney's "bilateral whole kidney"). **Anyone applying this ruling further
+   must not confuse the two columns** — collapsing Volume segmented would destroy a clinical
+   fact, not a label.
+
+   The optic nerve table keeps the source's note "Given the small size, 3D-CRT is often whole
+   organ", which is the source's own wording and now reads as support for the collapse.
+
+5. **Rows are ordered by technique, then by number of fractions; identical adjacent cells are
+   merged.** Owner decision, 2026-08-03, same request as 4. Presentation only — no value, note
+   or pairing changed.
+
+   Only the **liver** table's row order actually moved. Its SBRT block was interleaved in the
+   source (3 fx, 6 fx, 3 fx, 6 fx) and is now grouped 3 fx (13 Gy primary, 15 Gy metastases),
+   6 fx (18 Gy primary, 20 Gy metastases), 3–5 fx (Dmax 15 Gy). Every dose keeps the note it
+   came with; the pairing is the one the liver review confirms verbatim, quoted in the Abdomen
+   section above. Its provenance line states that the order is not the source's.
+
+   Merges added: liver (Volume across the eight `Whole liver − GTV` rows, Technique across the
+   four 3D-CRT and five SBRT rows, Fractionation within each fraction count); brain stem (the
+   three conventional rows, now one group); spinal cord (Technique `SRS` across its single- and
+   3-fraction rows); larynx (`Edema` endpoint ×2); esophagus (`Grade ≥2 acute esophagitis`
+   endpoint ×3). Kidney's Technique and Fractionation columns became identical in every row once
+   4 was applied, so they were hoisted into the caption and the columns dropped, per the
+   convention below.
+
+   **The Rate column is still never merged**, for the reason recorded below. The same reasoning
+   blocked one further merge: the two spinal cord SRS rows now carry identical *note* text, but
+   only because ruling 2 above moved "3 fractions," out of the 3-fraction row's note. The source
+   wrote two different notes there, so merging them would assert a grouping the source does not
+   make. They are left as two cells.
 
 ### The modern-IMRT caveat is now stated only where a source says it
 
