@@ -13,7 +13,7 @@ permalink: /quantec/
 <section class="content-section">
     <h3><i class="fas fa-book-open"></i> How to use this page</h3>
     <p>The dose/volume tolerance guidance on this site comes from the original QUANTEC reviews, published as a special issue of the <em>International Journal of Radiation Oncology Biology Physics</em>. This page routes you to them: find the organ system, then follow it to the review that carries the constraint.</p>
-    <p>Dose/volume/outcome values are stated directly in the <a href="#data">tables below</a> for the central nervous system, head and neck, and thorax. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. Abdomen and pelvis are still being transcribed, and route to the paper in the meantime.</p>
+    <p>Dose/volume/outcome values are stated directly in the <a href="#data">tables below</a> for the central nervous system, head and neck, thorax and pelvis. They are transcribed from the QUANTEC summary table, with its authors' own caveats reproduced alongside them and every row attributed to the page it came from. The abdominal organs are still being transcribed, and route to the paper in the meantime.</p>
     <div class="mt-3">
         <a href="{{ '/publications/' | relative_url }}" class="btn">Browse all QUANTEC papers</a>
     </div>
@@ -84,13 +84,14 @@ permalink: /quantec/
                 <li>Penile bulb</li>
             </ul>
             <p class="panel-link"><a href="{{ '/publications/' | relative_url }}#pelvis">Pelvis papers <i class="fas fa-arrow-right"></i></a></p>
+            <p class="panel-note">Bladder, rectum and penile bulb values are <a href="#group-pelvis" aria-label="Pelvis dose/volume values, tabulated below on this page">tabulated below</a>.</p>
         </div>
     </div>
 </section>
 
 <section class="content-section" id="data">
     <h3><i class="fas fa-table"></i> Dose/volume/outcome data</h3>
-    <p>Spinal cord, lung and heart. Every row below is transcribed from a single source — Table 1 of the QUANTEC summary paper — and carries the page it appears on.</p>
+    <p>Every row below is transcribed from a single source — Table 1 of the QUANTEC summary paper — and carries the page it appears on. Central nervous system, head and neck, thorax and pelvis are published; the abdominal organs are still being transcribed.</p>
 
     <div class="highlight-box">
         <p><strong>Read this first.</strong> The table these rows come from carries two footnotes from its authors. Both are reproduced verbatim, because they govern how every value below may be used.</p>
@@ -103,6 +104,7 @@ permalink: /quantec/
         <a href="#group-cns">Central nervous system</a>
         <a href="#group-head-neck">Head and neck</a>
         <a href="#group-thorax">Thorax</a>
+        <a href="#group-pelvis">Pelvis</a>
     </p>
 
     <h4 id="group-cns" class="constraint-group">Central nervous system</h4>
@@ -331,6 +333,61 @@ permalink: /quantec/
         </table>
     </div>
     <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S16. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03283-0/fulltext" target="_blank" rel="noopener" aria-label="Read the Esophagus QUANTEC review, Werner-Wasik M">Werner-Wasik M, Yorke E, Deasy J, et al., &ldquo;Radiation Dose&ndash;Volume Effects in the Esophagus&rdquo;, S86&ndash;S93</a>.</p>
+
+    <h4 id="group-pelvis" class="constraint-group">Pelvis</h4>
+    <div class="constraint-table-wrap" id="data-rectum" role="region" tabindex="0" aria-label="Rectum dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Rectum <span class="constraint-shared">Every row: whole organ, 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction), prostate cancer treatment</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Endpoint</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-group="V50 &lt;50%, V60 &lt;35%, V65 &lt;25%, V70 &lt;20%, V75 &lt;15%"><td class="grouped" rowspan="2" data-label="Dose">V<sub>50</sub> &lt;50%, V<sub>60</sub> &lt;35%, V<sub>65</sub> &lt;25%, V<sub>70</sub> &lt;20%, V<sub>75</sub> &lt;15%</td><td data-label="Endpoint">Grade &ge;2 late rectal toxicity</td><td class="num" data-label="Rate">&lt;15%</td><td rowspan="2" data-label="Notes">The five constraints are one set; both rates follow from meeting all of them</td></tr>
+                <tr data-group="V50 &lt;50%, V60 &lt;35%, V65 &lt;25%, V70 &lt;20%, V75 &lt;15%"><td data-label="Endpoint">Grade &ge;3 late rectal toxicity</td><td class="num" data-label="Rate">&lt;10%</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S18. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03291-X/fulltext" target="_blank" rel="noopener" aria-label="Read the Rectum QUANTEC review, Michalski JM">Michalski JM, Gay H, Jackson A, et al., &ldquo;Radiation Dose&ndash;Volume Effects in Radiation-Induced Rectal Injury&rdquo;, S123&ndash;S129</a>. The five constraints are a single set, not independent rows: that review states they are &ldquo;a conservative starting point for 3D treatment planning&rdquo; and that following them &ldquo;should limit Grade &ge;2 late rectal toxicity to &lt;15% and the probability of Grade &ge;3 late rectal toxicity to &lt;10% for prescriptions up to 79.2 Gy in standard 1.8- to 2-Gy fractions&rdquo;. It also notes they have yet to be validated as relatively safe.</p>
+    <div class="constraint-table-wrap" id="data-bladder" role="region" tabindex="0" aria-label="Bladder dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Bladder <span class="constraint-shared">Every row: whole organ, 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint Grade &ge;3 late RTOG toxicity</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="num" data-label="Dose">D<sub>max</sub> &lt;65 Gy</td><td class="num" data-label="Rate">&lt;6%</td><td data-label="Notes">Bladder cancer treatment. Variations in bladder size/shape/location during RT hamper ability to generate accurate data</td></tr>
+                <tr><td class="num" data-label="Dose">V<sub>65</sub> &le;50%, V<sub>70</sub> &le;35%, V<sub>75</sub> &le;25%, V<sub>80</sub> &le;15%</td><td class="num" data-label="Rate">Not stated</td><td data-label="Notes">Prostate cancer treatment. Based on current RTOG 0415 recommendation</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S18. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03285-4/fulltext" target="_blank" rel="noopener" aria-label="Read the Bladder QUANTEC review, Viswanathan AN">Viswanathan AN, Yorke ED, Marks LB, et al., &ldquo;Radiation Dose&ndash;Volume Effects of the Urinary Bladder&rdquo;, S116&ndash;S122</a>. No complication rate is given for the second row, and that blank is in the source: the bladder review offers those limits &ldquo;in the absence of any reliable data&rdquo;, citing the conventional-fractionation arm of RTOG 0415.</p>
+    <div class="constraint-table-wrap" id="data-penile-bulb" role="region" tabindex="0" aria-label="Penile bulb dose, volume and outcome data">
+        <table class="constraint-table">
+            <caption>Penile bulb <span class="constraint-shared">Every row: whole organ, 3D-CRT, conventional fractionation (1.8&ndash;2.0 Gy/fraction), endpoint severe erectile dysfunction</span></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Dose / dose-volume parameter</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Notes on dose/volume parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="num" data-label="Dose">Mean dose to 95% of gland &lt;50 Gy</td><td class="num" data-label="Rate">&lt;35%</td><td data-label="Notes"></td></tr>
+                <tr><td class="num" data-label="Dose">D<sub>90</sub> &lt;50 Gy</td><td class="num" data-label="Rate">&lt;35%</td><td data-label="Notes"></td></tr>
+                <tr><td class="num" data-label="Dose">D<sub>60&ndash;70</sub> &lt;70 Gy</td><td class="num" data-label="Rate">&lt;55%</td><td data-label="Notes"></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="constraint-source"><strong>Apply with caution</strong> &mdash; these are estimates; check applicability against the organ review itself. The source records these rows as 3D-CRT (3-dimensional conformal radiotherapy) or SRS (stereotactic radiosurgery) as shown. Transcribed from Table 1, p.&nbsp;S18. Organ review: <a href="https://www.redjournal.org/article/S0360-3016(09)03294-5/fulltext" target="_blank" rel="noopener" aria-label="Read the Penile bulb QUANTEC review, Roach M III">Roach M III, Nam J, Gagliardi G, et al., &ldquo;Radiation Dose&ndash;Volume Effects and the Penile Bulb&rdquo;, S130&ndash;S134</a>. D<sub>x</sub> is Table 1's notation for the minimum dose received by the hottest x% of the organ.</p>
 </section>
 
 <section class="content-section" id="ntcp">
