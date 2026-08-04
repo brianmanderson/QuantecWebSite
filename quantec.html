@@ -91,7 +91,12 @@ permalink: /quantec/
 </section>
 
 <section class="content-section" id="data">
-    <h3><i class="fas fa-table"></i> Dose/volume/outcome data</h3>
+    <!-- <wbr> after each slash: browsers offer no break opportunity there, so at 1.8rem
+         "Dose/volume/outcome" is a single 307px token and overhung its box on every phone,
+         pushing the page into horizontal scroll at 320px. These let it break at the slashes
+         instead of mid-word. They add no character to the text and no node to the heading's
+         accessible name. -->
+    <h3><i class="fas fa-table"></i> Dose/<wbr>volume/<wbr>outcome data</h3>
     <p>Every row below is transcribed from a single source — Table 1 of the QUANTEC summary paper — and carries the page it appears on. All 18 organ entries in that table are now published.</p>
 
     <div class="highlight-box">

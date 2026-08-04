@@ -146,6 +146,21 @@ right. For any change touching markup or CSS:
    `[320, 360, 375, 390, 414, 480, 600, 768, 880]`. `minmax(0, 1fr)` is the fix when the cell is a
    grid; `table-layout: fixed` is the same fix for the inner tables these cells became on
    2026-08-04.
+
+   **And measure text, not just the wrapper — they fail independently.** The fix above closed the
+   wrapper overflow and opened a worse hole in the same stroke: a fixed column width ignores its
+   content, so at 320px the value column was 68px against a 128px token, and
+   `.constraint-table tr { overflow: hidden }` — which is there to clip the group header to the
+   card's rounded corner — silently swallowed 45px of a Notes caveat. Every wrapper read
+   `scrollWidth === clientWidth` throughout, so the sweep above passed while text was disappearing.
+   A scrollbar at least advertises itself; this had no affordance at all. Walk the text nodes and
+   compare each client rect against the `tr`'s box:
+
+   ```js
+   const trR = tr.getBoundingClientRect();                    // the clipping ancestor
+   const rg = d.createRange(); rg.selectNodeContents(textNode);
+   [...rg.getClientRects()].some(r => r.right - trR.right > 0.5)   // true = characters are hidden
+   ```
 6. `read_console_messages` — should be clean. Font Awesome 404s only mean the CDN is
    unreachable; that is an environment artifact, not a regression.
 
