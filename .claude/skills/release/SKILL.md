@@ -129,12 +129,24 @@ right. For any change touching markup or CSS:
    equalled 881 − 145 was a coincidence, and it is what made a correct figure look circular.
 
    **A walk-up loop cannot find this number**, which is why the bad figure above went unchallenged.
-   Below the breakpoint the stacked layout is already live and never clips, so a loop that starts
-   under it returns its own start value and looks like a confident answer. Probe the grid by
-   forcing wrapper widths at a viewport *above* the breakpoint, or by measuring intrinsic width as
-   above. Allow ~2px for the wrapper's borders — every table reads 2px over at exactly its own
-   width, so `+2` is the noise floor, not a clip.
-5. `read_console_messages` — should be clean. Font Awesome 404s only mean the CDN is
+   The stacked layout is already live below the breakpoint, so a loop that starts under it returns
+   its own start value and looks like a confident answer. Probe the grid by forcing wrapper widths
+   at a viewport *above* the breakpoint, or by measuring intrinsic width as above. Allow ~2px for
+   the wrapper's borders — every table reads 2px over at exactly its own width, so `+2` is the
+   noise floor, not a clip.
+5. **Sweep *below* the breakpoint as well, not just 375px.** This file used to assert here that
+   the stacked layout "never clips". It did. The stacked cells were a CSS grid whose value track
+   was `1fr`, and an auto-sized track cannot shrink below its content's min-content width, so one
+   unbreakable token — the bladder Notes cell's "size/shape/location", 128px — put a floor under
+   the whole table. Bladder overflowed its wrapper by 5px at 375px, 20px at 360px and 60px at
+   320px, where seven other tables joined it. Eight review rounds and a 375px-only mobile check
+   never saw it, because 375 is where it happened to be smallest. Below the breakpoint the wrapper
+   does not scroll (`overflow-x: visible`), so a clip here spills onto the page instead of hiding
+   behind a scrollbar. Use the same iframe harness as (a), stepping
+   `[320, 360, 375, 390, 414, 480, 600, 768, 880]`. `minmax(0, 1fr)` is the fix when the cell is a
+   grid; `table-layout: fixed` is the same fix for the inner tables these cells became on
+   2026-08-04.
+6. `read_console_messages` — should be clean. Font Awesome 404s only mean the CDN is
    unreachable; that is an environment artifact, not a regression.
 
 Restart the preview after any `_config.yml` edit; the watcher does not reload it.
