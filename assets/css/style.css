@@ -472,8 +472,21 @@ footer {
     font-size: 1.35rem;
 }
 
-/* A cell merged across the rows it applies to. */
-.constraint-table .grouped {
+/* The qualifier marking. The rule across all 18 tables: every cell in a qualifier column —
+   Technique, Fractionation, Volume segmented, Endpoint — carries this styling, and a dose,
+   rate or note never does. A clinician who has read a few tables learns that the marked cells
+   are the conditions and the plain cells are the data; that convention only teaches if it
+   holds everywhere, so do not apply it per-cell by whether a rowspan happens to be present.
+
+   Two classes share it because they diverge below the 880px breakpoint:
+   - `.grouped` — the cell is ALSO part of the group-header mechanism: hidden in the stacked
+     layout and reprinted from its row's data-group. Merged (rowspan) cells and the single-row
+     cells that share their column both use it where the row carries data-group.
+   - `.qualifier` — the marking alone, on rows with no data-group. In the stacked layout these
+     stay ordinary labelled cells; the media query resets this styling so phone cards keep
+     their own rule (labels and headers bold, values plain). */
+.constraint-table .grouped,
+.constraint-table .qualifier {
     background-color: #fafcff;
     font-weight: 600;
     vertical-align: middle;
@@ -693,6 +706,16 @@ footer {
        group carries. Desktop shows the merged cell; mobile shows a header on every card. */
     .constraint-table .grouped {
         display: none;
+    }
+
+    /* `.qualifier` cells stay visible down here — their rows have no data-group, so hiding
+       them would lose the value outright. But the desktop marking must not follow them: the
+       stacked layout's own convention is labels and group headers bold, values plain, and a
+       bold tinted "Vocal dysfunction" beside plain doses would break it. This reset keeps the
+       phone cards rendering exactly as they did before the class existed. */
+    .constraint-table .qualifier {
+        background-color: transparent;
+        font-weight: 400;
     }
 
     /* Rectum is the exception, and the only one: the value its merge carries is the dose itself,
