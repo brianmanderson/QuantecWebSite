@@ -212,7 +212,9 @@ consequences, all of which have already cost a session:
   and describes a width nobody uses — and because 441 is under 768, a mobile check passes
   without ever rendering mobile. Measure exact widths in an iframe instead: an iframe
   establishes its own viewport, so media queries resolve at the width you set. Read `innerWidth`
-  back and never report a width you did not read back from the thing you measured.
+  back and never report a width you did not read back from the thing you measured. The obvious
+  fallback — driving headless Edge yourself — has its own version of this lie; see below before
+  you trust one of its screenshots.
 
 The two measurements item 4 asks for, and why the iframe is not optional. Resizing the iframe
 re-resolves its media queries, so neither needs a reload per width — but both need the forced
@@ -272,6 +274,56 @@ getComputedStyle(document.querySelector('.gallery-container')).gridTemplateColum
 // the stylesheet loaded at all (CDN sheets read as CORS-blocked; the local one must not)
 [...document.styleSheets].some(s => (s.href||'').includes('style.css'))
 ```
+
+### If the pane will not composite: headless Edge lies about width too
+
+When the Browser pane returns blank screenshots, the natural fallback is to drive headless Edge
+directly (`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`, `--headless=new
+--screenshot`). It works, but **`--window-size` does not give you the width you ask for**, and the
+failure is silent. Measured 2026-09-02 with a probe page beaconing `innerWidth` back to a local
+server — screenshots cannot measure this, because the picture is the thing that lies:
+
+```
+layout width = max(requested, 516) - 24
+```
+
+| `--window-size` | actual `innerWidth` |
+|---|---|
+| 320 / 375 / 390 / 480 / 500 | **492** (floored) |
+| 768 | **744** |
+| 792 | **768** |
+| 1280 | **1256** |
+
+The 24px deficit is window chrome, not the scrollbar: `--hide-scrollbars` changes none of these
+numbers, and `outerWidth` reads 516 when `innerWidth` reads 492. `--headless=old` behaves
+identically, so classic headless is not an escape.
+
+Two ways this bites on this site specifically:
+
+- **It crosses the breakpoint silently.** `--window-size=768` renders at 744 — the *stacked*
+  layout — so a capture meant to confirm the grid at the breakpoint confirms the wrong layout
+  instead. Request **792** for a true 768. Every desktop number is 24px short the same way:
+  `--window-size=1280` is really 1256.
+- **Below 516 requested, the width is unreachable.** A `--window-size=390` capture is a 492px
+  layout cropped to a 390px canvas, which looks exactly like the page clipping its own text. On
+  2026-09-02 that made the `/quantec-2/` report-template button appear to run off the right edge
+  when nothing was wrong; the same trap could just as easily hide a real clip by rendering a
+  width where it does not happen.
+
+**The fix is the same iframe, for the same reason:** render the page in an iframe of the exact
+width inside a wide headless window (e.g. `--window-size=1400,900` around a `width:390px`
+iframe). Verified exact at 320, 360, 375, 390, 414, 480, 768, 880 and 1280 — every one reported
+its own width back with zero deficit. A cross-origin iframe still renders fine for a screenshot;
+put a `#fragment` in its `src` to land on the section you want, since you cannot script into it.
+Above 516 you can instead just add 24 to the width you want.
+
+Whatever you use, the rule from the pane applies unchanged: **never report a width you did not
+read back from the thing you measured.**
+
+Two Windows quirks that cost time while establishing the above, so you do not re-derive them:
+`--dump-dom` produces no output at all from Git Bash, and the `--screenshot` file is frequently
+not flushed by the time the process exits — a command that reads it in the same pipeline sees
+"No such file". Re-check the file before concluding the capture failed.
 
 ## Then, and only then: the PR
 
