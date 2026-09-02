@@ -387,8 +387,13 @@ footer {
     margin-bottom: 3rem;
 }
 
+/* Marker-pen emphasis in the hero paragraph. `.hero p` is #666, which reaches only
+   4.07:1 against the #a8e6cf end of this gradient — under WCAG AA's 4.5:1, and 1.3rem
+   (20.8px) is not large text. The body colour gives 8.96:1 there and 10.22:1 at the
+   #dcedc8 end, so the gradient is kept as designed. Keep this colour declaration. */
 .highlight {
     background: linear-gradient(120deg, #a8e6cf 0%, #dcedc8 100%);
+    color: #333;
     padding: 0.2rem 0.5rem;
     border-radius: 3px;
 }
