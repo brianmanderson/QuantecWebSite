@@ -16,3 +16,15 @@ The anatomical category icons used on the Publications and QUANTEC 2 pages come 
 and resized for use as inline category-heading icons.
 
 All other icons are from [Font Awesome Free](https://fontawesome.com/) (CC BY 4.0 / SIL OFL).
+
+## Documents
+
+| File | Source | Author | Rights |
+|------|--------|--------|--------|
+| `assets/documents/quantec-2-site-specific-reports-2026-08-25.pdf` | QUANTEC 2 working group | Vitali Moiseenko (from the PDF's document metadata &mdash; **[CONFIRM OR EDIT]**) | **[FILL IN: e.g. "&copy; QUANTEC 2 working group, published with permission &mdash; all rights reserved", or a Creative Commons licence]** |
+
+*Structure of the organ site-specific papers &ndash; QUANTEC-2 Template*, dated 25 August 2026.
+Published on this site at the request of the site owner, who holds the document.
+
+**Changes made:** none. The PDF is published byte-for-byte as supplied; only the filename was
+changed (to a URL-safe, date-stamped form) when it moved into `assets/documents/`.

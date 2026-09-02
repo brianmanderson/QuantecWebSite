@@ -96,7 +96,12 @@ ls -R _site
 Jekyll copies unrecognised files through verbatim, so a stray file at the repo root becomes a
 public URL. The expected tree is `index.html`; `about/`, `quantec/`, `publications/`,
 `quantec-2/`, `contact/` and `resources/` each holding `index.html`; `assets/css`,
-`assets/images`; and `CNAME`, `feed.xml`, `robots.txt`, `sitemap.xml`.
+`assets/images`, `assets/documents`; and `CNAME`, `feed.xml`, `robots.txt`, `sitemap.xml`.
+
+`assets/documents/` holds the QUANTEC 2 site-specific report template PDF linked from
+`/quantec-2/#report-template`. It is published deliberately — the owner authorised it on
+2026-09-02 — and is not a stray file. The `docs/papers/` journal PDFs are a different matter and
+stay out of git entirely; see `.gitignore`.
 
 `resources/` is a deliberate redirect stub, not a page — `/resources/` was the QUANTEC page
 before it moved to `/quantec/`, and the stub carries the fragment across so the live
