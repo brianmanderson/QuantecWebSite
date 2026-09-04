@@ -189,6 +189,28 @@ right. For any change touching markup or CSS:
    const rg = d.createRange(); rg.selectNodeContents(textNode);
    [...rg.getClientRects()].some(r => r.right - trR.right > 0.5)   // true = characters are hidden
    ```
+
+   **That recipe false-positives on `<thead>` rows — expect it, do not chase it.** A header row's
+   own `getBoundingClientRect()` collapses to about 2px wide while its `<th>` children lay out
+   normally: measured 2026-09-03, `tr` read 2px at x=64–66 while each `th` was 101px with a 74px
+   text rect inside it, fully visible. Run against `tr` unconditionally, the check therefore
+   reports "Technique" clipped in **every** table at **every** width from 320px to 1280px, which
+   looks alarming and means nothing. It is not a regression and no change introduced it.
+
+   Compare against the **cell** box, falling back to the row only where the row's rect is the
+   wider of the two — the row still has to be the comparison for body cells, since
+   `.constraint-table tr { overflow: hidden }` is the rule that actually swallowed text before:
+
+   ```js
+   const cR = cell.getBoundingClientRect();
+   if (cR.width < 1) continue;                                // degenerate box, nothing rendered
+   const trR = tr.getBoundingClientRect();
+   const clipR = (trR.width > cR.width) ? trR : cR;           // real clipping box
+   [...rg.getClientRects()].some(r => r.right - clipR.right > 0.5)
+   ```
+
+   With that correction the tables read clean at 320, 360, 375, 390, 414, 480, 600, 768, 880,
+   1204 and 1280px.
 6. `read_console_messages` — should be clean. Font Awesome 404s only mean the CDN is
    unreachable; that is an environment artifact, not a regression.
 

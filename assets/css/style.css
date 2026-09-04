@@ -55,11 +55,16 @@ nav {
     flex-shrink: 0;
 }
 
-/* Six top-level items, two of them long ("AllTEC Publications", "QUANTEC 2"), have to share
-   the header row with a 526px logo. At 1280px the row allows 594px for the nav; these values
-   put it at 569px — 25px of slack. At gap 0.5rem it measures 605px and the nav drops to its
-   own row, making the header 167px instead of 130px. Do not widen either value without
-   re-measuring; see the `content-editing` skill. */
+/* Six top-level items, three of them long ("Toxicity Risk Metrics", "AllTEC Publications",
+   "QUANTEC 2"), share the header row with the logo block. Measured 2026-09-03 in an iframe at
+   exact widths: at 1280px the nav is 632px, the logo block 477px, and the header is one row of
+   130px. The header keeps that single row down to 1204px and splits to two rows (167px) at
+   1203px and below. Renaming "Constraints" to "Toxicity Risk Metrics" grew the nav 569px ->
+   632px but moved the split threshold only 1190px -> 1204px, because the tagline shortened in
+   the same pass and the logo block narrowed 526px -> 477px. The two are coupled: lengthening
+   the tagline again spends the same budget as lengthening a nav item. Do not widen either
+   value, add a seventh item, or re-lengthen the tagline without re-measuring in an iframe of
+   the exact width; see the `content-editing` skill. */
 nav ul {
     list-style: none;
     display: flex;

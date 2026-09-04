@@ -76,10 +76,16 @@ Radiation" produces a doubled title. Liquid is otherwise used only for `relative
    `_layouts/default.html`. That `<ul>` is the *only* nav definition; there is no data file.
 3. Always route links through `relative_url` (`{{ '/quantec/' | relative_url }}`), never a
    bare `/quantec/` or an absolute `https://quantecradiation.org/...`.
-4. **The nav is full.** Six items measure 569px against a 594px budget at 1280px — 25px of
-   slack. A seventh item, or renaming one to something longer, wraps the header to two rows.
-   Measure before and after in the browser (see `preview`); do not eyeball it. The gap and link
-   padding in `style.css` are already tightened for this and should not be widened.
+4. **The nav is full, and it shares its budget with the tagline.** Measured 2026-09-03: six
+   items are 632px at 1280px, the logo block 477px, and the header is one row of 130px down to
+   1204px, splitting to two rows (167px) at 1203px and below. The 2026-08-31 rename of
+   "Constraints" to "Toxicity Risk Metrics" grew the nav 63px but cost only 14px of threshold,
+   because the tagline shortened in the same pass and narrowed the logo block by 49px — the
+   tagline and the nav draw on one budget, so lengthening either pushes the split further up.
+   A seventh item, a longer label, or a longer tagline moves it again. Measure before and after
+   in an iframe of the exact width (see `release` step 4 — `resize_window` clamps and will lie
+   to you); do not eyeball it. The gap and link padding in `style.css` are already tightened
+   for this and should not be widened.
 5. Sub-navigation within a page uses `.subnav` — real `#anchor` links, no JS tab widget. The
    layout's smooth-scroll handler pushes the hash and moves focus, so those sections stay
    linkable, bookmarkable and reachable with the Back button. Keep that property if you touch
